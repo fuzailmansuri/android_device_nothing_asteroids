@@ -773,6 +773,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
 # Vibrator
+$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.nothing_sm7635-richtap)
+$(call soong_config_set,qti_vibrator,use_effect_stream,true)
+
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
