@@ -560,6 +560,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
+    AsteroidsApertureDevOverlay \
+    AsteroidsApertureOverlay \
     AsteroidsFrameworksOverlay \
     AsteroidsMainlineWifiOverlay \
     AsteroidsProMainlineWifiOverlay \
