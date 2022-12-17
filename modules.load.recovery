@@ -1,3 +1,4 @@
+adsp_loader_dlkm.ko
 adsp_sleepmon.ko
 altmode-glink.ko
 arm_smmu.ko
@@ -64,6 +65,7 @@ glink_pkt.ko
 glink_probe.ko
 governor_gpubw_mon.ko
 governor_msm_adreno_tz.ko
+gpr_dlkm.ko
 gpucc-pineapple.ko
 gpucc-volcano.ko
 gunyah_loader.ko
@@ -130,6 +132,8 @@ pmic-pon-log.ko
 proxy-consumer.ko
 pwm-qti-lpg.ko
 q2spi-geni.ko
+q6_notifier_dlkm.ko
+q6_pdr_dlkm.ko
 qcom-amoled-regulator.ko
 qcom-cpufreq-hw.ko
 qcom-dcvs.ko
@@ -218,7 +222,9 @@ smem.ko
 smp2p.ko
 smp2p_sleepstate.ko
 snd-usb-audio-qmi.ko
+snd_event_dlkm.ko
 socinfo.ko
+spf_core_dlkm.ko
 spi-msm-geni.ko
 spmi-pmic-arb.ko
 sps_drv.ko
