@@ -373,6 +373,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.demura-service
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    sys.brightness.disable_gamma_conversion=true
+
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.comp_mask=0 \
     vendor.display.disable_3d_adaptive_tm=1 \
