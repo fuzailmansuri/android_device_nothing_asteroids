@@ -808,6 +808,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     wifi.aware.interface=wifi-aware0
 
 # Widevine
+PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
+    $(LOCAL_PATH)/linker.config.json
+
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.wv.oemcrypto.debug.enable_hlos_data_path=true \
     vendor.wv.oemcrypto.debug.enable_prov40=true
