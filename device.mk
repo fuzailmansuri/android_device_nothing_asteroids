@@ -746,6 +746,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
 
+PRODUCT_ODM_PROPERTIES += \
+    ro.usb.uvc.enabled=true
+
 PRODUCT_VENDOR_PROPERTIES += \
     sys.usb.mtp.batchcancel=1 \
     vendor.usb.controller=a600000.dwc3 \
