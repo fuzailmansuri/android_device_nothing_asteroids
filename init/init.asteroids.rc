@@ -78,5 +78,4 @@ on property:sys.boot_completed=1
 
 on property:vendor.all.modules.ready=1
     chown system system /proc/touchpanel/fod_mode
-    chown system system /proc/touchpanel/gesture_mode
     chown system system /sys/panel_feature/fp_status

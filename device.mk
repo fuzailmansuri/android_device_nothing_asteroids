@@ -534,8 +534,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
 
 # Power
-$(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/gesture_mode)
-
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
@@ -594,6 +592,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
+    sensors.asteroids \
     sensors.dynamic_sensor_hal
 
 PRODUCT_VENDOR_PROPERTIES += \
