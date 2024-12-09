@@ -411,6 +411,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.keystore_desede=true \
     vendor.gatekeeper.is_security_level_spu=0
 
+# Lineage Health
+$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
+
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
