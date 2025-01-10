@@ -488,6 +488,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
+    aptxalsOverlay \
     AsteroidsApertureDevOverlay \
     AsteroidsApertureOverlay \
     AsteroidsEuiccPolicyOverlay \
