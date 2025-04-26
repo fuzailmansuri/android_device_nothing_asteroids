@@ -747,6 +747,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
 
 PRODUCT_ODM_PROPERTIES += \
+    ro.usb.uvc.disable_video_encode_flag=true \
     ro.usb.uvc.enabled=true
 
 PRODUCT_VENDOR_PROPERTIES += \
