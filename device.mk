@@ -374,6 +374,9 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/display_id_4630946978939328130.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946978939328130.xml
+
+PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 PRODUCT_PACKAGES += \
