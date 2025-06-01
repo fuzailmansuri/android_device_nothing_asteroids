@@ -578,6 +578,7 @@ PRODUCT_PACKAGES += \
     AsteroidsFrameworksOverlay \
     AsteroidsMainlineWifiOverlay \
     AsteroidsProMainlineWifiOverlay \
+    AsteroidsProSettingsProviderOverlay \
     AsteroidsProWifiOverlay \
     AsteroidsSettingsOverlay \
     AsteroidsSettingsProviderOverlay \
