@@ -139,12 +139,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
     audio.offload.video=true \
-    audio.sys.noisy.broadcast.delay=600 \
-    audio.sys.offload.pstimeout.secs=3 \
-    persist.audio.fluence.speaker=true \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicecomm=true \
-    persist.audio.fluence.voicerec=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.vendor.audio.ambisonic.auto.profile=false \
@@ -159,17 +153,11 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.audio.ras.enabled=false \
     persist.vendor.audio.spv3.enable=true \
     persist.vendor.audio.voicecall.speaker.stereo=true \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
     persist.vendor.bt.aac_vbr_frm_ctl.enabled=true \
-    persist.vendor.newAAC.cur.config=MUSIC \
-    persist.vendor.newAAC.dump=0 \
-    persist.vendor.newAAC.enable.value=1.000000 \
-    persist.vendor.newAAC.volume.value=0.000000 \
     ro.af.client_heap_size_kbyte=7168 \
     ro.audio.flinger_standbytime_ms=2000 \
     ro.bluetooth.a2dp_offload.supported=true \
-    ro.qc.sdk.audio.fluencetype=none \
     ro.vendor.audio.sdk.fluencetype=none \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.adm.buffering.ms=2 \
@@ -387,7 +375,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.demura-service
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.demo.hdmirotationlock=false \
     vendor.display.comp_mask=0 \
     vendor.display.disable_3d_adaptive_tm=1 \
     vendor.display.disable_cwb_idle_fallback=1 \
@@ -504,9 +491,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.asteroids.rc \
     ueventd.qcom.rc
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.shutdown.watchdog.timeout=120
 
 # Kernel
  PRODUCT_COPY_FILES += \

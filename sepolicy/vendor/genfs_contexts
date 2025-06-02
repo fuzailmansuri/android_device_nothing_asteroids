@@ -1,0 +1,20 @@
+# Display
+genfscon proc /touchpanel/gesture_mode     u:object_r:vendor_proc_graphics:s0
+genfscon sysfs /panel_feature/panel_id1    u:object_r:vendor_sysfs_graphics:s0
+
+# Fingerprint
+genfscon proc /touchpanel/fod_mode         u:object_r:vendor_proc_fingerprint:s0
+genfscon sysfs /panel_feature/fp_status    u:object_r:vendor_sysfs_fingerprint:s0
+
+# Lights
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/all_white_brightness    u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/dev_color               u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/frame_brightness        u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/operating_mode          u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/single_brightness       u:object_r:vendor_sysfs_graphics:s0
+
+# Wakeup
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/wakeup              u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup                                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/wakeup    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup                                     u:object_r:sysfs_wakeup:s0

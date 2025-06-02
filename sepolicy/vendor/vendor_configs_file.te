@@ -1,0 +1,1 @@
+allow vendor_configs_file vendor_configs_file:filesystem associate;
