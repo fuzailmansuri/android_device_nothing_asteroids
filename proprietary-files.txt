@@ -1723,6 +1723,3 @@ vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Widevine
 vendor/apex/com.google.android.widevine.nonupdatable.apex
-vendor/lib64/libcpion.so
-vendor/lib64/liboemcrypto.so
-vendor/lib64/libtrustedapploader.so
