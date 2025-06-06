@@ -2612,6 +2612,7 @@
         <boolean name="support_emergency_sms_over_ims_bool" value="true" />
         <boolean name="support_downgrade_vt_to_audio_bool" value="true" />
         <boolean name="carrier_vt_tty_support_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="carrier_call_composer_supported_bool" value="true" />
         <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
         <boolean name="use_sms_callback_mode_bool" value="true" />
