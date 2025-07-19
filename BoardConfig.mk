@@ -199,9 +199,6 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := volcano
 
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/gesture_mode"
-
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
