@@ -2618,6 +2618,23 @@
         <boolean name="show_rtt_visibility_setting_bool" value="true" />
         <boolean name="ignore_rtt_mode_setting_bool" value="true" />
         <int name="default_rtt_mode_int" value="1" />
+        <int-array name="additional_nr_advanced_bands_int_array" num="1">
+            <item value="77" />
+        </int-array>
+        <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+            <item value="-115" />
+            <item value="-105" />
+            <item value="-95" />
+            <item value="-85" />
+        </int-array>
+        <int-array name="5g_nr_sssinr_thresholds_int_array" num="4">
+            <item value="-3" />
+            <item value="1" />
+            <item value="5" />
+            <item value="13" />
+        </int-array>
+        <int name="parameters_use_for_5g_nr_signal_bar_int" value="5" />
+        <int name="parameters_used_for_lte_signal_bar_int" value="5" />
     </carrier_config>
     <carrier_config mcc="312" mnc="530">
         <boolean name="rtt_supported_bool" value="true" />
