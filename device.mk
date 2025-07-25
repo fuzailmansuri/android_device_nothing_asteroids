@@ -623,6 +623,7 @@ PRODUCT_PACKAGES += \
     qcrilNrDb_vendor
 
 PRODUCT_BOOT_JARS += \
+    nt-telephony-interface \
     telephony-ext
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \

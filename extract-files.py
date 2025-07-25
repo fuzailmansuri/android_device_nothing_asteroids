@@ -61,6 +61,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hidl.base@1.0.so', 'libhidlbase.so'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V2-cpp.so', 'android.media.audio.common.types-V4-cpp.so'),
+    'system_ext/priv-app/QtiTelephony/QtiTelephony.apk': blob_fixup()
+        .apktool_patch('telephony/0001-QtiTelephony-globally-set-RECEIVER_EXPORTED-for-regi.patch'),
     'vendor/etc/lvacfs_params/1mic/LVACFS_Configuration.txt': blob_fixup()
         .patch_file('audio/lvacfs_1mic_config.patch'),
     'vendor/etc/lvacfs_params/2mic/LVACFS_Configuration.txt': blob_fixup()
