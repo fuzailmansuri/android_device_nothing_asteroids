@@ -82,7 +82,6 @@
         <boolean name="world_mode_enabled_bool" value="false" />
         <boolean name="world_phone_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="1" />
     <carrier_config cid="1" name="T-Mobile - US">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
@@ -479,7 +478,6 @@
         <int name="smsToMmsTextThreshold" value="5" />
         <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="26" />
     <carrier_config cid="26" name="Vodafone">
         <string name="carrier_name_string">vodafone ES</string>
         <boolean name="carrier_vt_available_bool" value="false" />
@@ -540,7 +538,6 @@
         <int name="smsToMmsTextThreshold" value="10" />
         <boolean name="voicemail_notification_persistent_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="29" />
     <carrier_config cid="29" name="Vodafone">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <string name="carrier_name_string">vodafone IT</string>
@@ -610,13 +607,11 @@
         <boolean name="vvm_ssl_enabled_bool" value="false" />
         <string name="vvm_type_string">vvm_type_omtp</string>
     </carrier_config>
-    <carrier_config cid="33" />
     <carrier_config cid="33" name="TIM">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <string name="carrier_name_string">TIM</string>
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="34" />
     <carrier_config cid="34" name="Movistar">
         <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
             <item value="default" />
@@ -640,7 +635,6 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="568" />
     <carrier_config cid="576" name="Bell Mobility">
         <string name="carrier_name_string">Bell</string>
     </carrier_config>
@@ -648,7 +642,6 @@
         <string name="carrier_name_string">Telia</string>
         <int name="maxMessageSize" value="2097152" />
     </carrier_config>
-    <carrier_config cid="658" />
     <carrier_config cid="667" name="Telia">
         <boolean name="call_barring_visibility_bool" value="true" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
@@ -689,7 +682,6 @@
         <boolean name="enableWapPushSI" value="true" />
         <boolean name="hide_ims_apn_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="681" />
     <carrier_config cid="717" name="Virgin">
         <string name="default_vm_number_string">+447458333222</string>
     </carrier_config>
@@ -835,7 +827,6 @@
         <string name="carrier_name_string">Pelephone</string>
         <boolean name="carrier_supports_ss_over_ut_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="802" />
     <carrier_config cid="802" name="VI">
         <string name="carrier_name_string">Vi India</string>
     </carrier_config>
@@ -864,7 +855,6 @@
         <boolean name="use_call_waiting_ussd_bool" value="true" />
         <boolean name="use_caller_id_ussd_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="866" />
     <carrier_config cid="892" name="Telia">
         <string name="carrier_name_string">Telia LT</string>
         <int name="maxMessageSize" value="2097152" />
@@ -935,7 +925,6 @@
         <boolean name="editable_wfc_mode_bool" value="false" />
         <int name="wfc_spn_format_idx_int" value="11" />
     </carrier_config>
-    <carrier_config cid="970" />
     <carrier_config cid="970" name="Omantel">
         <string name="carrier_name_string">OMANTEL</string>
         <boolean name="carrier_vt_available_bool" value="false" />
@@ -1094,7 +1083,6 @@
     <carrier_config cid="1403" name="Rogers">
         <string name="carrier_name_string">ROGERS</string>
     </carrier_config>
-    <carrier_config cid="1404" />
     <carrier_config cid="1404" name="TELUS Mobility">
         <string name="carrier_name_string">TELUS</string>
     </carrier_config>
@@ -1114,8 +1102,6 @@
         <int name="recipientLimit" value="20" />
         <int name="smsToMmsTextThreshold" value="6" />
     </carrier_config>
-    <carrier_config cid="1429" />
-    <carrier_config cid="1435" />
     <carrier_config cid="1435" name="China Mobile">
         <string name="carrier_name_string">中国移动</string>
         <int-array name="carrier_nr_availabilities_int_array" num="2">
@@ -1126,7 +1112,6 @@
         <boolean name="hide_enabled_5g_bool" value="true" />
         <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1436" />
     <carrier_config cid="1436" name="China Unicom">
         <string name="carrier_name_string">中国联通</string>
         <int-array name="carrier_nr_availabilities_int_array" num="2">
@@ -1137,7 +1122,6 @@
         <boolean name="hide_enabled_5g_bool" value="true" />
         <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1437" />
     <carrier_config cid="1449" name="O2">
         <string name="carrier_name_string">O2.CZ</string>
     </carrier_config>
@@ -1219,7 +1203,6 @@
     <carrier_config cid="1463" name="TDC Mobil">
         <string name="ims.ims_user_agent_string">TDC VOLTE</string>
     </carrier_config>
-    <carrier_config cid="1464" />
     <carrier_config cid="1464" name="Telenor">
         <string name="carrier_name_string">Telenor DK</string>
         <string name="ims.ims_user_agent_string">Telenor VOLTE</string>
@@ -1259,7 +1242,6 @@
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
         <boolean name="hide_smart_5g_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1492" />
     <carrier_config cid="1492" name="O2">
         <boolean name="call_barring_visibility_bool" value="true" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
@@ -1336,7 +1318,6 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="1534" />
     <carrier_config cid="1534" name="Yettel">
         <string name="carrier_name_string">Yettel HU</string>
         <boolean name="carrier_vt_available_bool" value="false" />
@@ -1378,11 +1359,9 @@
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
-    <carrier_config cid="1556" name="MTNL" />
     <carrier_config cid="1556" name="mtnl_bsnl">
         <string name="carrier_name_string">Dolphin</string>
     </carrier_config>
-    <carrier_config cid="1573" />
     <carrier_config cid="1573" name="WINDTRE">
         <boolean name="call_barring_visibility_bool" value="true" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
@@ -1395,7 +1374,6 @@
     <carrier_config cid="1573" name="WindTre">
         <string name="carrier_name_string">WINDTRE</string>
     </carrier_config>
-    <carrier_config cid="1575" />
     <carrier_config cid="1575" name="WINDTRE">
         <boolean name="call_barring_visibility_bool" value="true" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
@@ -1411,7 +1389,6 @@
     <carrier_config cid="1578" name="Fastlink">
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="1581" />
     <carrier_config cid="1581" name="KDDI">
         <string name="carrier_name_string">KDDI</string>
     </carrier_config>
@@ -1473,7 +1450,6 @@
     <carrier_config cid="1644" name="KPN">
         <string name="carrier_name_string">KPN NL</string>
     </carrier_config>
-    <carrier_config cid="1653" />
     <carrier_config cid="1653" name="Globe">
         <string name="carrier_name_string">Globe</string>
     </carrier_config>
@@ -1536,7 +1512,6 @@
     <carrier_config cid="1676" name="Orange La Réunion">
         <boolean name="carrier_supports_ss_over_ut_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="1683" />
     <carrier_config cid="1683" name="STC">
         <boolean name="call_barring_visibility_bool" value="true" />
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
@@ -1597,7 +1572,6 @@
         <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_on_by_default_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1709" />
     <carrier_config cid="1709" name="SI Mobil">
         <boolean name="call_barring_visibility_bool" value="true" />
         <string name="carrier_name_string">A1 Sl</string>
@@ -1634,7 +1608,6 @@
     <carrier_config cid="1735" name="Turkcell">
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1736" />
     <carrier_config cid="1736" name="Vodafone">
         <string name="carrier_name_string">Vodafone Türkiye</string>
     </carrier_config>
@@ -1652,22 +1625,17 @@
     <carrier_config cid="1737" name="Türk Telekom">
         <string name="carrier_name_string">Turk Telekom</string>
     </carrier_config>
-    <carrier_config cid="1779" />
     <carrier_config cid="1779" name="Cricket Wireless">
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1820" />
-    <carrier_config cid="1838" />
-    <carrier_config cid="1839" />
     <carrier_config cid="1839" name="Verizon Wireless">
         <boolean name="additional_call_setting_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="1853" />
     <carrier_config cid="1881" name="遠傳電信 Far EasTone Telecom">
         <int name="call_barring_default_service_class_int" value="0" />
         <boolean name="call_barring_supports_password_change_bool" value="false" />
@@ -1740,7 +1708,6 @@
     <carrier_config cid="1892" name="LGT">
         <string name="carrier_name_string">LG U+</string>
     </carrier_config>
-    <carrier_config cid="1894" />
     <carrier_config cid="1894" name="SoftBank">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="false" />
@@ -1782,9 +1749,6 @@
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
         <string name="carrier_name_string">Fl DNA</string>
     </carrier_config>
-    <carrier_config cid="1911" />
-    <carrier_config cid="1951" />
-    <carrier_config cid="1952" />
     <carrier_config cid="1958" name="Free">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
@@ -1799,7 +1763,6 @@
     <carrier_config cid="1959" name="Digi">
         <string name="carrier_name_string">RO Digi.Mobil</string>
     </carrier_config>
-    <carrier_config cid="1961" />
     <carrier_config cid="1961" name="Airtel">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <string name="carrier_name_string">Airtel</string>
@@ -1812,7 +1775,6 @@
         <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
         <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1963" />
     <carrier_config cid="1963" name="VI">
         <string name="carrier_name_string">Vi India</string>
     </carrier_config>
@@ -1823,7 +1785,6 @@
         <int name="smsToMmsTextThreshold" value="10" />
         <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1964" />
     <carrier_config cid="1965" name="Telkom">
         <boolean name="call_forwarding_when_busy_supported_bool" value="false" />
     </carrier_config>
@@ -1843,7 +1804,6 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="1972" />
     <carrier_config cid="1972" name="Zain">
         <string name="carrier_name_string">Zain KSA</string>
     </carrier_config>
@@ -1852,7 +1812,6 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="prefer_2g_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="1988" />
     <carrier_config cid="1988" name="O2">
         <string-array name="carrier_metered_apn_types_strings" num="3">
             <item value="default" />
@@ -1902,7 +1861,6 @@
         <string name="carrier_name_string">YES</string>
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="2018" />
     <carrier_config cid="2018" name="Reliance Jio">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
@@ -1918,15 +1876,12 @@
         <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_on_by_default_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="2027" name="Airvoice" />
     <carrier_config cid="2037" name="Bite">
         <boolean name="rtt_supported_bool" value="true" />
     </carrier_config>
     <carrier_config cid="2038" name="Unifi - P1/Webe">
         <string name="carrier_name_string">unifi</string>
     </carrier_config>
-    <carrier_config cid="2038" name="unifi mobile" />
-    <carrier_config cid="2052" />
     <carrier_config cid="2091" name="Bonbon">
         <boolean name="allowEnablingWapPushSI" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="2" />
@@ -1959,7 +1914,6 @@
         <boolean name="smsUsesSimpleCharactersOnly" value="true" />
         <int name="wfc_spn_format_idx_int" value="2" />
     </carrier_config>
-    <carrier_config cid="2093" />
     <carrier_config cid="2093" name="Tesco">
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
@@ -2030,21 +1984,18 @@
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="2110" />
     <carrier_config cid="2118" name="giffgaff">
         <string name="carrier_name_string">giffgaff</string>
         <boolean name="carrier_volte_available_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
-    <carrier_config cid="2119" />
     <carrier_config cid="2119" name="FirstNet">
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
     </carrier_config>
-    <carrier_config cid="2120" />
     <carrier_config cid="2120" name="FirstNet (Lab)">
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
@@ -2061,7 +2012,6 @@
     <carrier_config cid="2150" name="Telenet">
         <string name="carrier_name_string">Telenet</string>
     </carrier_config>
-    <carrier_config cid="2237" />
     <carrier_config cid="2237" name="China Telecom">
         <string name="carrier_name_string">中国电信</string>
         <int-array name="carrier_nr_availabilities_int_array" num="2">
@@ -2201,7 +2151,6 @@
         <boolean name="smsEncodingChangeable" value="true" />
         <boolean name="smsUsesSimpleCharactersOnly" value="true" />
     </carrier_config>
-    <carrier_config cid="2378" />
     <carrier_config cid="2378" name="VI">
         <string name="carrier_name_string">Vi India</string>
     </carrier_config>
@@ -2740,8 +2689,6 @@
         <boolean name="smsUsesSimpleCharactersOnly" value="true" />
         <int name="wfc_spn_format_idx_int" value="2" />
     </carrier_config>
-    <carrier_config gid1="0000000099" mcc="222" mnc="88" name="VERY" />
-    <carrier_config gid1="0000000099" mcc="222" mnc="99" name="VERY" />
     <carrier_config gid1="99" mcc="262" mnc="98" name="Telekom Deutschland (DE)">
         <boolean name="allowEnablingWapPushSI" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="10" />
@@ -2992,11 +2939,6 @@
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <boolean name="fallback_sms_not_allowed_in_roaming" value="true" />
     </carrier_config>
-    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="EUSKALTEL" />
-    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="MASMOVIL" />
-    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="Pepephone" />
-    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="Virgin telco" />
-    <carrier_config mcc="214" mnc="04" name="Yoigo" spn="Yoigo" />
     <carrier_config mcc="214" mnc="06">
         <boolean name="carrier_volte_available_bool" value="true" />
     </carrier_config>
@@ -4013,12 +3955,6 @@
         <boolean name="support_video_conference_call_bool" value="false" />
         <boolean name="use_sms_callback_mode_bool" value="true" />
     </carrier_config>
-    <carrier_config mcc="311" mnc="870" />
-    <carrier_config mcc="311" mnc="880" />
-    <carrier_config mcc="311" mnc="940" />
-    <carrier_config mcc="312" mnc="190" />
-    <carrier_config mcc="312" mnc="240" />
-    <carrier_config mcc="312" mnc="250" />
     <carrier_config mcc="312" mnc="530">
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
@@ -4143,7 +4079,6 @@
         <boolean name="rtt_supported_bool" value="true" />
         <boolean name="rtt_supported_while_roaming_bool" value="true" />
     </carrier_config>
-    <carrier_config mcc="313" mnc="390" />
     <carrier_config mcc="340" mnc="01">
         <boolean name="fallback_sms_not_allowed_in_roaming" value="true" />
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
@@ -4900,7 +4835,6 @@
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
     </carrier_config>
-    <carrier_config mcc="454" mnc="00" name="Hello" spn="Hello" />
     <carrier_config mcc="454" mnc="03">
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="true" />
@@ -4913,8 +4847,6 @@
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <boolean name="check_mobile_data_for_cf" value="true" />
     </carrier_config>
-    <carrier_config mcc="454" mnc="07" name="CU-CSL" />
-    <carrier_config mcc="454" mnc="19" name="Hello" spn="Hello" />
     <carrier_config mcc="454" mnc="20" name="CSL">
         <boolean name="hide_enable_2g_bool" value="false" />
     </carrier_config>
@@ -5588,11 +5520,9 @@
             <item value="dun" />
         </string-array>
     </carrier_config>
-    <carrier_config mcc="466" mnc="05" />
     <carrier_config mcc="505" mnc="01">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
     </carrier_config>
-    <carrier_config mcc="515" mnc="66" />
     <carrier_config mcc="515" mnc="66" name="Dito">
         <string name="carrier_name_string">DITO</string>
     </carrier_config>
@@ -5612,11 +5542,9 @@
         <boolean name="fallback_sms_not_allowed_in_roaming" value="true" />
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
     </carrier_config>
-    <carrier_config mcc="647" mnc="04" />
     <carrier_config mcc="652" mnc="02">
         <boolean name="fallback_sms_not_allowed_in_roaming" value="true" />
     </carrier_config>
-    <carrier_config mcc="730" mnc="23" />
     <carrier_config mcc="999">
         <boolean name="is_private_network" value="true" />
     </carrier_config>
