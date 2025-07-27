@@ -997,11 +997,23 @@
             <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>             &lt;WifiNetwork>                 &lt;SSID>  AIS SMART Login&lt;/SSID>                     &lt;Credential>                         &lt;SIM>                             &lt;EAPType>18&lt;/EAPType>                         &lt;/SIM>                     &lt;/Credential>              &lt;/WifiNetwork>" />
         </string-array>
     </carrier_config>
-    <carrier_config cid="1187" />
     <carrier_config cid="1187" name="AT&amp;T">
+        <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+        <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+        <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+            <item value="-117" />
+            <item value="-111" />
+            <item value="-105" />
+            <item value="-99" />
+        </int-array>
+        <int-array name="additional_nr_advanced_bands_int_array" num="1">
+            <item value="77" />
+        </int-array>
         <string name="carrier_name_string">AT&amp;T</string>
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="include_lte_for_nr_advanced_threshold_bandwidth_bool" value="true" />
+        <int name="nr_advanced_threshold_bandwidth_khz_int" value="50000" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
     </carrier_config>
