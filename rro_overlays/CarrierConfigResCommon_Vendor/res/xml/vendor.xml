@@ -998,13 +998,16 @@
         <int-array name="additional_nr_advanced_bands_int_array" num="1">
             <item value="77" />
         </int-array>
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <string name="carrier_name_string">AT&amp;T</string>
         <boolean name="carrier_vt_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <boolean name="include_lte_for_nr_advanced_threshold_bandwidth_bool" value="true" />
         <int name="nr_advanced_threshold_bandwidth_khz_int" value="50000" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
+        <string name="wfc_emergency_address_carrier_app_string">com.google.android.wfcactivation/.WfcActivationActivity</string>
+        <int name="wfc_spn_format_idx_int" value="1" />
     </carrier_config>
     <carrier_config cid="1299" name="mobifone">
         <string name="carrier_name_string">VN Mobifone</string>
@@ -2539,7 +2542,7 @@
     </carrier_config>
     <carrier_config cid="10021" name="AT&amp;T 5G">
         <boolean name="carrier_vt_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
     </carrier_config>
@@ -2554,7 +2557,7 @@
     </carrier_config>
     <carrier_config cid="10028" name="AT&amp;T 5G SA">
         <boolean name="carrier_vt_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
     </carrier_config>
@@ -3810,7 +3813,6 @@
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_volte_tty_supported_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="config_enable_display_14digit_imei" value="true" />
         <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
         <boolean name="editable_enhanced_4g_lte_bool" value="false" />
