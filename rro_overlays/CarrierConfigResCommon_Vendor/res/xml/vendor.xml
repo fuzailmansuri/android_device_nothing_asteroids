@@ -1635,9 +1635,62 @@
         <boolean name="show_4glte_for_lte_data_icon_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1839" name="Verizon Wireless">
+        <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+            <item value="-115" />
+            <item value="-105" />
+            <item value="-95" />
+            <item value="-85" />
+        </int-array>
+        <int-array name="5g_nr_sssinr_thresholds_int_array" num="4">
+            <item value="-3" />
+            <item value="1" />
+            <item value="5" />
+            <item value="13" />
+        </int-array>
         <boolean name="additional_call_setting_bool" value="false" />
+        <int-array name="additional_nr_advanced_bands_int_array" num="1">
+            <item value="77" />
+        </int-array>
+        <string-array name="carrier_certificate_string_array" num="2">
+            <item value="FF82050BF6BED1F152AC1A12DC83CACBAD401775161882872C6665FC5E15C8F2:com.verizon.mips.services" />
+            <item value="AE23A03436DF07B0CD70FE881CDA2EC1D21215D7B7B0CC68E67B67F5DF89526A:com.vzw.hss.myverizon" />
+        </string-array>
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+        <boolean name="carrier_volte_override_wfc_provisioning_bool" value="true" />
+        <boolean name="carrier_volte_provisioning_required_bool" value="false" />
         <boolean name="carrier_vt_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <string-array name="enable_apps_string_array" num="5">
+            <item value="com.customermobile.preload.vzw" />
+            <item value="com.verizon.llkagent" />
+            <item value="com.verizon.mips.services" />
+            <item value="com.verizon.services" />
+            <item value="com.vzw.apnlib" />
+        </string-array>
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://eap-ide.myvzw.com:8201/certs</string>
+        <string name="ims.ims_user_agent_string">#MANUFACTURER#---#MODEL#---#BUILD#</string>
+        <map name="ims.mmtel_requires_provisioning_bundle">
+            <int-array name="ims.capability_type_video_int_array" num="1">
+                <item value="0" /> <!-- REGISTRATION_TECH_LTE -->
+            </int-array>
+            <int-array name="ims.capability_type_voice_int_array" num="1">
+                <item value="1" /> <!-- REGISTRATION_TECH_IWLAN -->
+            </int-array>
+        </map>
+        <string-array name="international_roaming_dial_string_replace_string_array" num="3">
+            <item value="611:+19085594899" />
+            <item value="*611:+19085594899" />
+            <item value="*86:+1MDN" />
+        </string-array>
+        <int name="min_udp_port_4500_nat_timeout_sec_int" value="45" />
+        <int name="network_notification_delay_int" value="30000" />
+        <int name="parameters_use_for_5g_nr_signal_bar_int" value="5" />
+        <int name="parameters_used_for_lte_signal_bar_int" value="5" />
+        <int name="preferred_ike_protocol_int" value="40" />
+        <int name="volte_replacement_rat_int" value="3" />
+        <string name="wfc_emergency_address_carrier_app_string">com.google.android.wfcactivation/.VzwEmergencyAddressActivity</string>
+        <int name="wfc_spn_format_idx_int" value="7" />
     </carrier_config>
     <carrier_config cid="1881" name="遠傳電信 Far EasTone Telecom">
         <int name="call_barring_default_service_class_int" value="0" />
@@ -3929,28 +3982,11 @@
         <boolean name="rtt_upgrade_supported_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="311" mnc="480">
-        <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
-            <item value="-115" />
-            <item value="-105" />
-            <item value="-95" />
-            <item value="-85" />
-        </int-array>
-        <int-array name="5g_nr_sssinr_thresholds_int_array" num="4">
-            <item value="-3" />
-            <item value="1" />
-            <item value="5" />
-            <item value="13" />
-        </int-array>
-        <int-array name="additional_nr_advanced_bands_int_array" num="1">
-            <item value="77" />
-        </int-array>
         <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
         <boolean name="carrier_call_composer_supported_bool" value="true" />
         <boolean name="carrier_vt_tty_support_bool" value="true" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <boolean name="editable_enhanced_4g_lte_bool" value="false" />
-        <int name="parameters_use_for_5g_nr_signal_bar_int" value="5" />
-        <int name="parameters_used_for_lte_signal_bar_int" value="5" />
         <boolean name="rtt_upgrade_supported_bool" value="false" />
         <boolean name="support_downgrade_vt_to_audio_bool" value="true" />
         <boolean name="support_emergency_sms_over_ims_bool" value="true" />
