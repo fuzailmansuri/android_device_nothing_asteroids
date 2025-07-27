@@ -48,6 +48,7 @@
         <boolean name="dtmf_type_enabled_bool" value="true" />
         <boolean name="csp_enabled_bool" value="true" />
         <boolean name="display_hd_audio_property_bool" value="true" />
+        <string name="ims.ims_user_agent_string">#MANUFACTURER#_#MODEL#_#BUILD#</string>
     </carrier_config>
     <carrier_config mcc="001" mnc="01">
         <boolean name="carrier_volte_available_bool" value="true" />
