@@ -1645,6 +1645,7 @@ product/etc/permissions/com.verizon.apn.xml|21a14491eed042abeecc4c3da6235845d290
 product/etc/permissions/com.verizon.services.xml|8fcd95a9f2bd4871ef30b2e00f45e8f4c1886ee3
 product/etc/permissions/features-verizon.xml|5f3fabe1019abc61531727b5fa51ee8dbbe22e63
 product/priv-app/AppDirectedSMSService/AppDirectedSMSService.apk;PRESIGNED|a4a30fef0a5c3a329c89f8c0b310f6190576929b
+product/priv-app/WfcActivation/WfcActivation.apk;PRESIGNED|9cd09900af189bb01a014192cf09c2e1fbf0d94c
 system_ext/etc/permissions/vzw_mvs_permissions.xml|c35a5ccd38e42291a9546ac6e778881e8223834e
 system_ext/priv-app/MyVerizonServices/MyVerizonServices.apk;PRESIGNED|dda5a68380d2bbf51419cd8cba9c34f528b19650
 
