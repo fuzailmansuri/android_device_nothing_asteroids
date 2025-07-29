@@ -84,6 +84,7 @@
     </carrier_config>
     <carrier_config cid="1" name="T-Mobile - US">
         <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1" name="TMO">
         <string name="carrier_name_string">T-Mobile</string>
