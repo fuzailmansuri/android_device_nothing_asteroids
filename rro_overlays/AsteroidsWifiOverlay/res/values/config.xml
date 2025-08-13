@@ -23,9 +23,6 @@
         <item>-65</item>
     </integer-array>
 
-    <!-- boolean indicating whether the WiFi chipset has 6GHz band support -->
-    <bool name="config_wifi6ghzSupport">false</bool>
-
     <!-- Whether to allow Settings or SUW to create insecure Enterprise networks where server
          certificate is not validated, by not specifying a Root CA certificate and/or server domain
          name. It is STRONGLY RECOMMENDED to be set to false -->
@@ -34,9 +31,6 @@
     <!-- Indicates that bridged AP mode is supported on this device provided that
      the device interface combination allows for it -->
     <bool name="config_wifiBridgedSoftApSupported">true</bool>
-
-    <!-- Wifi driver supports 6GHz band for softap when chip support 6GHz -->
-    <bool name="config_wifiSoftap6ghzSupported">false</bool>
 
     <!-- Wifi driver supports IEEE80211BE for softap -->
     <bool name="config_wifiSoftapIeee80211beSupported">false</bool>
