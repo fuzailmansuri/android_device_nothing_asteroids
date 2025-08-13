@@ -38,6 +38,9 @@
     <!-- Wifi driver supports 6GHz band for softap when chip support 6GHz -->
     <bool name="config_wifiSoftap6ghzSupported">false</bool>
 
+    <!-- Wifi driver supports IEEE80211BE for softap -->
+    <bool name="config_wifiSoftapIeee80211beSupported">false</bool>
+
     <!-- Do not translate. Default access point SSID used for tethering -->
     <string translatable="false" name="wifi_tether_configure_ssid_default">Nothing Phone (3a)</string>
 </resources>
