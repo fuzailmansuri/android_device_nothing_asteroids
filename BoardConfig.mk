@@ -103,6 +103,7 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
+    firmware_class.path=/vendor/firmware,/vendor/firmware_mnt/image \
     log_buf_len=1M \
     nosoftlockup \
     qcom_geni_serial.con_enabled=0 \
