@@ -387,6 +387,7 @@ PRODUCT_PACKAGES += \
     init.qcom.recovery.rc \
     init.qcom.sh \
     init.target.rc \
+    system_dlkm_modprobe.sh \
     ueventd.asteroids.rc \
     ueventd.qcom.rc
 
