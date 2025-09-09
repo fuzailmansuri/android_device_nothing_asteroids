@@ -1,5 +1,5 @@
 # Battery
-genfscon proc /charger/usb_charger_en    u:object_r:vendor_sysfs_usb_supply:s0
+genfscon proc /charger/usb_charger_en    u:object_r:vendor_proc_power_supply:s0
 
 # Display
 genfscon proc /touchpanel/gesture_mode     u:object_r:vendor_proc_graphics:s0
