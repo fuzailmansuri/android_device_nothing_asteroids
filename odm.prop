@@ -1,3 +1,7 @@
 # USB
 ro.usb.uvc.disable_video_encode_flag=true
 ro.usb.uvc.enabled=true
+
+# Sku properties
+ro.product.property_source_order=odm,vendor,product,system_ext,system
+import /odm/etc/build_${ro.boot.hardware.sku}.prop
