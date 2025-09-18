@@ -1,0 +1,50 @@
+# Bluetooth
+bluetooth.core.le.max_number_of_concurrent_connections=10
+bluetooth.device.class_of_device=90,2,12
+bluetooth.hfp.codec_aptx_voice.enabled=true
+bluetooth.hfp.swb.aptx.power_management.enabled=true
+bluetooth.leaudio.dual_bidirection_swb.supported=true
+bluetooth.profile.pbap.sim.enabled=true
+bluetooth.profile.pan.nap.enabled=true
+bluetooth.profile.pan.panu.enabled=true
+bluetooth.profile.sap.server.enabled=true
+persist.bluetooth.leaudio.allow.multiple.contexts=false
+persist.bluetooth.leaudio.notify.idle.during.call=true
+persist.bluetooth.leaudio_offload.disabled=false
+ro.bluetooth.leaudio_offload.supported=true
+
+# Camera
+vendor.camera.aux.packagelist=com.nothing.camera,org.lineageos.aperture,org.lineageos.aperture.dev
+
+# DPM
+persist.vendor.dpm.feature=11
+
+# Charger
+ro.charger.enable_suspend=1
+
+# CNE
+persist.vendor.cne.feature=1
+
+# Display
+sys.brightness.disable_gamma_conversion=true
+
+# DRM
+drm.service.enabled=true
+
+# Media
+media.stagefright.thumbnail.prefer_hw_codecs=true
+ro.media.recorder-max-base-layer-fps=60
+
+# Netmgr
+persist.vendor.data.mode=concurrent
+
+# OEM Unlock
+ro.oem_unlock_supported=1
+
+# QC Value Addons
+ro.vendor.qti.va_aosp.support=1
+
+# Telephony
+ril.subscription.types=NV,RUIM
+ro.telephony.default_network=26,26
+telephony.lteOnCdmaDevice=1
