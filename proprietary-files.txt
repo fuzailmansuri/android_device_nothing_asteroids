@@ -1768,9 +1768,11 @@ system_ext/etc/permissions/vzw_mvs_permissions.xml|c35a5ccd38e42291a9546ac6e7788
 system_ext/priv-app/MyVerizonServices/MyVerizonServices.apk;PRESIGNED|0f11acd4e795fcd126c8eaf57de0a4bf90074577
 
 # Vibrator
+odm/etc/aac_richtap.config
 vendor/firmware/100_Haptic.bin
 vendor/firmware/101_Haptic.bin
 vendor/firmware/haptic_config.bin
+vendor/lib64/libaacvibrator.so
 
 # Video
 vendor/lib64/libvideooptfeature.so
