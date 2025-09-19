@@ -101,6 +101,7 @@ PRODUCT_PACKAGES += \
     libbatterylistener \
     libcustomva_intf \
     libfmpal \
+    libhapticgenerator \
     libhfp_pal \
     libhotword_intf \
     libpalclient \
