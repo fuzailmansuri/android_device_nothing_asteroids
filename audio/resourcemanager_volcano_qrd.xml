@@ -763,6 +763,7 @@
             <quick_cal_time>0</quick_cal_time>
             <usecase>
                 <name>PAL_STREAM_LOW_LATENCY</name>
+                <priority>1</priority>
                 <custom-config key="cit-speaker-top">
                     <snd_device_name>speaker-mono</snd_device_name>
                 </custom-config>
