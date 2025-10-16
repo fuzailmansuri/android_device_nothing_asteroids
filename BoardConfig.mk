@@ -6,6 +6,7 @@
 DEVICE_PATH := device/nothing/asteroids
 
 include build/make/target/board/BoardConfigMainlineCommon.mk
+include vendor/nothing/asteroids/BoardConfigVendor.mk
 
 # A/B
 AB_OTA_UPDATER := true
