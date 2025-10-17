@@ -295,6 +295,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.gralloc.disable_ubwc=0 \
     vendor.gralloc.enable_logs=0
 
+# Doze
+PRODUCT_PACKAGES += \
+    NothingDoze
+
 # eUICC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_JPN/android.hardware.telephony.euicc.xml \
