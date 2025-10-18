@@ -106,6 +106,7 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Graphics
 TARGET_USES_VULKAN := true
+HWUI_COMPILE_FOR_PERF := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
