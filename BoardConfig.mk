@@ -103,6 +103,9 @@ TARGET_SCREEN_DENSITY := 420
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Graphics
+TARGET_USES_VULKAN := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware,/vendor/firmware_mnt/image \
