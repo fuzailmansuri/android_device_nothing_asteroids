@@ -13,9 +13,18 @@
 
 #include "aac_vibra_function.h"
 
-#define RICHTAP_LIGHT_STRENGTH 69
+#define RICHTAP_LIGHT_STRENGTH 79
 #define RICHTAP_MEDIUM_STRENGTH 89
 #define RICHTAP_STRONG_STRENGTH 99
+
+enum vibrationMode {
+    MODE_NONE,
+    MODE_TIMEOUT,
+    MODE_PREBAKED,
+    MODE_STREAM,
+};
+
+static vibrationMode sLastMode = MODE_NONE;
 
 namespace aidl {
 namespace android {
@@ -44,7 +53,12 @@ ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
 }
 
 ndk::ScopedAStatus Vibrator::off() {
-    int32_t ret = aac_vibra_off();
+    bool ret = aac_vibra_looper_stopPerformHe();
+
+    if (ret) 
+        ALOGW("No HE effects to stop!");
+    
+    ret = aac_vibra_off();
     if (ret) {
         ALOGE("AAC off failed: %d\n", ret);
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_SERVICE_SPECIFIC));
@@ -68,6 +82,7 @@ ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
         }).detach();
     }
 
+    sLastMode = MODE_TIMEOUT;
     return ndk::ScopedAStatus::ok();
 }
 
@@ -103,10 +118,10 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
 
     switch (es) {
         case EffectStrength::LIGHT:
-            strength = RICHTAP_STRONG_STRENGTH;
+            strength = RICHTAP_LIGHT_STRENGTH;
             break;
         case EffectStrength::MEDIUM:
-            strength = RICHTAP_STRONG_STRENGTH;
+            strength = RICHTAP_MEDIUM_STRENGTH;
             break;
         case EffectStrength::STRONG:
             strength = RICHTAP_STRONG_STRENGTH;
@@ -114,6 +129,10 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
         default:
             return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
     }
+
+    if (sLastMode == MODE_STREAM)
+        aac_vibra_setAmplitude(0xFF);
+
 
 #ifdef USE_RICHTAP_EFFECT_REMAP
     auto mappedEffect = mapEffectToPrebakedId(effect);
@@ -143,6 +162,7 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es,
 
     *_aidl_return = ret;
 
+    sLastMode = MODE_PREBAKED;
     return ndk::ScopedAStatus::ok();
 }
 
@@ -162,6 +182,7 @@ ndk::ScopedAStatus Vibrator::setAmplitude(float amplitude) {
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_SERVICE_SPECIFIC));
     }
 
+    sLastMode = MODE_STREAM;
     return ndk::ScopedAStatus::ok();
 }
 
