@@ -1,8 +1,4 @@
-on boot
-    write /proc/touchpanel/gesture_mode 1
-
 on property:vendor.all.modules.ready=1
-    chown system system /proc/touchpanel/gesture_mode
     chown system system /sys/devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/fts_fod_enabled
     chown system system /sys/devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/fts_fod_pressed
     chown system system /sys/devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/fts_gesture_single_tap_enabled
