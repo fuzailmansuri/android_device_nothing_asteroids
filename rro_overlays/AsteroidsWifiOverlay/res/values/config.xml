@@ -23,6 +23,9 @@
         <item>-65</item>
     </integer-array>
 
+    <!-- Integer indicating maximum hardware supported client number of soft ap -->
+    <integer name="config_wifiHardwareSoftapMaxClientCount">16</integer>
+
     <!-- Whether to allow Settings or SUW to create insecure Enterprise networks where server
          certificate is not validated, by not specifying a Root CA certificate and/or server domain
          name. It is STRONGLY RECOMMENDED to be set to false -->
