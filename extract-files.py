@@ -33,6 +33,7 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
+        'libntf',
         'vendor.qti.ImsRtpService-V1-ndk',
         'vendor.qti.diaghal@1.0',
         'vendor.qti.hardware.dpmaidlservice-V1-ndk',
@@ -55,8 +56,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'system_ext/priv-app/QtiTelephony/QtiTelephony.apk': blob_fixup()
-        .apktool_patch('telephony/0001-QtiTelephony-globally-set-RECEIVER_EXPORTED-for-regi.patch'),
     'vendor/bin/qcc-vendor': blob_fixup()
         .add_needed('libbinder_shim.so'),
     'vendor/bin/qms': blob_fixup()
@@ -79,6 +78,8 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+    'vendor/lib64/libntcamallocator.so': blob_fixup()
+        .add_needed('libui_shim.so'),
     'vendor/lib64/libntcamskia.so': blob_fixup()
         .add_needed('libnativewindow.so'),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
