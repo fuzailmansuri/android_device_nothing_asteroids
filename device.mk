@@ -51,8 +51,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     graphics.gpu.profiler.support=true \
-    ro.hardware.egl=adreno \
-    ro.hardware.vulkan=adreno \
     ro.opengles.version=196610
 
 # Audio
@@ -113,6 +111,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     audio.offload.min.duration.secs=30 \
+    audio.timecheck.timeout_duration_ms=8000 \
     media.stagefright.audio.deep=false \
     ro.af.client_heap_size_kbyte=7168 \
     ro.audio.monitorRotation=true
@@ -159,17 +158,18 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.hid.device.enabled=true \
     bluetooth.profile.map.server.enabled=true \
     bluetooth.profile.opp.enabled=true \
-    bluetooth.profile.pan.nap.enabled=true \
-    bluetooth.profile.pan.panu.enabled=true \
     bluetooth.profile.pbap.server.enabled=true \
     bluetooth.device_id.vendor_id=0x001D
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    bluetooth.core.le.max_number_of_concurrent_connections=10 \
     bluetooth.device.class_of_device=90,2,12 \
     bluetooth.hfp.codec_aptx_voice.enabled=true \
     bluetooth.hfp.swb.aptx.power_management.enabled=true \
     bluetooth.leaudio.dual_bidirection_swb.supported=true \
     bluetooth.profile.pbap.sim.enabled=true \
+    bluetooth.profile.pan.nap.enabled=true \
+    bluetooth.profile.pan.panu.enabled=true \
     bluetooth.profile.sap.server.enabled=true \
     persist.bluetooth.leaudio.allow.multiple.contexts=false \
     persist.bluetooth.leaudio.notify.idle.during.call=true \
@@ -224,7 +224,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     camera.disable_zsl_mode=1 \
-    ro.camera.enableCamera1MaxZsl=1
+    ro.camera.enableCamera1MaxZsl=1 \
+    ro.camera.disableHeicUltraHDR=true
 
 # Charger
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
@@ -343,7 +344,19 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
 # Graphics
+$(call soong_config_set,angle,angle_in_vendor,true)
+
+PRODUCT_REQUIRES_INSECURE_EXECMEM_FOR_SWIFTSHADER := true
+
+PRODUCT_PACKAGES += \
+    libEGL_angle \
+    libGLESv1_CM_angle \
+    libGLESv2_angle \
+    vulkan.pastel
+
 PRODUCT_VENDOR_PROPERTIES += \
+    debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough \
+    debug.graphics.game_default_frame_rate.disabled=0 \
     debug.sf.auto_latch_unsignaled=1 \
     debug.sf.early.app.duration=13666666 \
     debug.sf.early.sf.duration=10500000 \
@@ -365,6 +378,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.surface_flinger.protected_contents=true \
     ro.surface_flinger.set_idle_timer_ms=3000 \
     ro.surface_flinger.set_touch_timer_ms=200 \
+    ro.surface_flinger.supports_background_blur=1 \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.use_content_detection_for_refresh_rate=true \
     ro.surface_flinger.wcg_composition_dataspace=143261696
@@ -387,8 +401,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_asteroids)
 
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    fstab.qcom.vendor_ramdisk \
+    fstab.default \
+    fstab.default.vendor_ramdisk \
     fstab.zram.2g \
     init.asteroids.hw.rc \
     init.asteroids.rc \
@@ -559,6 +573,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.system_ext.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries.txt
 
+# QMS
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.data.qms.stx_disable=true
+
 # QC Value Addons
 PRODUCT_ODM_PROPERTIES += \
     ro.vendor.qti.va_odm.support=1
@@ -590,7 +608,7 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element-service.thales
 
 # Security
-BOOT_SECURITY_PATCH := 2025-03-05
+BOOT_SECURITY_PATCH := 2025-06-05
 INIT_BOOT_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
@@ -661,7 +679,7 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \
-    ro.telephony.default_network=33,33 \
+    ro.telephony.default_network=26,26 \
     telephony.lteOnCdmaDevice=1
 
 PRODUCT_VENDOR_PROPERTIES += \
