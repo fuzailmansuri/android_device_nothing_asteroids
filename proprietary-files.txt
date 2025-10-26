@@ -1594,6 +1594,11 @@ vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
 
+# QSPA
+system_ext/etc/init/qspa_system.rc
+system_ext/etc/qspa/qspa_default.rc
+vendor/etc/vintf/manifest/qspa/qspa-nav.xml
+
 # QSPM
 vendor/bin/vendor.qti.qspmhal-service
 vendor/etc/init/vendor.qti.qspmhal-service.rc

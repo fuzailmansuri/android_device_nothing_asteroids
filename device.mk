@@ -563,6 +563,11 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.vendor.qti.va_aosp.support=1
 
+# QSPA
+PRODUCT_PACKAGES += \
+    qspa_vendor.rc \
+    vendor.qti.qspa-service
+
 # RIL
 PRODUCT_VENDOR_PROPERTIES += \
     persist.radio.multisim.config=dsds \
