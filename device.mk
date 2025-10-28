@@ -184,6 +184,11 @@ PRODUCT_PACKAGES += \
     libGLESv2_angle \
     vulkan.pastel
 
+# Glyph
+PRODUCT_PACKAGES += \
+    ParanoidGlyphPhone3a \
+    GlyphAdapter
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
@@ -387,7 +392,9 @@ PRODUCT_PACKAGES += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    kernel/nothing/sm7635
+    kernel/nothing/sm7635 \
+    packages/apps/ParanoidGlyph \
+    packages/apps/GlyphAdapter
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
