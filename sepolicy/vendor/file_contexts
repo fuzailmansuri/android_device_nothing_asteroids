@@ -22,6 +22,7 @@
 /dev/led_strips    u:object_r:led_device:s0
 
 # NFC
+/odm/bin/init\.asteroids\.nfc\.sh                    u:object_r:vendor_qti_init_shell_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc-service\.st    u:object_r:hal_nfc_default_exec:s0
 
 # NTF

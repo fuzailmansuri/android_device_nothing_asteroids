@@ -82,3 +82,12 @@ on property:sys.touch.pocket_mode=*
 on property:vendor.all.modules.ready=1
     chown system system /proc/touchpanel/fod_mode
     chown system system /sys/panel_feature/fp_status
+
+    start asteroids_nfc_detect
+
+service asteroids_nfc_detect /odm/bin/init.asteroids.nfc.sh
+    class main
+    user shell
+    group shell
+    disabled
+    oneshot
