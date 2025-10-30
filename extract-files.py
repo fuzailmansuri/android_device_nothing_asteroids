@@ -54,6 +54,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libbinder_shim.so'),
     'vendor/bin/xtra-daemon': blob_fixup()
         .add_needed('libbinder_shim.so'),
+    'vendor/etc/media_codecs_volcano_v1.xml': blob_fixup()
+        .regex_replace(r'(?s)(<MediaCodecs.*?>)',r'\1\n    <Include href="media_codecs_dolby_audio.xml" />'),
     'vendor/lib64/libarcsoft_dark_vision_raw.so': blob_fixup()
         .clear_symbol_version('remote_register_buf')
         .clear_symbol_version('rpcmem_alloc')
