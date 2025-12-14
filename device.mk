@@ -370,6 +370,7 @@ PRODUCT_PACKAGES += \
     AsteroidsApertureOverlay \
     AsteroidsEuiccOverlay \
     AsteroidsFrameworksOverlay \
+    AsteroidsLauncher3Overlay \
     AsteroidsMainlineWifiOverlay \
     AsteroidsProMainlineWifiOverlay \
     AsteroidsProSettingsProviderOverlay \
