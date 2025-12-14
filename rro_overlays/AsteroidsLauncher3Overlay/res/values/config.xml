@@ -11,5 +11,5 @@
      limitations under the License.
 -->
 <resources>
-    <dimen name="max_depth_blur_radius_enhanced">10dp</dimen>
+    <dimen name="max_depth_blur_radius_enhanced">8dp</dimen>
 </resources>
