@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Tune the launcher depth blur down from the 30dp default: 10dp keeps
+         the depth effect subtle. Wallpaper zoom is unchanged. -->
+    <dimen name="max_depth_blur_radius_enhanced">10dp</dimen>
+</resources>
