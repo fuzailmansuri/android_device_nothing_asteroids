@@ -85,3 +85,16 @@ on property:sys.touch.pocket_mode=*
 on property:vendor.all.modules.ready=1
     chown system system /proc/touchpanel/fod_mode
     chown system system /sys/panel_feature/fp_status
+
+on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=0
+	stop sltntc
+
+on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=1
+	start sltntc
+    
+service sltntc /system_ext/bin/sltntc
+    class hal
+    user system
+    group system readproc root
+    disabled
+
