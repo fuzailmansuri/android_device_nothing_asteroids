@@ -312,6 +312,8 @@ PRODUCT_PACKAGES += \
     AsteroidsSettingsOverlay \
     AsteroidsSettingsProviderOverlay \
     AsteroidsSystemUIOverlay \
+    AsteroidsWallpaperPicker2Overlay \
+    AsteroidsWallpaperPicker2PixelOverlay \
     AsteroidsWifiOverlay \
     CarrierConfigResCommon_Vendor \
     FrameworksResCommon_Vendor \
@@ -323,8 +325,6 @@ PRODUCT_PACKAGES += \
     TelephonyResCommon_Sys \
     TelephonyResCommon_Vendor \
     UwbResCommon_Vendor \
-    WallpaperPicker2Overlay \
-    WallpaperPicker2PixelOverlay \
     WifiResCommonMainline_Vendor \
     WifiResCommon_Vendor \
     WifiResMainlineTarget \
