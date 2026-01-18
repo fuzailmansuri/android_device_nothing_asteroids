@@ -256,8 +256,44 @@ adb shell cat /proc/meminfo
 ## Known Issues
 
 1. **Audio HAL Base**: Using SM8650 audio HAL as base. Verify volcano-specific mixer paths are correctly applied.
-2. **Power Profile**: Power profile XML not present in tree; may fall back to generic profiles.
-3. **AVB Keys**: Currently using test keys; must be replaced for production builds.
+2. **AVB Keys**: Currently using test keys; must be replaced for production builds.
+
+## Additional Documentation
+
+This device tree includes comprehensive documentation for various aspects:
+
+- **[KERNEL_MODULES.md](KERNEL_MODULES.md)** - Detailed kernel module loading documentation
+  - Module loading stages (recovery, vendor_boot, vendor_dlkm, system_dlkm)
+  - Module categories (audio, camera, display, network, sensors)
+  - Debugging module loading issues
+  
+- **[DEVICE_TREE.md](DEVICE_TREE.md)** - Device tree and DTBO overlay documentation
+  - DTB/DTBO structure and configuration
+  - Hardware variant overlay selection
+  - Device tree debugging techniques
+  
+- **[SELINUX.md](SELINUX.md)** - SELinux policy documentation
+  - Custom policies for Nothing-specific features (Glyph, UDFPS)
+  - HAL service policies
+  - Debugging SELinux denials
+  
+- **[TESTING.md](TESTING.md)** - Comprehensive testing guide
+  - Core functionality tests (display, audio, camera, sensors)
+  - Performance testing
+  - Battery and charging tests
+  - Test checklists and automation
+  
+- **[CHARGING.md](CHARGING.md)** - Charging configuration and troubleshooting
+  - Fast charging configuration
+  - Thermal management
+  - LineageOS charging control
+  - Debugging charging issues
+  
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+  - How to contribute
+  - Coding standards
+  - Testing requirements
+  - PR submission process
 
 ## Contributing
 
