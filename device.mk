@@ -337,6 +337,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
 
 # Power
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/power/power_profile.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_profile.xml
+
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
