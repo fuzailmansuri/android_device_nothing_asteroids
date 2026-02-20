@@ -173,17 +173,16 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload-V1-ndk
 
 # Display
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/display_id_asteroids.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946978939328130.xml
+include hardware/qcom-caf/sm8650/display/config/display-modules.mk
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@4.0-impl-qti-display \
-    init.qti.display_boot.rc \
-    init.qti.display_boot.sh \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.display.composer-service.xml \
-    vendor.qti.hardware.display.demura-service
+    $(DISPLAY_MODULES_HARDWARE) \
+    init.qti.display_boot.rc
+
+$(call soong_config_set_bool,qtidisplay,drmpp,true)
+$(call soong_config_set_bool,qtidisplay,gralloc4,true)
+$(call soong_config_set_bool,qtidisplay,default,true)
+$(call soong_config_set_bool,qtidisplay,ubwcp_headers,true)
 
 # Device Extras, Assist Key & Doze
 PRODUCT_PACKAGES += \

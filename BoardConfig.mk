@@ -100,6 +100,7 @@ BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 TARGET_NEEDS_DTBOIMAGE := true
 
 # Display
+include hardware/qcom-caf/sm8650/display/config/display-board.mk
 TARGET_SCREEN_DENSITY := 420
 
 # Filesystem

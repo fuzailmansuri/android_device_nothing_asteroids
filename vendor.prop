@@ -58,7 +58,6 @@ vendor.display.disable_cwb_idle_fallback=1
 vendor.display.disable_dynamic_fps=1
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
-vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
 vendor.display.disable_scaler=0
 vendor.display.disable_sdr_dimming=0
@@ -68,7 +67,6 @@ vendor.display.enable_async_vds_creation=1
 vendor.display.enable_dpps_dynamic_fps=1
 vendor.display.enable_hdr10_gpu_target=1
 vendor.display.enable_optimize_refresh=0
-vendor.display.enable_rounded_corner=1
 vendor.display.vds_allow_hwc=1
 vendor.gralloc.disable_ubwc=0
 vendor.gralloc.enable_logs=0
@@ -92,23 +90,15 @@ ro.vendor.fingerprint.type=udfps_optical
 ro.vendor.fingerprint.sensor_location=540|2176|92
 
 # Graphics
+# Select the Volcano timing table before the asynchronous display boot script.
+vendor.display.target.version=5
 debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough
-debug.graphics.game_default_frame_rate.disabled=0
 debug.hwui.use_hint_manager=true
-debug.sf.auto_latch_unsignaled=1
 debug.sf.defer_refresh_rate_when_off=1
-debug.sf.early.app.duration=13666666
-debug.sf.early.sf.duration=12333333
-debug.sf.earlyGl.app.duration=13666666
-debug.sf.earlyGl.sf.duration=12333333
 debug.sf.enable_adpf_cpu_hint=true
-debug.sf.enable_gl_backpressure=0
-debug.sf.late.app.duration=13666666
-debug.sf.late.sf.duration=12333333
-debug.sf.predict_hwc_composition_strategy=0
-debug.sf.treat_170m_as_sRGB=1
-debug.sf.use_phase_offsets_as_durations=1
-persist.sys.sf.native_mode=260
+debug.sf.frame_rate_multiple_threshold=120
+persist.sys.sf.native_mode=2
+ro.surface_flinger.enable_frame_rate_override=true
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.game_default_frame_rate_override=60
 ro.surface_flinger.has_HDR_display=true
@@ -125,6 +115,9 @@ ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # Incremental FS
 ro.incremental.enable=yes
+
+# Input
+ro.input.resampling=1
 
 # Keymint
 ro.crypto.metadata_init_delete_all_keys.enabled=true
