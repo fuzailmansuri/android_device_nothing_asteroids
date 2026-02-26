@@ -19,7 +19,9 @@
 /vendor/bin/hw/vendor.nothing\.hardware\.biometrics\.fingerprint-service    u:object_r:hal_fingerprint_default_exec:s0
 
 # Lights
-/dev/led_strips    u:object_r:led_device:s0
+/dev/led_strips                                                                                         u:object_r:led_device:s0
+
+/sys/devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led(/.*)?    u:object_r:sysfs_leds:s0
 
 # NFC
 /odm/bin/init\.asteroids\.nfc\.sh                    u:object_r:vendor_qti_init_shell_exec:s0
