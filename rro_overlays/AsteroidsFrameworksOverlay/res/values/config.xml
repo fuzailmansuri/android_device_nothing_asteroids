@@ -151,7 +151,7 @@
     <bool name="config_displayWhiteBalanceAvailable">true</bool>
 
     <!-- Boolean indicating whether display white balance should be enabled by default. -->
-    <bool name="config_displayWhiteBalanceEnabledDefault">true</bool>
+    <bool name="config_displayWhiteBalanceEnabledDefault">false</bool>
 
     <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
     <bool name="config_dozePulsePickup">true</bool>
