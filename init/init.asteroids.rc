@@ -92,6 +92,10 @@ on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=0
 on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=1
 	start sltntc
     
+on property:sys.usb.state=*
+    write /sys/class/power_supply/battery/uevent "change"
+    write /sys/class/power_supply/usb/uevent "change"
+
 service sltntc /system_ext/bin/sltntc
     class hal
     user system
