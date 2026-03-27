@@ -103,6 +103,10 @@ on property:vendor.nfc.config_file_name=*
 on property:vendor.nfc_model=*
     setprop persist.vendor.nfc_model ${vendor.nfc_model}
 
+on property:sys.usb.state=*
+    write /sys/class/power_supply/battery/uevent "change"
+    write /sys/class/power_supply/usb/uevent "change"
+
 service asteroids_nfc_detect /odm/bin/init.asteroids.nfc.sh
     class main
     user shell
