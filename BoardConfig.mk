@@ -174,10 +174,6 @@ TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/bt-kernel
 
 # Partitions
-ifneq ($(PRODUCT_RO_FILE_SYSTEM), erofs)
--include vendor/lineage/config/BoardConfigReservedSize.mk
-endif
-
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9659482112 # BOARD_SUPER_PARTITION_SIZE - 4MiB
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
@@ -197,6 +193,11 @@ BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := $(PRODUCT_RO_FILE_SYSTEM)
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := $(PRODUCT_RO_FILE_SYSTEM)
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := $(PRODUCT_RO_FILE_SYSTEM)
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := $(PRODUCT_RO_FILE_SYSTEM)
+
+BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 104857600
+BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 104857600
+BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 104857600
+BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 104857600
 
 TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
@@ -233,7 +234,8 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/vintf/framework_matrix_nothing.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+    vendor/yaap/config/device_framework_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/vintf/framework_manifest.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 

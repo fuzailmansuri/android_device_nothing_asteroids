@@ -7,13 +7,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, device/nothing/asteroids/device.mk)
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
 
 PRODUCT_BRAND := Nothing
 PRODUCT_DEVICE := asteroids
 PRODUCT_MANUFACTURER := Nothing
 PRODUCT_MODEL := A059
-PRODUCT_NAME := lineage_asteroids
+PRODUCT_NAME := yaap_asteroids
+
+PRODUCT_AAPT_CONFIG := xxxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
+
+# Boot animation
+scr_resolution := 1084
+TARGET_SCREEN_HEIGHT := 2392
+TARGET_SCREEN_WIDTH := 1084
+
+TARGET_ENABLE_BLUR := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 

@@ -173,11 +173,23 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_ProEEA/android.hardware.telephony.euicc.xml \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_ProROW/android.hardware.telephony.euicc.xml \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_ProTUR/android.hardware.telephony.euicc.xml
-
 PRODUCT_PACKAGES += \
+    NothingEuicc \
     EuiccPolicy \
     default-permissions-com.google.android.euicc.xml \
     privapp-permissions-com.google.android.euicc.xml
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    masterclear.allow_retain_esim_profiles_after_fdr=true
+
+# FUSE
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.sys.fuse.passthrough.enable=true
+
+# FRP
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
 
 # FWK Detect
 PRODUCT_PACKAGES += \
@@ -248,18 +260,6 @@ PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
 
 
-# Lineage Health
-$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
-
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
-# LiveDisplay
-$(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
-
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay-service.sdm
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_profiles_volcano_v1_Base.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_volcano_v1_Base.xml \
@@ -304,9 +304,6 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc-service.st
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rro_overlays/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml
 
@@ -358,6 +355,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hidden-api-whitelist-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/hidden-api-whitelist-nothing.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-nothing.xml \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
+
+# Platform
+TARGET_BOARD_PLATFORM := volcano
 
 # Power
 PRODUCT_PACKAGES += \
@@ -422,10 +422,13 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
+    hardware/nothing \
+    hardware/qcom-caf/bootctrl \
     hardware/qcom-caf/common/libqti-perfd-client \
     kernel/nothing/sm7635 \
     packages/apps/ParanoidGlyph \
     packages/apps/GlyphAdapter
+
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -459,8 +462,7 @@ PRODUCT_PACKAGES += \
     qcrilNrDb_vendor
 
 PRODUCT_BOOT_JARS += \
-    nt-telephony-interface \
-    telephony-ext
+    nt-telephony-interface
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -496,6 +498,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
 # Vibrator
+$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.nothing_sm7635-richtap)
+$(call soong_config_set,qti_vibrator,use_effect_stream,true)
+
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+
 PRODUCT_PACKAGES += \
     android.hardware.vibrator.service.asteroids
 
