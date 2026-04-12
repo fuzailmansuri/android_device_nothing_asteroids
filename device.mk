@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
+$(call inherit-product, device/qcom/common/common.mk)
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
 
 # A/B
@@ -53,9 +53,14 @@ PRODUCT_VENDOR_PROPERTIES += \
     graphics.gpu.profiler.support=true \
     ro.opengles.version=196610
 
+# Architecture
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := volcano
+TARGET_BOOTLOADER_BOARD_NAME := volcano
+
 # Audio
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8650/audio/primary-hal
-AUDIO_PAL_DIR := hardware/qcom-caf/sm8650/audio/pal
+AUDIO_HAL_DIR := vendor/qcom/opensource/audio-hal/primary-hal
+AUDIO_PAL_DIR := vendor/qcom/opensource/pal
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -400,7 +405,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # Kernel
- PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system_dlkm.modules.blocklist:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
 
 # Keylayout
@@ -421,16 +426,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.gatekeeper.is_security_level_spu=0
 
 # Lineage Health
-$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
+#$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
 
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
-# LiveDisplay
-$(call soong_config_set,livedisplay_sdm,enable_dm,false)
-
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay-service.sdm
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -532,10 +531,6 @@ PRODUCT_PACKAGES += \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint
 
-# Performance
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.extension_library=libqti-perfd-client.so
-
 # Permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-nothing.xml \
@@ -570,6 +565,10 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     qspa_vendor.rc \
     vendor.qti.qspa-service
+
+# QTI Components
+TARGET_COMMON_QTI_COMPONENTS := \
+    perf
 
 # RIL
 PRODUCT_VENDOR_PROPERTIES += \
@@ -627,7 +626,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/nothing \
-    kernel/nothing/sm7635
+    kernel/nothing/sm7635 \
+    hardware/qcom/wlan/qcwcn
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -661,8 +661,7 @@ PRODUCT_PACKAGES += \
     qcrilNrDb_vendor
 
 PRODUCT_BOOT_JARS += \
-    nt-telephony-interface \
-    telephony-ext
+    nt-telephony-interface
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \

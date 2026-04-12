@@ -19,11 +19,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'hardware/qcom-caf/sm8650',
-    'hardware/qcom-caf/wlan',
-    'vendor/qcom/opensource/commonsys/display',
-    'vendor/qcom/opensource/commonsys-intf/display',
-    'vendor/qcom/opensource/dataservices',
+    'vendor/qcom/common/vendor/perf',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -44,6 +40,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
         'vendor.qti.qccvndhal_aidl-V1-ndk',
+        'vendor.qti.qspmhal-V1-ndk',
     ): lib_fixup_vendor_suffix,
 }
 
@@ -79,6 +76,11 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcodec2_shim.so'),
     'vendor/lib64/libwa_sat.so': blob_fixup()
         .binary_regex_replace(b'/system\x00', b'/vendor\x00'),
+    (
+	'vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so',
+	'vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti',
+    ): blob_fixup()
+	.replace_needed('vendor.qti.hardware.fm@1.0.so', 'vendor.qti.hardware.fm@1.0_vendor.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
