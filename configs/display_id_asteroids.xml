@@ -92,11 +92,11 @@
         <allowDefaultBrightnessOverride>true</allowDefaultBrightnessOverride>
         <timing>
             <!-- Window in which we restrict HBM. -->
-            <timeWindowSecs>1800</timeWindowSecs>
+            <timeWindowSecs>0</timeWindowSecs>
             <!-- Maximum time of HBM allowed in that window. -->
-            <timeMaxSecs>300</timeMaxSecs>
+            <timeMaxSecs>0</timeMaxSecs>
             <!-- Minimum time remaining required to switch HBM on for. -->
-            <timeMinSecs>60</timeMinSecs>
+            <timeMinSecs>0</timeMinSecs>
         </timing>
         <!-- Whether HBM is allowed when lower power mode is active. -->
         <allowInLowPowerMode>false</allowInLowPowerMode>
