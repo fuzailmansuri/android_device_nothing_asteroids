@@ -4,9 +4,9 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <displayConfiguration>
-    <screenBrightnessRampFastDecrease>0.7</screenBrightnessRampFastDecrease>
+    <screenBrightnessRampFastDecrease>0.5</screenBrightnessRampFastDecrease>
 
-    <screenBrightnessRampFastIncrease>0.7</screenBrightnessRampFastIncrease>
+    <screenBrightnessRampFastIncrease>0.5</screenBrightnessRampFastIncrease>
 
     <screenBrightnessRampSlowDecrease>0.05</screenBrightnessRampSlowDecrease>
 
