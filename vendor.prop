@@ -162,14 +162,15 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Telephony
 persist.vendor.rcs.singlereg.feature=1
-telephony.active_modems.max_count=2 
-
+telephony.active_modems.max_count=2
+ro.telecom.bt_retry_on_active=true
 # QMS
 persist.vendor.data.qms.stx_disable=true
 
 # USB
 sys.usb.mtp.batchcancel=1
 vendor.usb.controller=a600000.dwc3
+vendor.usb.device=a600000.ssusb
 vendor.usb.diag.func.name=ffs
 vendor.usb.dpl.inst.name=dpl
 vendor.usb.qdss.inst.name=qdss_sw
@@ -178,7 +179,15 @@ vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=gsi
 vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=1
+persist.sys.otg.enable=true
+
+# LMKD
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=100
+ro.lmk.psi_partial_stall_ms=70
+ro.lmk.psi_complete_stall_ms=700
+ro.lmk.thrashing_limit=30
+ro.lmk.thrashing_limit_decay=50
 
 # Wi-Fi
 wifi.aware.interface=wifi-aware0
-
