@@ -22,7 +22,6 @@ PRODUCT_NAME := yaap_asteroids
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="qssi_64-user 17 CQ2A.260522.002-CP2A.260605.016 2611061007 release-keys" \
     BuildFingerprint=Nothing/Asteroids/Asteroids:17/CQ2A.260522.002-CP2A.260605.016/2611061007:user/release-keys \
     BuildSystemFingerprint=qti/qssi_64/qssi_64:17/CQ2A.260522.002-CP2A.260605.016/2611061007:user/release-keys \
     DeviceName=Asteroids \
