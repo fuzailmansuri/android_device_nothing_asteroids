@@ -239,6 +239,38 @@ PRODUCT_PACKAGES += \
     ParanoidGlyphPhone3a \
     GlyphAdapter
 
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough \
+    debug.graphics.game_default_frame_rate.disabled=0 \
+    debug.sf.auto_latch_unsignaled=1 \
+    debug.sf.early.app.duration=13666666 \
+    debug.sf.early.sf.duration=10500000 \
+    debug.sf.earlyGl.app.duration=13666666 \
+    debug.sf.earlyGl.sf.duration=10500000 \
+    debug.sf.enable_gl_backpressure=1 \
+    debug.sf.late.app.duration=13666666 \
+    debug.sf.late.sf.duration=10500000 \
+    debug.sf.predict_hwc_composition_strategy=0 \
+    debug.sf.treat_170m_as_sRGB=1 \
+    debug.sf.use_phase_offsets_as_durations=1 \
+    persist.sys.sf.native_mode=260 \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.game_default_frame_rate_override=60 \
+    ro.surface_flinger.has_HDR_display=true \
+    ro.surface_flinger.has_wide_color_display=true \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.set_idle_timer_ms=3000 \
+    ro.surface_flinger.set_touch_timer_ms=200 \
+    ro.surface_flinger.supports_background_blur=1 \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    ro.surface_flinger.wcg_composition_dataspace=143261696
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.launcher.blur.appLaunch=0
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
