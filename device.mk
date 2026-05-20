@@ -147,6 +147,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.charger.enable_suspend=1
 
+# Debloater
+PRODUCT_PACKAGES += \
+    debloater
+
 # DPM
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.dpm.feature=11
