@@ -206,7 +206,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.camerax.extensions.enabled=true
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    vendor.camera.aux.packagelist=com.nothing.camera,org.lineageos.aperture,org.lineageos.aperture.dev
+    vendor.camera.aux.packagelist=com.nothing.camera,org.lineageos.aperture,org.lineageos.aperture.dev,org.codeaurora.snapcam
 
 PRODUCT_VENDOR_PROPERTIES += \
     camera.disable_zsl_mode=1 \
