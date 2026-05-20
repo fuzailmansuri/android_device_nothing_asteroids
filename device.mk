@@ -132,6 +132,29 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.config-V2-ndk.vendor
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.camerax.extensions.enabled=true
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    vendor.camera.aux.packagelist=com.nothing.camera,org.lineageos.aperture,org.lineageos.aperture.dev,org.codeaurora.snapcam
+
+PRODUCT_VENDOR_PROPERTIES += \
+    camera.disable_zsl_mode=1 \
+    ro.camera.enableCamera1MaxZsl=1 \
+    ro.camera.disableHeicUltraHDR=true
+
+# Charger
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.charger.enable_suspend=1
+
+# DPM
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.vendor.dpm.feature=11
+
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.dpm.vndr.feature=11 \
+    persist.vendor.dpm.vndr.halservice.enable=1 \
+    persist.vendor.dpm.vndr.idletimer.mode=default
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
