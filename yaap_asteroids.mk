@@ -28,7 +28,6 @@ TARGET_ENABLE_BLUR := true
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="qssi_64-user 16 BQ2A.250721.001-BP2A.250605.031.A3 2604141749 release-keys" \
     BuildFingerprint=Nothing/Asteroids/Asteroids:14/UKQ1.250612.001/2604141749:user/release-keys \
     DeviceName=Asteroids \
     DeviceProduct=Asteroids \
