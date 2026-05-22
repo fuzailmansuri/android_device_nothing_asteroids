@@ -3,4 +3,7 @@
     <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
      vibrator is capable of subtle vibrations -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
+
+    <!-- Whether or not long-pressing on keyguard will display a shortcut to customize lockscreen -->
+    <bool name="long_press_keyguard_customize_lockscreen_enabled">false</bool>
 </resources>
