@@ -377,6 +377,7 @@ PRODUCT_PACKAGES += \
     AsteroidsFrameworksOverlay \
     AsteroidsLauncher3Overlay \
     AsteroidsMainlineWifiOverlay \
+    AsteroidsOpenDeltaOverlay \
     AsteroidsProMainlineWifiOverlay \
     AsteroidsProSettingsProviderOverlay \
     AsteroidsProWifiOverlay \
