@@ -113,8 +113,8 @@ ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.protected_contents=true
-ro.surface_flinger.set_idle_timer_ms=300
-ro.surface_flinger.set_touch_timer_ms=500
+ro.surface_flinger.set_idle_timer_ms=3000
+ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.supports_background_blur=1
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
@@ -162,15 +162,14 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Telephony
 persist.vendor.rcs.singlereg.feature=1
-telephony.active_modems.max_count=2
-ro.telecom.bt_retry_on_active=true
+telephony.active_modems.max_count=2 
+
 # QMS
 persist.vendor.data.qms.stx_disable=true
 
 # USB
 sys.usb.mtp.batchcancel=1
 vendor.usb.controller=a600000.dwc3
-vendor.usb.device=a600000.ssusb
 vendor.usb.diag.func.name=ffs
 vendor.usb.dpl.inst.name=dpl
 vendor.usb.qdss.inst.name=qdss_sw
@@ -179,15 +178,7 @@ vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=gsi
 vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=1
-persist.sys.otg.enable=true
-
-# LMKD
-ro.lmk.kill_heaviest_task=true
-ro.lmk.kill_timeout_ms=100
-ro.lmk.psi_partial_stall_ms=70
-ro.lmk.psi_complete_stall_ms=700
-ro.lmk.thrashing_limit=30
-ro.lmk.thrashing_limit_decay=50
 
 # Wi-Fi
 wifi.aware.interface=wifi-aware0
+

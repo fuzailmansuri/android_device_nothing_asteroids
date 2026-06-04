@@ -7,10 +7,6 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
-# Keys
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
-PRODUCT_EXTRA_RECOVERY_KEYS := vendor/lineage-priv/keys/releasekey
-
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
@@ -180,7 +176,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     EuiccPolicy \
-    default-permissions-com.google.android.euicc.xml
+    default-permissions-com.google.android.euicc.xml \
+    privapp-permissions-com.google.android.euicc.xml
 
 # FWK Detect
 PRODUCT_PACKAGES += \

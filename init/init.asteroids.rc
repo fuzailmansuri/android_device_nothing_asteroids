@@ -84,11 +84,6 @@ on property:sys.boot_completed=1
 
     # Set OTG node permissions
     chown system system /proc/charger/nt_otg_enable
-
-on property:persist.sys.otg.enable=true
-    write /proc/charger/nt_otg_enable 3
-
-on property:persist.sys.otg.enable=false
     write /proc/charger/nt_otg_enable 4
 
 on property:sys.touch.pocket_mode=*
@@ -111,10 +106,6 @@ on property:vendor.nfc.config_file_name=*
 
 on property:vendor.nfc_model=*
     setprop persist.vendor.nfc_model ${vendor.nfc_model}
-
-on property:sys.usb.state=*
-    write /sys/class/power_supply/battery/uevent "change"
-    write /sys/class/power_supply/usb/uevent "change"
 
 service asteroids_nfc_detect /odm/bin/init.asteroids.nfc.sh
     class main
