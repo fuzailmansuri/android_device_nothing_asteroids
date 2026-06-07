@@ -1,3 +1,12 @@
 # Allow libperfmgr to write CPU frequency scaling sysfs nodes
 allow hal_power_default sysfs_devices_system_cpu:file { open read write getattr };
 allow hal_power_default sysfs_devices_system_cpu:dir { open read search };
+
+# Allow PowerHAL to use CAP_SYS_NICE to modify scheduler properties (ADPF uclamp)
+allow hal_power_default self:capability sys_nice;
+
+# Allow PowerHAL to adjust scheduling properties for apps, system_server, surfaceflinger, and composer HAL
+allow hal_power_default { appdomain untrusted_app_all priv_app platform_app system_app isolated_app_all system_server surfaceflinger hal_graphics_composer_default }:process setsched;
+
+# Add mlstrustedsubject to bypass MLS constraints for setsched on multi-level/MCS app processes
+typeattribute hal_power_default mlstrustedsubject;
