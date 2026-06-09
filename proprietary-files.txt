@@ -1249,7 +1249,6 @@ vendor/etc/pwr/GamePowerOptFeature.xml
 vendor/etc/pwr/OffScreenPowerOptFeature.xml
 vendor/etc/pwr/PowerFeatureConfig.xml
 vendor/etc/pwr/VideoPowerOptFeature.xml
-vendor/lib64/libprotobuf-cpp-lite-21.7.so
 
 # Peripheral Manager
 vendor/bin/pm-proxy
@@ -1374,7 +1373,6 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.radio.uim_remote_server.xml
 vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/libQtiRilLoadable.so
 vendor/lib64/libSensorsInterface.so
-vendor/lib64/libprotobuf-cpp-full-21.7.so
 vendor/lib64/libqcrilDataModule.so
 vendor/lib64/libqcrilNr.so
 vendor/lib64/libqcrilNrCellInfoModule.so
