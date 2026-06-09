@@ -182,3 +182,8 @@ vendor.usb.use_gadget_hal=1
 # Wi-Fi
 wifi.aware.interface=wifi-aware0
 
+# Nothing Feature Flags
+ro.vendor.nothing.feature.base=0x600800001004458438124a040106b4247b97ffL
+ro.vendor.nothing.feature.diff.device.Asteroids=0x240001a38fc01acc038d140ad44002d0842080L
+ro.vendor.nothing.feature.diff.plus.Asteroids=0x4000000000000000000000L
+ro.vendor.nothing.feature.diff.product.Asteroids=0x0

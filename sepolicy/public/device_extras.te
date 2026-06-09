@@ -1,1 +1,5 @@
 type device_extras, domain;
+
+# Nothing Camera HAL attributes — must be declared in public policy so
+# hal_vendor_hal_noth_camera_server and _client are visible to all policy splits.
+hal_attribute(vendor_hal_noth_camera);

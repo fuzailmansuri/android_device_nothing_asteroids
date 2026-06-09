@@ -3,6 +3,17 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+on init
+    # Create cpuset for Nothing camera algo
+    mkdir /dev/cpuset/ntcam-algo
+    write /dev/cpuset/ntcam-algo/cpus 0-7
+    write /dev/cpuset/ntcam-algo/mems 0
+    chown system system /dev/cpuset/ntcam-algo
+    chown system system /dev/cpuset/ntcam-algo/tasks
+    chown system system /dev/cpuset/ntcam-algo/cpus
+    chmod 0664 /dev/cpuset/ntcam-algo/tasks
+    chmod 0664 /dev/cpuset/ntcam-algo/cpus
+
 on fs
     mkdir /mnt/vendor/persist/camera 0777 cameraserver cameraserver
 

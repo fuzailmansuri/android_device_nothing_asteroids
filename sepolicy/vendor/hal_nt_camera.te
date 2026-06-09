@@ -1,0 +1,65 @@
+# Nothing Camera HAL — PixelOS naming (mirrors hal_nt_charger pattern)
+# Stock ROM uses vendor_hal_camera_default; we use hal_nt_camera to avoid
+# confusion with QTI hal_camera_default and match asteroids device-tree convention.
+
+# Use typealias to map hal_nt_camera directly to hal_camera_default so it inherits the QCOM DSP exemptions
+typealias hal_camera_default alias hal_nt_camera;
+type hal_nt_camera_exec, exec_type, vendor_file_type, file_type;
+
+# Associate hal_nt_camera with hal_camera attributes to inherit QCOM DSP neverallow exemptions
+typeattribute hal_nt_camera hal_camera;
+typeattribute hal_nt_camera hal_camera_client;
+typeattribute hal_nt_camera hal_camera_server;
+
+# hal_attribute(vendor_hal_noth_camera) declared in public/device_extras.te
+
+hal_server_domain(hal_nt_camera, hal_vendor_hal_noth_camera);
+hal_client_domain(system_app, hal_vendor_hal_noth_camera);
+hal_client_domain(platform_app, hal_vendor_hal_noth_camera);
+hal_client_domain(priv_app, hal_vendor_hal_noth_camera);
+
+# Allow bidirectional binder IPC between clients (apps) and server (HAL)
+binder_call(system_app, hal_nt_camera);
+binder_call(platform_app, hal_nt_camera);
+binder_call(priv_app, hal_nt_camera);
+binder_call(hal_nt_camera, system_app);
+binder_call(hal_nt_camera, platform_app);
+binder_call(hal_nt_camera, priv_app);
+
+init_daemon_domain(hal_nt_camera);
+
+add_service(hal_nt_camera, vendor_hal_noth_camera_service);
+binder_call(hal_nt_camera, servicemanager);
+binder_use(hal_nt_camera);
+
+allow hal_nt_camera kmsg_device:chr_file rw_file_perms;
+allow hal_nt_camera proc_meminfo:file r_file_perms;
+allow hal_nt_camera proc_meminfo:dir r_dir_perms;
+
+r_dir_file(hal_nt_camera, vendor_configs_file);
+rw_dir_file(hal_nt_camera, vendor_data_file);
+
+allow hal_nt_camera vendor_file:file r_file_perms;
+allow hal_nt_camera vendor_file:dir r_dir_perms;
+allow hal_nt_camera same_process_hal_file:file r_file_perms;
+
+allow hal_nt_camera nt_cam_device:chr_file rw_file_perms;
+
+binder_call(hal_nt_camera, hal_graphics_allocator_default);
+binder_call(hal_nt_camera, cameraserver);
+binder_call(cameraserver, hal_nt_camera);
+allow hal_nt_camera cameraserver_service:service_manager find;
+allow hal_nt_camera fwk_camera_service:service_manager find;
+binder_call(hal_nt_camera, hal_camera_default);
+
+hal_client_domain(hal_nt_camera, hal_graphics_allocator);
+
+get_prop(hal_nt_camera, camera_config_prop);
+get_prop(hal_nt_camera, vendor_nothing_feature_prop);
+
+# ADSP/CDSP access rules matching standard client patterns allowed by QCOM policy
+allow hal_nt_camera vendor_xdsp_device:chr_file { ioctl read getattr lock map open watch watch_reads };
+allow hal_nt_camera vendor_qdsp_device:chr_file { ioctl read getattr lock map open watch watch_reads };
+allow hal_nt_camera adsprpcd_file:dir search;
+
+allow hal_nt_camera vendor_ntf_file:file r_file_perms;

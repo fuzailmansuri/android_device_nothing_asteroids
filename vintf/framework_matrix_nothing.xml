@@ -27,4 +27,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Nothing Camera -->
+    <hal format="aidl" optional="true">
+        <name>vendor.noth.hardware.camera</name>
+        <interface>
+            <name>INtCamService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

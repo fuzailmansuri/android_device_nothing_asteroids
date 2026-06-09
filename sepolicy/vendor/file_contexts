@@ -18,6 +18,11 @@
 # Charger
 /vendor/bin/hw/vendor\.noth\.hardware\.charge-service                 u:object_r:hal_nt_charger_exec:s0
 
+# Nothing Camera HAL
+/vendor/bin/hw/vendor\.noth\.hardware\.camera-service                 u:object_r:hal_nt_camera_exec:s0
+/dev/nt_cam_dev                                                       u:object_r:nt_cam_device:s0
+
+
 # Fingerprint
 /dev/goodix_fp                                                              u:object_r:fingerprint_device:s0
 /vendor/bin/hw/vendor.nothing\.hardware\.biometrics\.fingerprint-service    u:object_r:hal_fingerprint_default_exec:s0

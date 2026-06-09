@@ -309,7 +309,9 @@ system_ext/etc/permissions/advancedSample_camera_extensions.xml
 system_ext/framework/androidx.camera.extensions.impl.advanced.jar;MAKE_COPY_RULE_ONLY
 system_ext/lib64/libencoderjpeg_jni.so
 vendor/bin/hw/vendor.qti.camera.provider-service_64
-vendor/etc/camera/Ndot-55.otf
+vendor/etc/camera/NdotFont/Ndot-55.otf
+vendor/etc/camera/Robotofont/Roboto-55.ttf
+vendor/etc/camera/SansCJKFont/NotoSansCJK.ttc
 vendor/etc/camera/ancsat/sat_mecp.bin
 vendor/etc/camera/ancsat/sat_mecp_plus.bin
 vendor/etc/camera/basic_param.bin
@@ -794,6 +796,15 @@ vendor/etc/charger_fw_fstab.qti
 vendor/etc/init/vendor.noth.hardware.charge-service.rc
 vendor/etc/vintf/manifest/vendor.noth.hardware.charge-service.xml
 vendor/lib64/vendor.noth.hardware.charge-V1-ndk.so
+
+
+# Nothing Camera HAL
+vendor/bin/hw/vendor.noth.hardware.camera-service
+vendor/etc/init/vendor.noth.hardware.camera-service.rc
+vendor/etc/vintf/manifest/vendor.noth.hardware.camera-service.xml
+vendor/lib64/vendor.noth.hardware.camera-service-impl.so
+vendor/lib64/vendor.noth.hardware.camera-V1-ndk.so
+
 
 # Config Store
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
@@ -1350,6 +1361,11 @@ system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
 system_ext/framework/qcrilhook.jar
+
+# NTCamera (Nothing stock-signed)
+system_ext/priv-app/NTCamera/NTCamera.apk;PRESIGNED|2c4e1f8eb95d96f760336f03b92bc3858111e989c59703f9873c8dc7faa4119d
+system_ext/app/NothingProxy/NothingProxy.apk;PRESIGNED
+
 system_ext/priv-app/QtiTelephony/QtiTelephony.apk
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/qcrilNrd

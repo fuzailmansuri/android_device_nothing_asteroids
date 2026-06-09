@@ -87,6 +87,8 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/lib64/libntcamallocator.so': blob_fixup()
         .add_needed('libui_shim.so'),
+    'vendor/lib64/vendor.noth.hardware.camera-service-impl.so': blob_fixup()
+        .add_needed('libui_shim.so'),
     'vendor/lib64/libntcamskia.so': blob_fixup()
         .add_needed('libnativewindow.so'),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()

@@ -11,7 +11,7 @@ import android.os.SystemProperties;
 import java.math.BigInteger;
 import java.util.BitSet;
 
-public class NtFeaturesUtils {
+public class NtFeaturesUtils extends NtFeatures {
 
     private static final BitSet sFeatures;
 
