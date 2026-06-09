@@ -1363,7 +1363,7 @@ system_ext/etc/permissions/qti_permissions.xml
 system_ext/framework/qcrilhook.jar
 
 # NTCamera (Nothing stock-signed)
-system_ext/priv-app/NTCamera/NTCamera.apk;PRESIGNED|2c4e1f8eb95d96f760336f03b92bc3858111e989c59703f9873c8dc7faa4119d
+system_ext/priv-app/NTCamera/NTCamera.apk
 system_ext/app/NothingProxy/NothingProxy.apk;PRESIGNED
 
 system_ext/priv-app/QtiTelephony/QtiTelephony.apk
