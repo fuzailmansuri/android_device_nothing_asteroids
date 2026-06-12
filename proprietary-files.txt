@@ -1371,6 +1371,10 @@ system_ext/priv-app/NTCamera/NTCamera.apk
 system_ext/app/NothingProxy/NothingProxy.apk
 system_ext/lib64/libofflineproc_jni.so
 
+# NothingExperience
+system_ext/etc/permissions/privapp-permissions-NothingExperience.xml
+system_ext/priv-app/NothingExperience/NothingExperience.apk
+
 
 system_ext/priv-app/QtiTelephony/QtiTelephony.apk
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
