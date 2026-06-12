@@ -26,3 +26,14 @@ install_symlink {
     installed_location: "firmware/wlan/qca_cld/qca6750/wlan_mac.bin",
     symlink_target: "/mnt/vendor/persist/qca6750/wlan_mac.bin",
 }
+
+cc_library_shared {
+    name: "libcamera_client_shim",
+    srcs: ["camera_client_shim.cpp"],
+    shared_libs: [
+        "libutils",
+        "liblog",
+        "libbinder",
+    ],
+    system_ext_specific: true,
+}

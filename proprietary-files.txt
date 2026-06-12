@@ -691,7 +691,9 @@ vendor/lib64/libarcsoft_beautyshot.so
 vendor/lib64/libarcsoft_dark_vision_raw.so
 vendor/lib64/libarcsoft_dualcam_refocus_image.so
 vendor/lib64/libarcsoft_dualcam_refocus_preview.so
+vendor/lib64/libarcsoft_hdr_detection.so
 vendor/lib64/libarcsoft_lensstaindetection.so
+vendor/lib64/libarcsoft_mf_superresolution.so
 vendor/lib64/libarcsoft_panorama.so
 vendor/lib64/libarcsoft_portrait_distortion_correction.so
 vendor/lib64/libarcsoft_qnnhtp.so
@@ -788,7 +790,9 @@ vendor/lib64/libwa_opticalzoomfactor.so
 vendor/lib64/libwa_sat.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so
+vendor/lib64/vendor.qti.hardware.camera.offlinecamera-V1-ndk.so;EXTRACT_ONLY
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0.so
 
 # Charging
 vendor/bin/hw/vendor.noth.hardware.charge-service
@@ -1362,9 +1366,11 @@ system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
 system_ext/framework/qcrilhook.jar
 
-# NTCamera (Nothing stock-signed)
+# NTCamera (platform-signed, DEX-patched)
 system_ext/priv-app/NTCamera/NTCamera.apk
-system_ext/app/NothingProxy/NothingProxy.apk;PRESIGNED
+system_ext/app/NothingProxy/NothingProxy.apk
+system_ext/lib64/libofflineproc_jni.so
+
 
 system_ext/priv-app/QtiTelephony/QtiTelephony.apk
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
@@ -1779,3 +1785,7 @@ vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Widevine
 vendor/apex/com.google.android.widevine.nonupdatable.apex
+vendor/lib64/libcpion.so
+vendor/lib64/liboemcrypto.so
+vendor/lib64/libtrustedapploader.so
+

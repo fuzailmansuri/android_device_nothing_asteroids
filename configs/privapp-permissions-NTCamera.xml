@@ -14,6 +14,9 @@
         <permission name="mediatek.permission.ACCESS_APU_SYS"/>
         <permission name="android.permission.STATUS_BAR" />
         <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+            <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="android.permission.WRITE_SYNC_SETTINGS"/>
+        <permission name="com.nothing.experience.PERMISSION"/>
     </privapp-permissions>
 
 </permissions>
