@@ -1,1 +1,4 @@
 allow kernel per_boot_file:file r_file_perms;
+r_dir_file(kernel, firmware_file)
+r_dir_file(kernel, bt_firmware_file)
+

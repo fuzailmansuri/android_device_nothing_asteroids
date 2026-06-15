@@ -27,4 +27,24 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Radio IMS -->
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.ims</name>
+        <version>13-16</version>
+        <interface>
+            <name>IImsRadio</name>
+            <instance>imsradio0</instance>
+            <instance>imsradio1</instance>
+        </interface>
+    </hal>
+    <!-- Radio QtiRadioConfig -->
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.qtiradioconfig</name>
+        <version>5-6</version>
+        <interface>
+            <name>IQtiRadioConfig</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
+

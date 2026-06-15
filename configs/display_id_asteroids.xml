@@ -4,9 +4,9 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <displayConfiguration>
-    <screenBrightnessRampFastDecrease>0.7</screenBrightnessRampFastDecrease>
+    <screenBrightnessRampFastDecrease>0.5</screenBrightnessRampFastDecrease>
 
-    <screenBrightnessRampFastIncrease>0.7</screenBrightnessRampFastIncrease>
+    <screenBrightnessRampFastIncrease>0.5</screenBrightnessRampFastIncrease>
 
     <screenBrightnessRampSlowDecrease>0.05</screenBrightnessRampSlowDecrease>
 
@@ -89,14 +89,14 @@
         <!-- Minimum lux needed to enter high brightness mode. -->
         <minimumLux>7000</minimumLux>
         <thermalStatusLimit>light</thermalStatusLimit>
-        <allowDefaultBrightnessOverride>true</allowDefaultBrightnessOverride>
+        <allowDefaultBrightnessOverride>false</allowDefaultBrightnessOverride>
         <timing>
             <!-- Window in which we restrict HBM. -->
-            <timeWindowSecs>1800</timeWindowSecs>
+            <timeWindowSecs>0</timeWindowSecs>
             <!-- Maximum time of HBM allowed in that window. -->
-            <timeMaxSecs>300</timeMaxSecs>
+            <timeMaxSecs>0</timeMaxSecs>
             <!-- Minimum time remaining required to switch HBM on for. -->
-            <timeMinSecs>60</timeMinSecs>
+            <timeMinSecs>0</timeMinSecs>
         </timing>
         <!-- Whether HBM is allowed when lower power mode is active. -->
         <allowInLowPowerMode>false</allowInLowPowerMode>
