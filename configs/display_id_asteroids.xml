@@ -89,12 +89,12 @@
         <!-- Minimum lux needed to enter high brightness mode. -->
         <minimumLux>7000</minimumLux>
         <thermalStatusLimit>light</thermalStatusLimit>
-        <allowDefaultBrightnessOverride>true</allowDefaultBrightnessOverride>
+        <allowDefaultBrightnessOverride>false</allowDefaultBrightnessOverride>
         <timing>
             <!-- Window in which we restrict HBM. -->
-            <timeWindowSecs>0</timeWindowSecs>
+            <timeWindowSecs>1800</timeWindowSecs>
             <!-- Maximum time of HBM allowed in that window. -->
-            <timeMaxSecs>0</timeMaxSecs>
+            <timeMaxSecs>300</timeMaxSecs>
             <!-- Minimum time remaining required to switch HBM on for. -->
             <timeMinSecs>0</timeMinSecs>
         </timing>
@@ -150,19 +150,19 @@
         <throttlingMap>
             <map>
                 <thermalStatus>light</thermalStatus>
-                <brightness>0.84074</brightness> 
+                <brightness>0.92000</brightness> 
             </map>
             <map>
                 <thermalStatus>moderate</thermalStatus>
-                <brightness>0.71959</brightness>
+                <brightness>0.84074</brightness>
             </map>
             <map>
                 <thermalStatus>severe</thermalStatus>
-                <brightness>0.60503</brightness>
+                <brightness>0.71959</brightness>
             </map>
             <map>
                 <thermalStatus>critical</thermalStatus>
-                <brightness>0.52614</brightness>
+                <brightness>0.60503</brightness>
             </map>
             <map>
                 <thermalStatus>emergency</thermalStatus>
