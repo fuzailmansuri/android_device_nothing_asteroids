@@ -104,6 +104,9 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 # Graphics
 TARGET_USES_VULKAN := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_asteroids
+
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware,/vendor/firmware_mnt/image \
