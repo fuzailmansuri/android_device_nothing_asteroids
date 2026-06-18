@@ -242,6 +242,10 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     ipacm
 
+# debloat
+PRODUCT_PACKAGES += \
+    debloater
+
 # Display
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display_id_asteroids.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946978939328130.xml
