@@ -445,7 +445,10 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     debug.stagefright.c2inputsurface=-1 \
+    debug.stagefright.ccodec=4 \
     debug.stagefright.omx_default_rank=0 \
+    ro.mediaserver.64b.enable=true \
+    vendor.media.omx=0 \
     vendor.qc2audio.per_frame.flac.dec.enabled=true \
     vendor.qc2audio.suspend.enabled=true
 
