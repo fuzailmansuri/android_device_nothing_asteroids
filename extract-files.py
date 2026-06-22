@@ -76,11 +76,6 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcodec2_shim.so'),
     'vendor/lib64/libwa_sat.so': blob_fixup()
         .binary_regex_replace(b'/system\x00', b'/vendor\x00'),
-    (
-	'vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so',
-	'vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti',
-    ): blob_fixup()
-	.replace_needed('vendor.qti.hardware.fm@1.0.so', 'vendor.qti.hardware.fm@1.0_vendor.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
