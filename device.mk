@@ -36,10 +36,6 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 # ART
 PRODUCT_ENABLE_UFFD_GC := true
 
-# ADPF task profiles (SCHED_QOS_NONE, SCHED_QOS_SENSITIVE_*) required by power-libperfmgr
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
-
 # Adreno
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
