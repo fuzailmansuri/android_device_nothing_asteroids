@@ -4,7 +4,8 @@
             "Name": " ClassKgslKgsl3d0DevfreqMinFreq",
             "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
             "Values": [
-                "264000000"
+                "264000000",
+                "510000000"
             ],
             "DefaultIndex": 0,
             "ResetOnInit": true
@@ -302,6 +303,24 @@
             "PowerHint": "LAUNCH",
             "Node": " DevicesSystemCpuCpufreqPolicy7WaltAdaptiveLowFreq",
             "Value": "1209600",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": " DevicesSystemCpuBusDcvsDdr24091000QcomBwmonDdrMinFreq",
+            "Value": "1353600",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": " DevicesSystemCpuCpu0CoreCtlMinCpus",
+            "Value": "3",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": " ClassKgslKgsl3d0DevfreqMinFreq",
+            "Value": "510000000",
             "Duration": 2000
         },
         {
