@@ -1,2 +1,6 @@
 set_prop(vendor_init, vendor_qms_prop)
 set_prop(vendor_init, vendor_ssr_prop)
+
+get_prop(vendor_init, vendor_nfc_prop)
+set_prop(vendor_init, vendor_nfc_prop)
+set_prop(vendor_init, vendor_persist_nfc_prop)

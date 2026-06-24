@@ -73,6 +73,12 @@ on boot
     chmod 0660 /proc/touchpanel/TP_charger_flags
     chown system system /proc/touchpanel/TP_charger_flags
 
+on property:vendor.nfc.config_file_name=*
+    setprop persist.vendor.nfc.config_file_name ${vendor.nfc.config_file_name}
+
+on property:vendor.nfc_model=*
+    setprop persist.vendor.nfc_model ${vendor.nfc_model}
+
 on property:sys.boot_completed=1
     swapon_all /odm/etc/fstab.zram.2g
 
