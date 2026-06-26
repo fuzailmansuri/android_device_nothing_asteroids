@@ -379,22 +379,8 @@
     -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
-    <!-- Flag specifying whether VoLTE is available on device -->
-    <bool name="config_device_volte_available">true</bool>
-
-    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
-         carrier provisioning. If false: hard disabled. If true: then depends on carrier
-         provisioning, availability etc -->
-    <bool name="config_carrier_volte_available">true</bool>
-
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
-
-    <!-- Whether the device enable the standalone (SA) mode of 5G NR.-->
-    <bool name="config_telephony5gStandalone">true</bool>
-
-    <!-- Whether the device enable the non-standalone (NSA) mode of 5G NR.-->
-    <bool name="config_telephony5gNonStandalone">true</bool>
 
     <!-- Default value for fp screen off unlock toggle, it only works for the devices that support
          fp screen off unlock-->
@@ -419,4 +405,21 @@
 
     <!-- Whether to disable Smart Pixels on UDFPS -->
     <bool name="config_disableSmartPixelsOnUDFPS">true</bool>
+    
+    <!-- Flag indicating whether we should enable smart battery. -->
+    <bool name="config_smart_battery_available">true</bool>
+    
+    <!-- Flag indicating whether we should enable camera-based autorotate -->
+    <bool name="config_camera_autorotate">true</bool>
+    
+    <!-- If this is true, the screen will fade off. -->
+    <bool name="config_animateScreenLights">true</bool>
+    
+    <!-- By default ActivityOptions#makeScaleUpAnimation is only used between activities. This
+         config enables OEMs to support its usage across tasks.-->
+    <bool name="config_enableCrossTaskScaleUpAnimation">true</bool>
+    
+    <!-- If true, the doze component is not started until after the screen has been
+         turned off and the screen off animation has been performed. -->
+    <bool name="config_dozeAfterScreenOffByDefault">true</bool>
 </resources>
