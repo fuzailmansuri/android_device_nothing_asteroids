@@ -564,23 +564,11 @@ PRODUCT_PACKAGES += \
 TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     init \
-    perf
-
-# RIL
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.radio.multisim.config=dsds \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.enableadvancedscan=true \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    persist.vendor.radio.sib16_support=1
+    perf \
+    telephony
 
 # Ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
-
-# SSR
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Secure Element
 PRODUCT_COPY_FILES += \
@@ -630,11 +618,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # Telephony
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
-    frameworks/native/data/etc/android.hardware.telephony.mbms.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.mbms.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.hardware.telephony.mbms.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.mbms.xml
 
 PRODUCT_PACKAGES += \
     extphonelib \
@@ -658,15 +642,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     nt-telephony-interface
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ril.subscription.types=NV,RUIM \
-    ro.telephony.default_network=26,26 \
-    telephony.lteOnCdmaDevice=1
-
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.rcs.singlereg.feature=1 \
-    telephony.active_modems.max_count=2
 
 # Thermal
 PRODUCT_PACKAGES += \
