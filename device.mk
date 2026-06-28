@@ -611,9 +611,11 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/qcom/wlan \
     hardware/nothing \
     kernel/nothing/sm7635 \
-    hardware/qcom/wlan/qcwcn
+    hardware/qcom/wlan/qcwcn \
+    hardware/qcom/wlan/qcwcn/wpa_supplicant_8_lib
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
