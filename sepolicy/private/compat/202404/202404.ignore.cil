@@ -7,5 +7,4 @@
   ( new_objects
     glyph_app
     sltntc
-    vendor_nothing_feature_prop
-    device_extras))
+    vendor_nothing_feature_prop))
