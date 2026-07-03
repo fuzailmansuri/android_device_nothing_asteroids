@@ -584,8 +584,18 @@ PRODUCT_PACKAGES += \
     firmware_wlanmdsp.otaupdate_symlink \
     firmware_wlan_mac.bin_symlink \
     hostapd \
-    libwifi-hal-ctrl \
-    libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Widevine
+PRODUCT_PACKAGES += \
+    libcpion \
+    liboemcrypto \
+    libtrustedapploader
+
+PRODUCT_VENDOR_PROPERTIES += \
+    wifi.aware.interface=wifi-aware0 \
+    ro.netflix.bsp_rev=Q8450-34634-1 \
+    vendor.wv.oemcrypto.debug.enable_hlos_data_path=true \
+    vendor.wv.oemcrypto.debug.enable_prov40=true
 
