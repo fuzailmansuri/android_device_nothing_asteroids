@@ -119,3 +119,9 @@ service sltntc /system_ext/bin/sltntc
     group system readproc root
     disabled
 
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service-st
+    class hal
+    user nfc
+    group nfc net_bt_admin gps
+    override
+
