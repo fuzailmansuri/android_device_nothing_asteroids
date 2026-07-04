@@ -270,6 +270,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     sys.brightness.disable_gamma_conversion=true
 
 PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.display.array.backlight=366,366,551,838,1187,1291,1339,1490,1621,1693,1866,2009,2154,2394,2477,2946,2946,3442 \
+    ro.vendor.display.array.lux=0,1,4,10,25,60,150,390,620,750,1000,1300,1700,2800,3500,4500,7000,8000 \
     vendor.display.comp_mask=0 \
     vendor.display.disable_3d_adaptive_tm=1 \
     vendor.display.disable_cwb_idle_fallback=1 \
