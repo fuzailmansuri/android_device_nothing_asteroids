@@ -35,3 +35,9 @@ prebuilt_etc {
     ],
     vendor: true,
 }
+
+python_binary_host {
+    name: "generate_qcril_db",
+    main: "generate_qcril_db.py",
+    srcs: ["generate_qcril_db.py"],
+}

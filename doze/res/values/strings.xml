@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="device_settings_app_name">Nothing Doze</string>
+    <string name="ambient_display_title">Ambient Display</string>
+    <string name="ambient_display_enable_title">Ambient display</string>
+    <string name="ambient_display_enable_summary">Enable ambient display</string>
+    <string name="ambient_display_always_on_title">Always on</string>
+    <string name="ambient_display_always_on_summary">Always show time and icons</string>
+    <string name="pickup_sensor_title">Pick up sensor</string>
+    <string name="pick_up_gesture_title">Pick up gesture</string>
+    <string name="proximity_sensor_title">Proximity sensor</string>
+    <string name="pocket_gesture_title">Pocket gesture</string>
+    <string name="pocket_gesture_summary">Turn off screen in pocket</string>
+    <string name="disabled">Disabled</string>
+    <string name="pick_up_gesture_summary">Pulse notifications on pick up</string>
+    <string name="pick_up_wake_gesture_summary">Wake device on pick up</string>
+</resources>

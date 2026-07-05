@@ -3,7 +3,26 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
+TARGET_BOARD_PLATFORM := volcano
+TARGET_USES_NQ_NFC := false
+TARGET_COMMON_QTI_COMPONENTS := \
+    adreno \
+    alarm \
+    audio \
+    av \
+    bt \
+    display \
+    gps \
+    init \
+    media \
+    overlay \
+    perf \
+    telephony \
+    usb \
+    wfd \
+    wlan
+$(call inherit-product, device/qcom/common/common.mk)
+
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
 
 # A/B
@@ -136,7 +155,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.hfp.ag.enabled=true \
     bluetooth.profile.gatt.enabled=true \
     bluetooth.profile.hid.host.enabled=true \
-    bluetooth.profile.hid.device.enabled=true \
     bluetooth.profile.map.server.enabled=true \
     bluetooth.profile.opp.enabled=true \
     bluetooth.profile.pbap.server.enabled=true \
@@ -271,7 +289,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.disable_dynamic_fps=1 \
     vendor.display.disable_excl_rect=0 \
     vendor.display.disable_excl_rect_partial_fb=1 \
-    vendor.display.disable_hw_recovery_dump=1 \
     vendor.display.disable_offline_rotator=1 \
     vendor.display.disable_scaler=0 \
     vendor.display.disable_sdr_dimming=0 \
@@ -337,7 +354,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough \
-    debug.graphics.game_default_frame_rate.disabled=0 \
     debug.sf.auto_latch_unsignaled=1 \
     debug.sf.early.app.duration=13666666 \
     debug.sf.early.sf.duration=10500000 \
@@ -514,7 +530,6 @@ PRODUCT_PACKAGES += \
     SecureElementResTarget_Vendor \
     SettingsResCommon_Vendor \
     SystemUIResCommon_Vendor \
-    TelephonyResCommon_Sys \
     TelephonyResCommon_Vendor \
     UwbResCommon_Vendor \
     WifiResCommonMainline_Vendor \
@@ -625,7 +640,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    kernel/nothing/sm7635
+    kernel/nothing/sm7635 \
+    kernel/nothing/sm7635-modules \
+    hardware/qcom/wlan/qcwcn/wpa_supplicant_8_lib
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -699,7 +716,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.usb.controller=a600000.dwc3 \
     vendor.usb.diag.func.name=ffs \
     vendor.usb.dpl.inst.name=dpl \
-    vendor.usb.qdss.inst.name=qdss_sw \
     vendor.usb.rmnet.func.name=gsi \
     vendor.usb.rmnet.inst.name=rmnet \
     vendor.usb.rndis.func.name=gsi \

@@ -11,3 +11,23 @@
 
 # Lights
 /dev/led_strips   0664   system   system
+
+# eMMC RPMB
+/dev/mmcblk0rpmb          0600   system     system
+
+# FRP
+/dev/block/platform/soc/8844000.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc/b24000.sdhci/by-name/frp        0600   system     system
+
+# Power state
+/dev/power_state           0660   system      system
+
+# Secure element (STSAFE)
+/dev/stsafe320_gpio       0660   system     system
+
+# UWB
+/dev/spiuwb    0660    uwb    uwb
+
+# USB
+/sys/bus/platform/devices/4e00000.ssusb    mode        0660  system  usb
+/sys/bus/platform/devices/a400000.ssusb    mode        0660  system  usb

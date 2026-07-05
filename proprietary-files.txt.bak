@@ -1750,7 +1750,9 @@ vendor/lib64/libtime_genoff.so
 
 # Touch
 vendor/firmware/focaltech_ts_fw_boe.bin
+vendor/firmware/focaltech_ts_fw_boe.bin:recovery/root/vendor/firmware/focaltech_ts_fw_boe.bin
 vendor/firmware/focaltech_ts_fw_vxn.bin
+vendor/firmware/focaltech_ts_fw_vxn.bin:recovery/root/vendor/firmware/focaltech_ts_fw_vxn.bin
 
 # TrustedUI
 vendor/bin/trusteduilistener

@@ -174,7 +174,7 @@ TARGET_KERNEL_EXT_MODULES := \
 
 # Partitions
 ifneq ($(PRODUCT_RO_FILE_SYSTEM), erofs)
--include vendor/lineage/config/BoardConfigReservedSize.mk
+# -include vendor/lineage/config/BoardConfigReservedSize.mk
 endif
 
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
@@ -223,9 +223,9 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/vintf/framework_matrix_nothing.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
+    vendor/aospa/target/config/aospa_vendor_framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/vintf/framework_manifest.xml
-DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := device/qcom/vendor-common/compatibility_matrix.xml
 
 ODM_MANIFEST_FILES += $(DEVICE_PATH)/vintf/manifest_asteroids.xml
 ODM_MANIFEST_SKUS := JPN
@@ -250,3 +250,4 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+TARGET_PREBUILT_KERNEL :=
