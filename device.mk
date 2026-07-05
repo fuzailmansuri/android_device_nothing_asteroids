@@ -676,8 +676,7 @@ PRODUCT_PACKAGES += \
     qcrilNrDb_vendor
 
 PRODUCT_BOOT_JARS += \
-    nt-telephony-interface \
-    telephony-ext
+    nt-telephony-interface
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \
