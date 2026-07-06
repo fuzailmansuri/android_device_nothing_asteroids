@@ -115,6 +115,7 @@ BOARD_KERNEL_CMDLINE := \
     qcom_geni_serial.con_enabled=0 \
     video=vfb:640x400,bpp=32,memsize=3072000
 BOARD_BOOTCONFIG := \
+    androidboot.bootdevice=1d84000.ufshc \
     androidboot.console=0 \
     androidboot.hardware=qcom \
     androidboot.load_modules_parallel=true \
