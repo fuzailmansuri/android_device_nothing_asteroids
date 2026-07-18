@@ -79,6 +79,9 @@ on property:sys.boot_completed=1
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-5
 
+    chown system system /proc/charger/nt_otg_enable
+    chmod 0664 /proc/charger/nt_otg_enable
+
 on property:sys.touch.pocket_mode=*
     write /proc/touchpanel/pocket_mode ${sys.touch.pocket_mode}
 
