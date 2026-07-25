@@ -372,6 +372,9 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/gesture_mode)
 $(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
 
+PRODUCT_PACKAGES += \
+    libqti-perfd-client
+
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -426,7 +429,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/nothing \
+    hardware/qcom-caf/bootctrl \
+    hardware/qcom-caf/common/libqti-perfd-client \
     hardware/qcom-caf/wlan/qcwcn \
     kernel/nothing/sm7635 \
     packages/apps/ParanoidGlyph \
@@ -526,6 +531,8 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set_bool,nothing_fingerprint,use_lhbm,true)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.nothing
+
+
 
 
 
