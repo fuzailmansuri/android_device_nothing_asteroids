@@ -7,6 +7,10 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
+# Keys
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
+PRODUCT_EXTRA_RECOVERY_KEYS := vendor/lineage-priv/keys/releasekey
+
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
@@ -365,12 +369,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr \
-    libqti-perfd-client
-    
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+$(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/gesture_mode)
+$(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -427,7 +427,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client \
+    hardware/qcom-caf/wlan/qcwcn \
     kernel/nothing/sm7635 \
     packages/apps/ParanoidGlyph \
     packages/apps/GlyphAdapter
@@ -521,4 +521,11 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Fingerprint
+$(call soong_config_set_bool,nothing_fingerprint,use_lhbm,true)
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.nothing
+
+
 

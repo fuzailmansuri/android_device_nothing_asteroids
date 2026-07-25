@@ -1,3 +1,9 @@
-# Allow libperfmgr to write CPU frequency scaling sysfs nodes
-allow hal_power_default sysfs_devices_system_cpu:file { open read write getattr };
-allow hal_power_default sysfs_devices_system_cpu:dir { open read search };
+# Allow QTI Power HAL to access CPU frequency scaling sysfs nodes
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
+allow hal_power_default sysfs_devices_system_cpu:dir r_dir_perms;
+
+# DisplayConfig AIDL & HIDL
+hal_client_domain(hal_power_default, hal_graphics_composer)
+binder_call(hal_power_default, hal_graphics_composer_default)
+
+
