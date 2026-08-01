@@ -6,6 +6,14 @@
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
+$(call inherit-product-if-exists, hardware/nothing/camera/ntcam.mk)
+
+# MatLog Logcat Viewer
+PRODUCT_PACKAGES += \
+    MatLog
+
+PRODUCT_COPY_FILES += \
+    packages/apps/MatLog/privapp-permissions-MatLog.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-MatLog.xml
 
 # Keys
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
@@ -108,12 +116,14 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     sound_trigger.primary.volcano
 
+# BCR (Basic Call Recorder)
+$(call inherit-product, vendor/bcr/bcr.mk)
 
 # Biometrics
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.nothing
 
-$(soong_config_set_bool,nothing_fingerprint,use_lhbm,true)
+$(call soong_config_set_bool,nothing_fingerprint,use_lhbm,true)
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -377,6 +387,12 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/gesture_mode)
 $(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
 
+# power-vendor-product.mk selects powerhint.xml with ifeq on TARGET_BOARD_PLATFORM, which is a
+# BoardConfig variable and is still empty while product makefiles are parsed. Copy it explicitly
+# or the QTI power HAL ships with no config at all.
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/power/config/volcano/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
 PRODUCT_PACKAGES += \
     libqti-perfd-client
 
@@ -531,13 +547,5 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf
-
-# Fingerprint
-$(call soong_config_set_bool,nothing_fingerprint,use_lhbm,true)
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.nothing
-
-
-
 
 

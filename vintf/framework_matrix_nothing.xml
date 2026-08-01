@@ -27,4 +27,24 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Nothing Camera Service -->
+    <hal format="aidl" optional="true">
+        <name>vendor.noth.hardware.camera</name>
+        <version>1</version>
+        <interface>
+            <name>INtCamService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- QTI Camera PostProc Service -->
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.camera.postproc</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPostProcService</name>
+            <instance>camerapostprocservice</instance>
+            <instance>default</instance>
+            <instance>postprocservice</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

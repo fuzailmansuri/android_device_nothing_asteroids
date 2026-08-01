@@ -27,3 +27,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=Asteroids \
     SystemDevice=Asteroids \
     SystemName=Asteroids
+
+

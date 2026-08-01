@@ -9,6 +9,8 @@ include build/make/target/board/BoardConfigMainlineCommon.mk
 include vendor/nothing/asteroids/BoardConfigVendor.mk
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
+
 
 include hardware/nothing/config.mk
 
