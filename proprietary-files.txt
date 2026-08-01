@@ -784,6 +784,9 @@ vendor/lib64/libwa_sat.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+# Stock build carries a wider PostProcCapabilities than the AOSP types.hal;
+# the source-built interface omits YuvCapabilities and corrupts the struct copy
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0.so
 
 # Charging
 vendor/bin/hw/vendor.noth.hardware.charge-service

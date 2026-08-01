@@ -1,4 +1,11 @@
 # Camera
+# QNN HTP (Qualcomm Neural Network Hexagon Tensor Processor) AI/ML libs
+# NTCamera loads these directly into its process for AI camera post-processing.
+# Must be same_process_hal_file to allow platform_app access without neverallow.
+/vendor/lib64/libQnnHtp\.so                                          u:object_r:same_process_hal_file:s0
+/vendor/lib64/libQnnHtpV75Stub\.so                                   u:object_r:same_process_hal_file:s0
+/vendor/lib64/libQnnHtpPrepare\.so                                   u:object_r:same_process_hal_file:s0
+/vendor/lib64/libQnn.*\.so                                           u:object_r:same_process_hal_file:s0
 /vendor/lib64/camera/components/com\.qti\.stats\.aecxcore\.so       u:object_r:same_process_hal_file:s0
 /vendor/lib64/camera/components/com\.qti\.stats\.afc\.so            u:object_r:same_process_hal_file:s0
 /vendor/lib64/camera/components/com\.qti\.stats\.hafoverride\.so    u:object_r:same_process_hal_file:s0

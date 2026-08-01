@@ -2,3 +2,6 @@ set_prop(vendor_init, vendor_qms_prop)
 set_prop(vendor_init, vendor_ssr_prop)
 get_prop(vendor_init, vendor_nfc_prop)
 set_prop(vendor_init, vendor_nfc_prop)
+
+# vendor.prop sets vendor.fastrpc.* (vendor_adsprpc_prop); QCOM policy only grants get_prop
+set_prop(vendor_init, vendor_adsprpc_prop)

@@ -8,4 +8,7 @@
     device_extras
     glyph_app
     sltntc
-    vendor_nothing_feature_prop))
+    vendor_nothing_feature_prop
+    offline_proc_binder_service
+    offline_proc_service
+    offline_proc_service_exec))
