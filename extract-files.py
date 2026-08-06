@@ -107,6 +107,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libqcc_sdk.so',
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
+    'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
+        .add_line_if_missing('lseek: 1'),
     'vendor/etc/lvacfs_params/1mic/LVACFS_Configuration.txt': blob_fixup()
         .patch_file('audio/lvacfs_1mic_config.patch'),
     'vendor/etc/lvacfs_params/2mic/LVACFS_Configuration.txt': blob_fixup()
