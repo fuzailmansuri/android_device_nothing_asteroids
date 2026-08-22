@@ -7,13 +7,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, device/nothing/asteroids/device.mk)
-$(call inherit-product, vendor/clover/config/common_full_phone.mk)
+$(call inherit-product, vendor/custom/config/common_full_phone.mk)
 
 PRODUCT_BRAND := Nothing
 PRODUCT_DEVICE := asteroids
 PRODUCT_MANUFACTURER := Nothing
 PRODUCT_MODEL := A059
-PRODUCT_NAME := clover_asteroids
+PRODUCT_NAME := custom_asteroids
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
@@ -24,10 +24,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=Asteroids \
     SystemDevice=Asteroids \
     SystemName=Asteroids
-
-# Clover assortment
-CLOVER_MAINTAINER := NayanYC
-CLOVER_BUILDTYPE := OFFICIAL
-TARGET_ENABLE_BLUR := true
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
