@@ -45,4 +45,4 @@
 /vendor/bin/hw/android\.hardware\.vibrator\.service\.asteroids      u:object_r:hal_vibrator_default_exec:s0
 
 # Wakeup
-/sys/devices/platform/hypervisor/hypervisor:qcom,resource-manager-rpc@[0-9a-f]+/wakeup(/.*)?    u:object_r:sysfs_wakeup:s0
+#/sys/devices/platform/hypervisor/hypervisor:qcom,resource-manager-rpc@[0-9a-f]+/wakeup(/.*)?    u:object_r:sysfs_wakeup:s0
