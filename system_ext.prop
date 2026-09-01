@@ -10,6 +10,7 @@ bluetooth.profile.sap.server.enabled=true
 persist.bluetooth.leaudio.allow.multiple.contexts=false
 persist.bluetooth.leaudio.notify.idle.during.call=true
 persist.bluetooth.leaudio_offload.disabled=false
+persist.debug.wfd.enable=1
 ro.bluetooth.leaudio_offload.supported=true
 
 # Camera
