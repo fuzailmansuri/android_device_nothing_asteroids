@@ -263,4 +263,3 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Disable deprecated system_other partition
 BOARD_USES_SYSTEM_OTHER_ODEX := false
-PRODUCT_BUILD_SYSTEM_OTHER_IMAGE := false
