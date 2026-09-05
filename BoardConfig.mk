@@ -227,8 +227,13 @@ include hardware/nothing/config.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy/public \
+    hardware/google/pixel-sepolicy/turbo_adapter/public
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy/private \
+    hardware/google/pixel-sepolicy/flipendo \
+    hardware/google/pixel-sepolicy/turbo_adapter/private
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
@@ -260,3 +265,6 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# Disable deprecated system_other partition
+BOARD_USES_SYSTEM_OTHER_ODEX := false
