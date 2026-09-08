@@ -53,6 +53,7 @@ lib_fixups: lib_fixups_user_type = {
         'libats',
         'libagm',
         'libpalclient',
+        'libheif',
     ): lib_fixup_remove,
 }
 
