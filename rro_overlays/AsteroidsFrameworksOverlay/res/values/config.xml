@@ -81,8 +81,10 @@
 
     <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
     <integer-array name="config_availableColorModes">
-        <item>260</item>
         <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>260</item>
     </integer-array>
 
     <!-- Messages that should not be shown to the user during face authentication, on keyguard.
