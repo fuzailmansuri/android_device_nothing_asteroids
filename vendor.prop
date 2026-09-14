@@ -142,6 +142,7 @@ vendor.qc2audio.suspend.enabled=true
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 vendor.perf.framepacing.enable=1
+vendor.pasr.activemode.enabled=true
 
 # RIL
 persist.radio.multisim.config=dsds
