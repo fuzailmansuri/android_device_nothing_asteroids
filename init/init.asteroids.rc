@@ -92,9 +92,6 @@ on property:sys.touch.pocket_mode=*
 on property:vendor.all.modules.ready=1
     chown system system /proc/touchpanel/fod_mode
     chown system system /sys/panel_feature/fp_status
-
-    start asteroids_nfc_detect
-
 on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=0
 	stop sltntc
 
@@ -104,13 +101,6 @@ on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=1
 on property:sys.usb.state=*
     write /sys/class/power_supply/battery/uevent "change"
     write /sys/class/power_supply/usb/uevent "change"
-
-service asteroids_nfc_detect /odm/bin/init.asteroids.nfc.sh
-    class main
-    user shell
-    group shell
-    disabled
-    oneshot
 
 service sltntc /system_ext/bin/sltntc
     class hal
