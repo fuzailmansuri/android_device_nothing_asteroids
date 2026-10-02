@@ -75,7 +75,9 @@ on boot
     chown system system /proc/touchpanel/TP_charger_flags
 
 on property:sys.boot_completed=1
-    swapon_all /odm/etc/fstab.zram.2g
+    # zram is sized and swapped by init.qcom.post_boot.sh:configure_zram_parameters()
+    # (50% of RAM). The former swapon_all /odm/etc/fstab.zram.2g raced with it and
+    # made the final zram size nondeterministic, so it is no longer used.
 
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-5
