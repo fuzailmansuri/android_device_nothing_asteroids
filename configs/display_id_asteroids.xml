@@ -88,15 +88,13 @@
         <transitionPoint>0.84074</transitionPoint>
         <!-- Minimum lux needed to enter high brightness mode. -->
         <minimumLux>7000</minimumLux>
-        <thermalStatusLimit>light</thermalStatusLimit>
-        <allowDefaultBrightnessOverride>false</allowDefaultBrightnessOverride>
         <timing>
             <!-- Window in which we restrict HBM. -->
             <timeWindowSecs>1800</timeWindowSecs>
             <!-- Maximum time of HBM allowed in that window. -->
             <timeMaxSecs>300</timeMaxSecs>
             <!-- Minimum time remaining required to switch HBM on for. -->
-            <timeMinSecs>0</timeMinSecs>
+            <timeMinSecs>60</timeMinSecs>
         </timing>
         <!-- Whether HBM is allowed when lower power mode is active. -->
         <allowInLowPowerMode>false</allowInLowPowerMode>
@@ -141,33 +139,33 @@
                 <hdrRatio>3.75</hdrRatio>
             </point>
             <point>
-                <sdrNits>1300.0</sdrNits> 
+                <sdrNits>1300.0</sdrNits>
                 <hdrRatio>2.3</hdrRatio>
             </point>
         </sdrHdrRatioMap>
     </highBrightnessMode>
     <thermalThrottling>
-        <throttlingMap>
-            <map>
-                <thermalStatus>light</thermalStatus>
-                <brightness>0.92000</brightness> 
-            </map>
-            <map>
+        <brightnessThrottlingMap id="default">
+            <brightnessThrottlingPoint>
                 <thermalStatus>moderate</thermalStatus>
                 <brightness>0.84074</brightness>
-            </map>
-            <map>
+            </brightnessThrottlingPoint>
+            <brightnessThrottlingPoint>
                 <thermalStatus>severe</thermalStatus>
                 <brightness>0.71959</brightness>
-            </map>
-            <map>
+            </brightnessThrottlingPoint>
+            <brightnessThrottlingPoint>
                 <thermalStatus>critical</thermalStatus>
                 <brightness>0.60503</brightness>
-            </map>
-            <map>
+            </brightnessThrottlingPoint>
+            <brightnessThrottlingPoint>
                 <thermalStatus>emergency</thermalStatus>
                 <brightness>0.36395</brightness>
-            </map>
-        </throttlingMap>
+            </brightnessThrottlingPoint>
+            <brightnessThrottlingPoint>
+                <thermalStatus>shutdown</thermalStatus>
+                <brightness>0.18000</brightness>
+            </brightnessThrottlingPoint>
+        </brightnessThrottlingMap>
     </thermalThrottling>
 </displayConfiguration>
