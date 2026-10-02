@@ -1,0 +1,23 @@
+# device/qcom/sepolicy_vndr/sm8650/generic/vendor/common/hal_power_default.te already
+# declares hal_client_domain(hal_power_default, vendor_hal_perf). Through that
+# attribute the Power HAL already gets:
+#   - find on vendor_hal_perf2_service, via
+#     hal_attribute_service(vendor_hal_perf, vendor_hal_perf2_service)
+#   - binder { call transfer } towards vendor_hal_perf_server, via
+#     binder_call(vendor_hal_perf_client, vendor_hal_perf_server)
+#
+# Still missing is the server -> client direction: the perf HAL returns feedback
+# over binder (send_perf_get_feedback), which the client rule above does not cover.
+binder_call(vendor_hal_perf_default, hal_power_default)
+
+# PowerHintSession::initSupportedFps() looks up
+# vendor.qti.hardware.display.config.IDisplayConfig/default and bails out with
+# "DisplayConfig AIDL is not available" without it, taking the FPS init path down
+# with it. This adds the hal_graphics_composer_client attribute, which carries the
+# find on vendor_hal_vnddisplayconfig_service.
+hal_client_domain(hal_power_default, hal_graphics_composer)
+
+# Bounded WALT scheduler boost, matching the perf HAL.
+rw_dir_file(hal_power_default, proc_sched)
+r_dir_file(hal_power_default, proc_sched_walt)
+allow hal_power_default proc_sched_walt:file rw_file_perms;

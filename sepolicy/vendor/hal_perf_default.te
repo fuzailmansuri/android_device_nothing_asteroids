@@ -1,4 +1,14 @@
 r_dir_file(vendor_hal_perf_default, system_server)
 r_dir_file(vendor_hal_perf_default, hal_power_default)
+
+# Bounded WALT scheduler boost. proc_sched is the /proc/sys/walt/sched_boost
+# node labelled in genfs_contexts; proc_sched_walt is the rest of the WALT sysctl
+# directory (labelled by hardware/nothing).
 rw_dir_file(vendor_hal_perf_default, proc_sched)
-allow vendor_hal_perf_default proc_sched_walt:dir search;
+r_dir_file(vendor_hal_perf_default, proc_sched_walt)
+allow vendor_hal_perf_default proc_sched_walt:file rw_file_perms;
+
+# perf2 AIDL service registration. hal_attribute_service() only covers find;
+# without "add" the perf2 HAL cannot register itself, so the Power HAL has no
+# perf service to send PiCARD hints to (VENDOR_HINT_PICARD_TOP_APP, 0x104A).
+allow vendor_hal_perf_default vendor_hal_perf2_service:service_manager add;
