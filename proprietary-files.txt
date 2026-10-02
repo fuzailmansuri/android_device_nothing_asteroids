@@ -1,14 +1,14 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from the B4.0-251229-1551 release for the Nothing Phone (3a).
+## are from the Nothing Phone 3a (C5.0-260915-2123).
 
 # ADSPRPC
 vendor/bin/adsprpcd
 vendor/bin/cdsprpcd
 vendor/bin/dspservice
+vendor/etc/init/vendor.qti.hardware.dsp-service.rc
 vendor/bin/loadalgo
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
-vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/init/vendor.qti.smp2p.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/lib/rfsa/adsp/libQnnHtpV73.so
@@ -17,6 +17,7 @@ vendor/lib/rfsa/adsp/libadsp_jpege_skel.so
 vendor/lib/rfsa/adsp/libarc_htp_driver_skel.so
 vendor/lib/rfsa/adsp/libbitml_nsp_skel.so
 vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
+vendor/lib/rfsa/adsp/libhdr_skel.so
 vendor/lib/rfsa/adsp/libhme_dsp_skel.so
 vendor/lib/rfsa/adsp/libmctfengine_skel.so
 vendor/lib/rfsa/adsp/libmlawbpostproc_dsp_skel.so
@@ -101,10 +102,15 @@ vendor/etc/acdbdata/nn_ns_models/fai__2.7.8_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1
 vendor/etc/acdbdata/nn_ns_models/fai__2.9.0_1.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__2.9.2_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__2.9.2_1.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.0__eai_3.4_enpuv4.pmd
+vendor/etc/acdbdata/nn_ns_models/fai__4.40.2_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
+vendor/etc/acdbdata/nn_ns_models/fai__4.60.1.2_2.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
+vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
+vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.2_0.0__3.0.0_0.0__3.1.1.0_0.0__3.2.0_0.0__eai_2.7_enpu_v3.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.3_0.0__3.0.0_0.0__3.1.0_0.0__3.2.0_0.0__eai_2.10_enpuv3.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.4_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.0_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.4_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
+vendor/etc/acdbdata/nn_ns_models/fai__4.80.1.5_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__8.0.2_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_3.4_enpuv4.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_1.36_enpu2.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_2.10_enpuv3.pmd
@@ -267,6 +273,9 @@ vendor/etc/vintf/manifest/qms-saidl.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.data.iwlandata.xml
 vendor/lib64/libCneAppJni.so
 vendor/lib64/libTxPwrJni.so
+vendor/lib64/libcpion.so
+vendor/lib64/libsi.so
+vendor/lib64/libtrustedapploader.so
 vendor/lib64/libWlanServiceJni.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
@@ -460,6 +469,7 @@ vendor/firmware/CAMERA_ICP.b20
 vendor/firmware/CAMERA_ICP.elf
 vendor/firmware/CAMERA_ICP.mbn
 vendor/firmware/CAMERA_ICP.mdt
+vendor/firmware/CAMERA_ICP_170.elf
 vendor/firmware/DW9785.bin
 vendor/lib64/bm4d68v02s12n52.bin
 vendor/lib64/bm4d68v02s12n53.bin
@@ -767,9 +777,9 @@ vendor/lib64/libqll10.so
 vendor/lib64/libqllengine.so
 vendor/lib64/libqsegnet.so
 vendor/lib64/libqshcamera.so
-vendor/lib64/librender_lib.so
+vendor/lib64/librender_lib.so|6b07fde39b8931ea642b91f6822d3f82bab0e00b
 vendor/lib64/libsfeShiftExtrapolation.so
-vendor/lib64/libstmobile_effect.so
+vendor/lib64/libstmobile_effect.so|bb4976d17c4fe2b916b9718546eb2c2172c6389a
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libsynx.so
 vendor/lib64/libtfestriping.so
@@ -1066,7 +1076,7 @@ system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
-system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
+system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so|ae7b9dc964cb0d3939e09d91af096b207c978830
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
 system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so
@@ -1288,6 +1298,7 @@ vendor/lib64/libq-perflog.so
 vendor/lib64/libqapesdk.so
 vendor/lib64/libqti-iopd-client.so
 vendor/lib64/libqti-iopd.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-qesdk-secure.so
@@ -1359,16 +1370,21 @@ vendor/etc/init/qmipriod.rc
 vendor/etc/seccomp_policy/qti-systemd.policy
 vendor/lib64/libidl.so
 vendor/lib64/libmdmdetect.so
+vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
+vendor/lib64/libqmi_csvt_srvc.so
 vendor/lib64/libqmi_encdec.so
+vendor/lib64/libqmi_legacy.so
+vendor/lib64/libqmiextservices.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqsocket.so
+vendor/lib64/libsmemlog.so
 vendor/lib64/libsystem_health_mon.so
 
 # QCRIL
@@ -1383,8 +1399,10 @@ product/framework/uimgbamanagerlibrary.jar
 product/framework/uimremoteclientlibrary.jar
 product/framework/uimremoteserverlibrary.jar
 product/framework/uimservicelibrary.jar
+system/etc/permissions/uimremoteclient.xml
+system/etc/permissions/uimremoteserver.xml
 system/framework/nt-telephony-interface.jar
-system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|e0d0f759b23c1cbbb26f03436b8e6093d3bb67a0
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
@@ -1546,6 +1564,10 @@ vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
 vendor/lib64/libqspm-mem-utils-vendor.so
 vendor/lib64/vendor.qti.qspmhal-V1-ndk.so
 vendor/lib64/vendor.qti.qspmhal-impl.so
+vendor/bin/hw/vendor.qti.hardware.servicetrackeraidl-service
+vendor/etc/init/vendor.qti.hardware.servicetrackeraidl-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
+vendor/lib64/hw/vendor.qti.hardware.servicetrackeraidl-impl.so
 
 # RemoteFS
 vendor/bin/rmt_storage
@@ -1567,6 +1589,7 @@ vendor/lib64/libqcbor.so
 vendor/bin/ssr_diag
 vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
+vendor/lib64/libsubsystem_control.so
 
 # Secure Element
 vendor/etc/hal_uuid_map_JPN.xml
@@ -1583,13 +1606,13 @@ vendor/etc/init/vendor.noth.hardware.sensor.sensor_extension-service.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
 vendor/etc/sensors/config/json.lst
-vendor/etc/sensors/config/milos_qsh_ble_0.json
-vendor/etc/sensors/config/qrd_hx32062secr_0.json
-vendor/etc/sensors/config/qrd_icm536xx_0.json
-vendor/etc/sensors/config/qrd_lsm6dsv_0.json
-vendor/etc/sensors/config/qrd_ltr567_0.json
-vendor/etc/sensors/config/qrd_mmc56x3x_0.json
-vendor/etc/sensors/config/qrd_och191x_0.json
+vendor/etc/sensors/config/milos_qsh_ble_0.json|2c4a507c5090427025958dc0aeee23079d4ed0f4
+vendor/etc/sensors/config/qrd_hx32062secr_0.json|9d135d41cf1ed857fc7f8a6b8e7c2b5c9cc3da64
+vendor/etc/sensors/config/qrd_icm536xx_0.json|25494b01a48a609458666f61848171f9da863393
+vendor/etc/sensors/config/qrd_lsm6dsv_0.json|155b0460d4a4a11056957ca0f13a673d3ea87e48
+vendor/etc/sensors/config/qrd_ltr567_0.json|8420e7a230f054ebffbbdacf2d5c95f68386cf76
+vendor/etc/sensors/config/qrd_mmc56x3x_0.json|b5eb7208657940a88f176e2fa375700c05cc8348
+vendor/etc/sensors/config/qrd_och191x_0.json|bff307356a097bac8b0b8af9fd8f7a060d8c6bcd
 vendor/etc/sensors/config/qrd_ois_manager.json
 vendor/etc/sensors/config/qsh_ble.json
 vendor/etc/sensors/config/sns_amd.json
@@ -1696,9 +1719,12 @@ vendor/firmware/focaltech_ts_fw_vxn.bin
 vendor/firmware/focaltech_ts_fw_vxn.bin:recovery/root/vendor/firmware/focaltech_ts_fw_vxn.bin
 
 # TrustedUI
-vendor/bin/trusteduilistener
-vendor/etc/init/trusteduilistener.rc
+vendor/bin/trusteduilistener|c09c2a44c065875ca9fa01e0eddb930d69df73d3
+vendor/etc/init/trusteduilistener.rc|1c350bd3272c728c2c28352d52d61f1ca43c2917
 vendor/lib64/libTrustedInputUtils.so
+vendor/lib64/libGPMTEEC_vendor.so
+vendor/lib64/libGPTEE_vendor.so
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # Verizon - from komodo BP2A.250805.005
 product/app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED|b46894f553b9bdcd4fd6b6832b4839b92b96870e
@@ -1715,6 +1741,8 @@ odm/etc/aac_richtap.config
 vendor/firmware/100_Haptic.bin
 vendor/firmware/101_Haptic.bin
 vendor/firmware/haptic_config.bin
+vendor/lib64/libstreamparser.so
+vendor/lib64/libstreamprocessor.so
 vendor/lib64/libaacvibrator.so
 vendor/lib64/libics_haptic.so
 
@@ -1749,7 +1777,7 @@ system_ext/lib64/libwfduibcsinkinterface.so
 system_ext/lib64/libwfduibcsrc.so
 system_ext/lib64/libwfduibcsrcinterface.so
 system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so|862439ea491b4b88c812bcc6b240076e309c0f9b
 system_ext/priv-app/WfdService/WfdService.apk
 
 # WFD
@@ -1763,6 +1791,7 @@ vendor/etc/seccomp_policy/wfdhdcphalservice.policy
 vendor/etc/seccomp_policy/wfdvndservice.policy
 vendor/etc/seccomp_policy/wifidisplayhalservice.policy
 vendor/etc/vintf/manifest/android.hardware.drm-service.xml
+vendor/lib64/liboemcrypto.so
 vendor/etc/vintf/manifest/vendor.qti.hardware.wifidisplaysession-service.xml
 vendor/etc/wfdconfig.xml
 vendor/lib64/hw/vendor.qti.hardware.wifidisplaysession@1.0-impl.so
