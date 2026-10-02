@@ -10,7 +10,9 @@ $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
+ifneq ($(wildcard $(LOCAL_PATH)/adbkey.pub),)
 PRODUCT_ADB_KEYS += $(LOCAL_PATH)/adbkey.pub
+endif
 
 PRODUCT_RO_FILE_SYSTEM ?= ext4
 

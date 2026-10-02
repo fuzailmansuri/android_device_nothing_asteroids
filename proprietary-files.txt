@@ -726,6 +726,7 @@ vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
 vendor/lib64/libchifeature2.so;DISABLE_DEPS
 vendor/lib64/libchilog.so
+vendor/lib64/libcolorful.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcommonchiutils.so
 vendor/lib64/libfastcvdsp_stub.so
@@ -1777,7 +1778,7 @@ system_ext/lib64/libwfduibcsinkinterface.so
 system_ext/lib64/libwfduibcsrc.so
 system_ext/lib64/libwfduibcsrcinterface.so
 system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so|862439ea491b4b88c812bcc6b240076e309c0f9b
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk.so
 system_ext/priv-app/WfdService/WfdService.apk
 
 # WFD
