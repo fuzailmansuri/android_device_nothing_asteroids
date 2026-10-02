@@ -4,6 +4,13 @@ genfscon proc /charger/usb_charger_en u:object_r:vendor_proc_power_supply:s0
 genfscon proc /touchpanel/TP_charger_flags   u:object_r:vendor_proc_power_supply:s0
 genfscon sysfs /class/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
 
+# Scheduler
+# WALT sysctls are registered under /proc/sys/walt (register_sysctl("walt", ...)),
+# so genfscon paths are relative to the proc mount. Label the sched_boost node
+# itself so the perf/power HALs can bound the boost; the parent directory is
+# already proc_sched_walt via hardware/nothing.
+genfscon proc /sys/walt/sched_boost u:object_r:proc_sched:s0
+
 # Display
 genfscon sysfs /panel_feature/panel_id1    u:object_r:vendor_sysfs_graphics:s0
 
