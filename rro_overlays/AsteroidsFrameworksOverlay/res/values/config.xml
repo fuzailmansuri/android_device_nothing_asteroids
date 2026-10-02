@@ -431,4 +431,23 @@
      <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
      <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
 
+    <!-- Vibrator and Haptics Configuration -->
+    <integer name="config_defaultVibrationAmplitude">255</integer>
+    <bool name="config_keyboardVibrationSettingsSupported">true</bool>
+    <bool name="config_keyboardVibrationSettingsIntensitySupported">true</bool>
+    <bool name="config_ringtoneVibrationSettingsSupported">true</bool>
+
+    <!-- Scale factors for vibration intensity: Low (0.75), Medium (0.90), High (1.0) -->
+    <string-array name="config_vibrationIntensityScaleFactors" translatable="false">
+        <item>0.75</item>
+        <item>0.90</item>
+        <item>1.0</item>
+    </string-array>
+
+    <string-array name="config_keyboardVibrationIntensityScaleFactors" translatable="false">
+        <item>0.75</item>
+        <item>0.90</item>
+        <item>1.0</item>
+    </string-array>
+
 </resources>
