@@ -1074,7 +1074,7 @@ system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.uceaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.imsdatachannel.jar
 system_ext/lib64/lib-imsvideocodec.so
-system_ext/lib64/lib-imsvt.so
+system_ext/lib64/lib-imsvt.so;DISABLE_DEPS
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so|ae7b9dc964cb0d3939e09d91af096b207c978830
