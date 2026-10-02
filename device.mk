@@ -7,12 +7,12 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
-# Keys
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
-PRODUCT_EXTRA_RECOVERY_KEYS := vendor/lineage-priv/keys/releasekey
-
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
+
+ifneq ($(wildcard $(LOCAL_PATH)/adbkey.pub),)
+PRODUCT_ADB_KEYS += $(LOCAL_PATH)/adbkey.pub
+endif
 
 PRODUCT_RO_FILE_SYSTEM ?= ext4
 
@@ -175,6 +175,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.demura-service
 
+
 # eUICC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_JPN/android.hardware.telephony.euicc.xml \
@@ -229,7 +230,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.default \
     fstab.default.vendor_ramdisk \
-    fstab.zram.2g \
     init.asteroids.hw.rc \
     init.asteroids.rc \
     init.class_main.sh \
