@@ -228,12 +228,10 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    $(DEVICE_PATH)/sepolicy/public \
-    hardware/google/pixel-sepolicy/turbo_adapter/public
+    $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy/private \
-    hardware/google/pixel-sepolicy/flipendo \
-    hardware/google/pixel-sepolicy/turbo_adapter/private
+    hardware/google/pixel-sepolicy/flipendo
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
