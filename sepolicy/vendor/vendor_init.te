@@ -1,2 +1,9 @@
 set_prop(vendor_init, vendor_qms_prop)
 set_prop(vendor_init, vendor_ssr_prop)
+
+# zram setup from init.asteroids.rc: vendor_init writes comp_algorithm on
+# the zram0 sysfs node (labelled sysfs_zram by system/sepolicy) before
+# swapon_all runs. The swapon_all builtin itself executes in the core init
+# domain (RunInSubcontext=false in builtins.cpp), so no blk_device access is
+# needed here.
+allow vendor_init sysfs_zram:file rw_file_perms;

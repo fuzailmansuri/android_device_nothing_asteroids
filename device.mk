@@ -230,6 +230,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.default \
     fstab.default.vendor_ramdisk \
+    fstab.zram \
     init.asteroids.hw.rc \
     init.asteroids.rc \
     init.class_main.sh \
