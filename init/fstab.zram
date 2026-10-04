@@ -1,0 +1,14 @@
+# zram swap.
+#
+# Single deterministic writer: swapon_all processes this file (init core
+# domain), sizes zram0 and swaps it on after vendor modules are ready
+# (see init.asteroids.rc). comp_algorithm is set from init.target.rc on
+# init, which is valid because system_dlkm (zram.ko/zsmalloc.ko) is loaded
+# during first-stage init, before second-stage init runs.
+#
+# Size: QCOM default for >=4GB targets is 50% of RAM capped at 4GiB, which
+# is 4GiB for both the 8GB and 12GB SKUs. Stock Nothing shipped 2GiB
+# (fstab.zram.2g); 4GiB matches the QCOM formula and reduces LMK churn.
+#
+#<src>               <mnt_point> <mnt_flags> <fs_mgr_flags>
+/dev/block/zram0      none        swap        defaults zramsize=4294967296

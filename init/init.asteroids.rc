@@ -32,6 +32,10 @@ on post-fs-data
 
     setprop ro.media.xml_variant.profiles "_volcano_v1_${ro.boot.pbid}"
 
+    # zram swap activation
+    write /sys/block/zram0/comp_algorithm lz4
+    swapon_all /vendor/etc/fstab.zram
+
 on early-boot
     chmod 660 /sys/devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/dev_color
     chown system system /sys/devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/dev_color
@@ -75,22 +79,18 @@ on boot
     chown system system /proc/touchpanel/TP_charger_flags
 
 on property:sys.boot_completed=1
-    # zram is sized and swapped by init.qcom.post_boot.sh:configure_zram_parameters()
-    # (50% of RAM). The former swapon_all /odm/etc/fstab.zram.2g raced with it and
-    # made the final zram size nondeterministic, so it is no longer used.
-
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-5
 
     chown system system /proc/charger/nt_otg_enable
     chmod 0664 /proc/charger/nt_otg_enable
 
+    chown system system /proc/touchpanel/fod_mode
+    chown system system /sys/panel_feature/fp_status
+
 on property:sys.touch.pocket_mode=*
     write /proc/touchpanel/pocket_mode ${sys.touch.pocket_mode}
 
-on property:vendor.all.modules.ready=1
-    chown system system /proc/touchpanel/fod_mode
-    chown system system /sys/panel_feature/fp_status
 on property:sys.boot_completed=1 && property:persist.sys.sltntc.enable=0
 	stop sltntc
 
