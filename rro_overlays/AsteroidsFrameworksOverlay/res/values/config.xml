@@ -429,4 +429,12 @@
      <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
      <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
 
+    <!-- Device key handler libraries and classes -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system_ext/priv-app/AssistKey/AssistKey.apk</item>
+    </string-array>
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>com.nothing.assistkey.KeyHandler</item>
+    </string-array>
+
 </resources>

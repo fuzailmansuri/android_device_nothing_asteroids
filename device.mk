@@ -150,8 +150,9 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     ipacm
 
-# Device Extras
+# Device Extras & Assist Key
 PRODUCT_PACKAGES += \
+    AssistKey \
     DeviceExtras
 
 # Display
