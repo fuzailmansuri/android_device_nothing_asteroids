@@ -217,6 +217,13 @@ PRODUCT_PACKAGES += \
     ParanoidGlyphPhone3a \
     GlyphAdapter
 
+# Launcher -1 screen, when the tree carries Launcher3Feed and its Launcher3
+ifneq ($(wildcard packages/apps/Launcher3Feed/Android.bp),)
+PRODUCT_PACKAGES += \
+    AsteroidsLauncherOverlay \
+    Launcher3FeedGlance
+endif
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
