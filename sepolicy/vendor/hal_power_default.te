@@ -1,3 +1,18 @@
 # Allow libperfmgr to write CPU frequency scaling sysfs nodes
 allow hal_power_default sysfs_devices_system_cpu:file { open read write getattr };
 allow hal_power_default sysfs_devices_system_cpu:dir { open read search };
+
+# GPU min frequency
+allow hal_power_default vendor_sysfs_kgsl:dir search;
+allow hal_power_default vendor_sysfs_kgsl:file rw_file_perms;
+
+# WALT sched_boost and busy hysteresis
+allow hal_power_default { proc_sched proc_sched_walt }:dir search;
+allow hal_power_default { proc_sched proc_sched_walt }:file rw_file_perms;
+
+# CAMERA_LAUNCH holds /dev/cpu_dma_latency
+allow hal_power_default latency_device:chr_file rw_file_perms;
+
+# ADPF sets uclamp on hint session threads
+allow hal_power_default self:capability sys_nice;
+allow hal_power_default { appdomain surfaceflinger system_server }:process setsched;
