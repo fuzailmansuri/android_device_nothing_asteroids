@@ -4,9 +4,10 @@
             "Name": " ClassKgslKgsl3d0DevfreqMinFreq",
             "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
             "Values": [
+                "510000000",
                 "264000000"
             ],
-            "DefaultIndex": 0,
+            "DefaultIndex": 1,
             "ResetOnInit": true
         },
         {
@@ -217,23 +218,58 @@
             "HoldFd": true
         },
         {
-            "Name": "LittleClusterMinFreq",
+            "Name": "CPULittleClusterMinFreq",
             "Path": "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq",
             "Values": [
-              "441600",
-              "595200",
-              "787200",
-              "902400",
-              "1017600",
-              "1113600",
-              "1228800",
-              "1344000",
-              "1497600",
-              "1593600",
-              "1708800",
-              "1804800"
+                "1804800",
+                "1344000",
+                "595200"
             ],
-            "DefaultIndex": 0,
+            "DefaultIndex": 2,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigClusterMinFreq",
+            "Path": "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq",
+            "Values": [
+                "2400000",
+                "1824000",
+                "1401600",
+                "633600"
+            ],
+            "DefaultIndex": 3,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUPrimeClusterMinFreq",
+            "Path": "/sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq",
+            "Values": [
+                "2496000",
+                "1651200",
+                "633600"
+            ],
+            "DefaultIndex": 2,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "WaltSchedBoost",
+            "Path": "/proc/sys/walt/sched_boost",
+            "Values": [
+                "1",
+                "2",
+                "0"
+            ],
+            "DefaultIndex": 2,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "WaltBusyHystCpus",
+            "Path": "/proc/sys/walt/sched_busy_hysteresis_enable_cpus",
+            "Values": [
+                "240",
+                "0"
+            ],
+            "DefaultIndex": 1,
             "ResetOnInit": true
         }
     ],
@@ -261,12 +297,6 @@
             "Node": " DevicesSystemCpuCpu0CoreCtlMinCpus",
             "Value": "3",
             "Duration": 0
-        },
-        {
-            "PowerHint": "INTERACTION",
-            "Node": "LittleClusterMinFreq",
-            "Value": "1497600",
-            "Duration": 300
         },
         {
             "PowerHint": "LAUNCH",
@@ -471,6 +501,117 @@
             "Node": " CpuDmaLatency",
             "Value": "1",
             "Duration": 1000
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPULittleClusterMinFreq",
+            "Value": "1344000",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUBigClusterMinFreq",
+            "Value": "1824000",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUPrimeClusterMinFreq",
+            "Value": "1651200",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "WaltSchedBoost",
+            "Value": "2",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "WaltBusyHystCpus",
+            "Value": "240",
+            "Duration": 0
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPULittleClusterMinFreq",
+            "Value": "1344000",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUBigClusterMinFreq",
+            "Value": "1401600",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUPrimeClusterMinFreq",
+            "Value": "1651200",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "WaltSchedBoost",
+            "Value": "1",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "WaltBusyHystCpus",
+            "Value": "240",
+            "Duration": 2000
+        },
+        {
+            "PowerHint": "EXPENSIVE_RENDERING",
+            "Node": " ClassKgslKgsl3d0DevfreqMinFreq",
+            "Value": "510000000",
+            "Duration": 0
+        }
+    ],
+    "AdpfConfig": [
+        {
+            "Name": "ADPF_DEFAULT",
+            "PID_On": true,
+            "PID_Po": 5.0,
+            "PID_Pu": 3.0,
+            "PID_I": 0.001,
+            "PID_I_Init": 200,
+            "PID_I_High": 512,
+            "PID_I_Low": -120,
+            "PID_Do": 500.0,
+            "PID_Du": 0.0,
+            "SamplingWindow_P": 1,
+            "SamplingWindow_I": 0,
+            "SamplingWindow_D": 1,
+            "UclampMin_On": true,
+            "UclampMin_Init": 162,
+            "UclampMin_LoadUp": 200,
+            "UclampMin_LoadReset": 300,
+            "UclampMin_High": 480,
+            "UclampMin_Low": 0,
+            "ReportingRateLimitNs": 166666660,
+            "TargetTimeFactor": 1.0,
+            "StaleTimeFactor": 10.0,
+            "HeuristicBoost_On": true,
+            "HBoostModerateJankThreshold": 4,
+            "HBoostOffMaxAvgDurRatio": 4.0,
+            "HBoostSevereJankPidPu": 0.5,
+            "HBoostSevereJankThreshold": 2,
+            "HBoostUclampMinCeilingRange": [
+                480,
+                800
+            ],
+            "HBoostUclampMinFloorRange": [
+                200,
+                400
+            ],
+            "JankCheckTimeFactor": 1.2,
+            "LowFrameRateThreshold": 25,
+            "MaxRecordsNum": 50,
+            "HeuristicRampup": true,
+            "DefaultRampupMult": 1,
+            "HighRampupMult": 4
         }
     ]
 }
