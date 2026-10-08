@@ -1,3 +1,7 @@
 r_dir_file(hal_light_default, mnt_vendor_file)
 
 allow hal_light_default led_device:chr_file rw_file_perms;
+
+# Glyph LEDs
+allow hal_light_default vendor_sysfs_glyph:dir search;
+allow hal_light_default vendor_sysfs_glyph:file rw_file_perms;
