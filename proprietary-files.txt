@@ -904,7 +904,6 @@ vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 # Display
 vendor/bin/feature_enabler_client
 vendor/bin/hw/vendor.qti.hardware.display.color-service
-vendor/bin/hw/vendor.qti.hardware.lights.service
 vendor/bin/ppd
 vendor/bin/qdcmss
 vendor/etc/clstc_config_library.xml
@@ -917,9 +916,7 @@ vendor/etc/display/thermallevel_to_fps.xml
 vendor/etc/init/feature_enabler_client.rc
 vendor/etc/init/qdcmss.rc
 vendor/etc/init/vendor.qti.hardware.display.color-service.rc
-vendor/etc/init/vendor.qti.hardware.lights.service.rc
 vendor/etc/snapdragon_color_libs_config.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.lights.service.xml
 vendor/lib64/libbacklight-calib.so
 vendor/lib64/libclstc_algorithm_adapter.so
 vendor/lib64/libclstc_gcp_adapter.so
@@ -952,7 +949,6 @@ vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/libtestutils.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libvmfilexfer.so
-vendor/lib64/vendor.hardware.light-V1-ndk_platform.so
 
 # eUICC
 product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED

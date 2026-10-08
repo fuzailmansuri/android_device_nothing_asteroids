@@ -88,6 +88,16 @@ on property:sys.boot_completed=1
     chown system system /proc/touchpanel/fod_mode
     chown system system /sys/panel_feature/fp_status
 
+# Glyph handset mode and sub brightness, previously in the QTI lights service rc
+on property:sys.glyph.handset_mode=1
+    write /sys/class/leds/aw20036_led/handset_mode 1
+
+on property:sys.glyph.handset_mode=0
+    write /sys/class/leds/aw20036_led/handset_mode 0
+
+on property:sys.glyph.brightness.sub_brightness=*
+    setprop vendor.glyph.brightness.sub_brightness ${sys.glyph.brightness.sub_brightness}
+
 on property:sys.touch.pocket_mode=*
     write /proc/touchpanel/pocket_mode ${sys.touch.pocket_mode}
 
