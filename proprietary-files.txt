@@ -62,6 +62,7 @@ vendor/lib64/libOpenCL_adreno.so
 vendor/lib64/libadreno_app_profiles.so
 vendor/lib64/libadreno_compiler_cl.so
 vendor/lib64/libadreno_utils.so
+vendor/lib64/libgpudataproducer.so
 vendor/lib64/libgsl.so
 vendor/lib64/libkcl.so
 vendor/lib64/libkernelmanager.so
@@ -192,6 +193,7 @@ vendor/etc/init.qti.fm.sh
 vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/vintf/manifest/bluetooth_audio.xml:vendor/etc/vintf/manifest/bluetooth_audio_qti.xml
+vendor/etc/vintf/manifest/bttpi-saidl.xml
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -458,6 +460,7 @@ vendor/firmware/CAMERA_ICP.b18
 vendor/firmware/CAMERA_ICP.b19
 vendor/firmware/CAMERA_ICP.b20
 vendor/firmware/CAMERA_ICP.elf
+vendor/firmware/CAMERA_ICP_170.elf
 vendor/firmware/CAMERA_ICP.mbn
 vendor/firmware/CAMERA_ICP.mdt
 vendor/firmware/DW9785.bin
@@ -897,7 +900,11 @@ vendor/bin/hw/vendor.qti.hardware.lights.service
 vendor/bin/ppd
 vendor/bin/qdcmss
 vendor/etc/clstc_config_library.xml
+vendor/etc/display/DPU1010.xml
 vendor/etc/display/DPU1020.xml
+vendor/etc/display/DPU10__.xml
+vendor/etc/display/DPU870.xml
+vendor/etc/display/DPU9__.xml
 vendor/etc/display/advanced_sf_offsets.xml
 vendor/etc/display/perf_hint_threshold.xml
 vendor/etc/display/qdcm_calib_data_rm69220_amoled_vid_mode_dsi_BOE_panel_with_DSC.json
@@ -918,6 +925,7 @@ vendor/lib64/libdigital-dimming.so
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
+vendor/lib64/libdpp_manager.so
 vendor/lib64/libdpps.so
 vendor/lib64/libfeutils.so
 vendor/lib64/libgame_enhance.so
@@ -942,6 +950,7 @@ vendor/lib64/libtestutils.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libvmfilexfer.so
 vendor/lib64/vendor.hardware.light-V1-ndk_platform.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # eUICC
 product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
@@ -1133,6 +1142,11 @@ vendor/lib64/libqtiidentitycredential.so
 vendor/bin/early_eth.sh
 vendor/bin/init.kernel.early_boot-memory.sh
 vendor/bin/init.kernel.post_boot-memory.sh
+vendor/bin/init.kernel.post_boot-volcano_2_2_1.sh
+vendor/bin/init.kernel.post_boot-volcano_3_2_1.sh
+vendor/bin/init.kernel.post_boot-volcano_3_3_1.sh
+vendor/bin/init.kernel.post_boot-volcano_4_2_1.sh
+vendor/bin/init.kernel.post_boot-volcano_4_3_0.sh
 vendor/bin/init.kernel.post_boot-volcano_default_4_3_1.sh
 vendor/bin/init.kernel.post_boot-volcano.sh
 vendor/bin/init.kernel.post_boot.sh
@@ -1199,6 +1213,7 @@ vendor/bin/hw/pasrknob
 vendor/bin/hw/vendor.qti.psiclient@1.0-service
 vendor/etc/init/vendor.qti.pasrknob@1.0-service.rc
 vendor/etc/init/vendor.qti.psiclient@1.0-service.rc
+vendor/lib64/libcpion.so
 vendor/lib64/libpasrutils.so
 vendor/lib64/libvmmem.so
 vendor/lib64/vendor.qti.memory.pasrmanager-V1-ndk.so
@@ -1270,6 +1285,7 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
 vendor/lib64/libadaptlaunch.so
 vendor/lib64/libapengine.so
 vendor/lib64/libappclassifier.so
+vendor/lib64/libfastcrc.so
 vendor/lib64/libgamepoweroptfeature.so
 vendor/lib64/liblearningmodule.so
 vendor/lib64/liblightninglaunches.so
@@ -1296,6 +1312,7 @@ vendor/lib64/libqti-qesdk-secure.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libsilkyscrolls.so
 vendor/lib64/libskewknob.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
 vendor/lib64/vendor.qti.hardware.limits@1.0.so
 vendor/lib64/vendor.qti.hardware.limits@1.1.so
@@ -1383,6 +1400,8 @@ product/framework/uimgbamanagerlibrary.jar
 product/framework/uimremoteclientlibrary.jar
 product/framework/uimremoteserverlibrary.jar
 product/framework/uimservicelibrary.jar
+system/etc/permissions/uimremoteclient.xml
+system/etc/permissions/uimremoteserver.xml
 system/framework/nt-telephony-interface.jar
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/permissions/qcrilhook.xml
@@ -1532,6 +1551,7 @@ vendor/lib64/librpmb.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # QSPA
 system_ext/etc/init/qspa_system.rc
@@ -1669,6 +1689,12 @@ vendor/lib64/libsnsutils.so
 vendor/lib64/sensors.qsh.so
 vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk_platform.so
 
+# ServiceTracker
+vendor/bin/hw/vendor.qti.hardware.servicetrackeraidl-service
+vendor/etc/init/vendor.qti.hardware.servicetrackeraidl-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
+vendor/lib64/hw/vendor.qti.hardware.servicetrackeraidl-impl.so
+
 # TFTP
 vendor/bin/tftp_server
 vendor/etc/init/vendor.qti.tftp.rc
@@ -1719,8 +1745,10 @@ vendor/lib64/libaacvibrator.so
 vendor/lib64/libics_haptic.so
 
 # Video
+vendor/lib64/liblqe.so
 vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvideotxr.so
+vendor/lib64/libvideoutils.so
 
 # WFD
 system/framework/WfdCommon.jar;BOOT_JAR
