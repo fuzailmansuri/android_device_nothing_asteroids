@@ -262,6 +262,10 @@ PRODUCT_PACKAGES += \
 
 
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.nothing
+
 # LiveDisplay
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
