@@ -5,6 +5,7 @@
 -->
 <PerfConfigsStore>
     <PerfConfigs>
+        <Prop Name="vendor.perf.expensive_rendering" Value="0" />
         <Prop Name="vendor.debug.enable.lm" Value="false" />
         <Prop Name="vendor.debug.enable.memperfd" Value="false" />
         <Prop Name="ro.vendor.perf.lal" Value="false" />
@@ -14,6 +15,11 @@
         <Prop Name="ro.vendor.perf.ss" Value="false" />
         <Prop Name="ro.vendor.perf.ssv2" Value="false" />
         <Prop Name="ro.vendor.perf.dplh" Value="false" />
+        <Prop Name="vendor.perf.gestureflingboost.enable" Value="false" />
+        <Prop Name="ro.vendor.perf.qape" Value="true" Target="volcano" />
+        <Prop Name="ro.vendor.perf.qape.boost_duration" Value="10" />
+        <Prop Name="ro.vendor.perf.qape.max_boost_count" Value="3" />
+        <Prop Name="ro.vendor.perf.qape.max_pipeline_number" Value="4" />
         <Prop Name="ro.vendor.perf.attach.hint.ll" Value="false" />
         <Prop Name="vendor.perf.fps_switch_hyst_time_secs" Value="6" />
     </PerfConfigs>
