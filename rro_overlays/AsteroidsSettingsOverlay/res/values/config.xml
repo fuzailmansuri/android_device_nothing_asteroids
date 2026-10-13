@@ -25,4 +25,6 @@
     <!-- Uses the legacy UDFPS enrollment UI with side text instead of a footer button. -->
     <bool name="config_useLegacyUdfpsUi" translatable="false">true</bool>
 
+    <!-- Vibration intensity sliders with low, medium and high levels -->
+    <integer name="config_vibration_supported_intensity_levels">3</integer>
 </resources>
