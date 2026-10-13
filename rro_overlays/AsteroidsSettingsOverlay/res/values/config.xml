@@ -27,4 +27,6 @@
 
     <!-- The radius of the enrollment progress bar, in DP. -->
     <integer name="config_udfpsEnrollProgressBar" translatable="false">92</integer>
+    <!-- Vibration intensity sliders with low, medium and high levels -->
+    <integer name="config_vibration_supported_intensity_levels">3</integer>
 </resources>
