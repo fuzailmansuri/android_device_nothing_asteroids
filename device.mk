@@ -150,10 +150,11 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     ipacm
 
-# Device Extras & Assist Key
+# Device Extras, Assist Key & Doze
 PRODUCT_PACKAGES += \
     AssistKey \
-    DeviceExtras
+    DeviceExtras \
+    NothingDoze
 
 # Display
 $(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
