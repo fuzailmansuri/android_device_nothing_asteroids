@@ -18,16 +18,6 @@ audio.offload.video=true
 ro.af.client_heap_size_kbyte=7168
 ro.audio.flinger_standbytime_ms=2000
 vendor.audio.adm.buffering.ms=2
-vendor.audio.feature.a2dp_offload.enable=true
-vendor.audio.feature.afe_proxy.enable=true
-vendor.audio.feature.battery_listener.enable=true
-vendor.audio.feature.hfp.enable=true
-vendor.audio.feature.kpi_optimize.enable=true
-vendor.audio.offload.buffer.size.kb=256
-vendor.audio.offload.playspeed=true
-vendor.audio.ull_record_period_multiplier=2
-vendor.audio.volume.headset.gain.depcal=true
-vendor.audio_hal.period_size=192
 
 # Bluetooth
 bluetooth.a2dp.source.lhdcv5_priority.config=-1
@@ -42,7 +32,6 @@ bluetooth.profile.mcp.server.enabled=true
 bluetooth.profile.vcp.controller.enabled=true
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 persist.vendor.bluetooth.modem_nv_support=true
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
@@ -57,26 +46,14 @@ ro.camera.enableCamera1MaxZsl=1
 ro.camera.disableHeicUltraHDR=true
 
 # Display 
-vendor.display.comp_mask=0
 vendor.display.disable_3d_adaptive_tm=1
 vendor.display.disable_cwb_idle_fallback=1
-vendor.display.disable_dynamic_fps=1
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
-vendor.display.disable_hw_recovery_dump=1
-vendor.display.disable_offline_rotator=1
-vendor.display.disable_scaler=0
 vendor.display.disable_sdr_dimming=0
-vendor.display.disable_sdr_histogram=1
 vendor.display.disable_stc_dimming=1
-vendor.display.enable_async_vds_creation=1
-vendor.display.enable_dpps_dynamic_fps=1
 vendor.display.enable_hdr10_gpu_target=1
-vendor.display.enable_optimize_refresh=0
-vendor.display.enable_rounded_corner=1
-vendor.display.vds_allow_hwc=1
 vendor.gralloc.disable_ubwc=0
-vendor.gralloc.enable_logs=0
 
 # DPM
 persist.vendor.dpm.vndr.feature=11
@@ -96,14 +73,12 @@ ro.vendor.fingerprint.sensor_location=540|2176|92
 # Graphics
 debug.angle.feature_overrides_enabled=preferLinearFilterForYUV:mapUnspecifiedColorSpaceToPassThrough
 debug.graphics.game_default_frame_rate.disabled=0
-debug.hwui.target_cpu_time_percent=70
-debug.hwui.use_hint_manager=true
 debug.sf.auto_latch_unsignaled=1
+debug.sf.latch_unsignaled=1
 debug.sf.early.app.duration=13666666
 debug.sf.early.sf.duration=10500000
 debug.sf.earlyGl.app.duration=13666666
 debug.sf.earlyGl.sf.duration=10500000
-debug.sf.enable_adpf_cpu_hint=true
 debug.sf.enable_gl_backpressure=1
 debug.sf.late.app.duration=13666666
 debug.sf.late.sf.duration=10500000
@@ -146,7 +121,6 @@ vendor.qc2audio.suspend.enabled=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-vendor.perf.framepacing.enable=1
 vendor.pasr.activemode.enabled=true
 
 # RIL
