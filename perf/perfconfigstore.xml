@@ -5,9 +5,7 @@
 -->
 <PerfConfigsStore>
     <PerfConfigs>
-        <!-- SurfaceFlinger requests this mode for blur and color conversion.
-             The matching 0x10A5 hint is defined in perf/powerhint.xml. -->
-        <Prop Name="vendor.perf.expensive_rendering" Value="1" />
+        <Prop Name="vendor.perf.expensive_rendering" Value="0" />
         <Prop Name="vendor.debug.enable.lm" Value="false" />
         <Prop Name="vendor.debug.enable.memperfd" Value="false" />
         <Prop Name="ro.vendor.perf.lal" Value="false" />
@@ -17,9 +15,7 @@
         <Prop Name="ro.vendor.perf.ss" Value="false" />
         <Prop Name="ro.vendor.perf.ssv2" Value="false" />
         <Prop Name="ro.vendor.perf.dplh" Value="false" />
-        <!-- Retain the vendor gesture/fling boost used for responsive scrolling. -->
-        <Prop Name="vendor.perf.gestureflingboost.enable" Value="true" />
-        <!-- ADPF's QTI Power HAL sends PICARD_TOP_APP (0x104A) on session init. -->
+        <Prop Name="vendor.perf.gestureflingboost.enable" Value="false" />
         <Prop Name="ro.vendor.perf.qape" Value="true" Target="volcano" />
         <Prop Name="ro.vendor.perf.qape.boost_duration" Value="10" />
         <Prop Name="ro.vendor.perf.qape.max_boost_count" Value="3" />
