@@ -4,9 +4,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_asteroids.mk \
-    $(LOCAL_DIR)/yaap_asteroids.mk \
-    $(LOCAL_DIR)/custom_asteroids.mk
+    $(LOCAL_DIR)/lineage_asteroids.mk
 
 COMMON_LUNCH_CHOICES := \
     lineage_asteroids-cp2a-user \
