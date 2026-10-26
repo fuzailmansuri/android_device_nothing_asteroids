@@ -136,7 +136,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
-    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
+    vendor/nothing/asteroids/proprietary/odm/overlayfs_origin/base/etc/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt \
+    vendor/nothing/asteroids/proprietary/odm/overlayfs_origin/base/etc/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_ODM)/etc/camera/camxoverridesettings.txt
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.config-V2-ndk.vendor
@@ -261,10 +263,6 @@ PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
 
 
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.nothing
 
 # LiveDisplay
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
@@ -532,6 +530,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
+
+# Stealth Keybox
+ifneq ($(wildcard $(LOCAL_PATH)/keybox.xml),)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keybox.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/security/keybox.xml
+else ifneq ($(wildcard vendor/lineage-priv/keys/keybox.xml),)
+PRODUCT_COPY_FILES += \
+    vendor/lineage-priv/keys/keybox.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/security/keybox.xml
+endif
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \

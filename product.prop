@@ -23,7 +23,7 @@ persist.bluetooth.a2dp_offload.disabled=false
 ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
-ro.camerax.extensions.enabled=true
+ro.camerax.extensions.enabled=false
 
 # eUICC
 masterclear.allow_retain_esim_profiles_after_fdr=true
