@@ -372,12 +372,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig_qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/sysconfig_qti.xml \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
-
-$(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/gesture_mode)
-
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
