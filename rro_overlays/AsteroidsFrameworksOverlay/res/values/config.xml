@@ -430,7 +430,7 @@
 
     <!-- Whether low power standby is supported by the device. -->
     <bool name="config_lowPowerStandbySupported">true</bool>
-    <bool name="config_lowPowerStandbyEnabledByDefault">true</bool>
+    <bool name="config_lowPowerStandbyEnabledByDefault">false</bool>
 
     <!-- Flag indicating whether the surface flinger is inefficient at performing a blur. -->
     <bool name="config_sf_slowBlur">false</bool>
