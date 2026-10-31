@@ -5,5 +5,7 @@ rw_dir_file(vendor_hal_perf_default, proc_sched)
 r_dir_file(vendor_hal_perf_default, proc_sched_walt)
 allow vendor_hal_perf_default proc_sched_walt:file rw_file_perms;
 
+dontaudit vendor_hal_perf_default self:capability net_admin;
+
 # Perf2 service
 allow vendor_hal_perf_default vendor_hal_perf2_service:service_manager { add find };
