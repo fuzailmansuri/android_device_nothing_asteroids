@@ -80,9 +80,6 @@ on boot
 on property:sys.boot_completed=1
     swapon_all /odm/etc/fstab.zram.2g
 
-    write /dev/cpuset/background/cpus 0-2
-    write /dev/cpuset/system-background/cpus 0-5
-
     chown system system /proc/charger/nt_otg_enable
     chmod 0664 /proc/charger/nt_otg_enable
 
