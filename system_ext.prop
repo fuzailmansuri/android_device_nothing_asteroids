@@ -36,3 +36,6 @@ ro.build.nothing.feature.diff.product.AsteroidsProEEA=0x108000000000000000000000
 ro.build.nothing.feature.diff.product.AsteroidsProIND=0x10000000000000000000000L
 ro.build.nothing.feature.diff.product.AsteroidsProTUR=0x20100000000000000000000000L
 ro.build.nothing.feature.diff.product.AsteroidsTUR=0x20000000000000000000000000L
+
+# Thermal
+persist.sys.sltntc.enable=1
