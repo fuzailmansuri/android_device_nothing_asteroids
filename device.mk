@@ -369,6 +369,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/default-permissions-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/default-permissions/default-permissions-nothing.xml \
     $(LOCAL_PATH)/configs/hidden-api-whitelist-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/hidden-api-whitelist-nothing.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-nothing.xml \
+    $(LOCAL_PATH)/configs/sysconfig_qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/sysconfig_qti.xml \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
 
 # Power

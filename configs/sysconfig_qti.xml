@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- Allow WorkloadClassifier to start its service from PACKAGE_ADDED while in background. -->
+    <allow-in-power-save package="com.qualcomm.qti.workloadclassifier" />
+</config>
