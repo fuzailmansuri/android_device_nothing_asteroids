@@ -268,25 +268,6 @@
     <!-- Limit for the number of face templates per user -->
     <integer name="config_faceMaxTemplatesPerUser">2</integer>
 
-    <!-- Default color temperature, in Kelvin, to tint the screen when Night display is
-         activated. -->
-    <integer name="config_nightDisplayColorTemperatureDefault">4130</integer>
-
-    <!-- Maximum color temperature, in Kelvin, supported by Night display. -->
-    <integer name="config_nightDisplayColorTemperatureMax">5000</integer>
-
-    <!-- Minimum color temperature, in Kelvin, supported by Night display. -->
-    <integer name="config_nightDisplayColorTemperatureMin">4000</integer>
-
-    <!-- Default strength, in percentage, of bright color reduction when activated. -->
-    <integer name="config_reduceBrightColorsStrengthDefault">25</integer>
-
-    <!-- Maximum strength, in percentage, supported by bright color reduction. -->
-    <integer name="config_reduceBrightColorsStrengthMax">60</integer>
-
-    <!-- Minimum strength, in percentage, supported by bright color reduction. -->
-    <integer name="config_reduceBrightColorsStrengthMin">25</integer>
-
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
     <integer name="config_shutdownBatteryTemperature">600</integer>
 
