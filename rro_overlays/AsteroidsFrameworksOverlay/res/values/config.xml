@@ -85,6 +85,15 @@
         <item>0</item>
     </integer-array>
 
+    <!-- The panel calibration exposes vendor render intent 260 only in the
+         sRGB color mode, so keep composition in sRGB (7) while it is active. -->
+    <integer-array name="config_displayCompositionColorModes">
+        <item>260</item>
+    </integer-array>
+    <integer-array name="config_displayCompositionColorSpaces">
+        <item>7</item>
+    </integer-array>
+
     <!-- Messages that should not be shown to the user during face authentication, on keyguard.
          This includes both lockscreen and bouncer. This should be used to hide messages that may be
          too chatty or messages that the user can't do much about. Entries are defined in
