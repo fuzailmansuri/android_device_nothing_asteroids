@@ -159,6 +159,10 @@ PRODUCT_PACKAGES += \
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Memory
+PRODUCT_PACKAGES += \
+    libvmmem
+
 # Data
 PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/sm8650/data-ipa-cfg-mgr

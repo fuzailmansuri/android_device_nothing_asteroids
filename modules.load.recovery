@@ -107,7 +107,6 @@ msm_qmp.ko
 msm_sharedmem.ko
 msm_show_epoch.ko
 msm_show_resume_irq.ko
-msm_sysstats.ko
 nt_display_notifier.ko
 nvmem_qcom-spmi-sdam.ko
 nvmem_qfprom.ko
