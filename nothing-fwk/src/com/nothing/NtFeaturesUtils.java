@@ -13,6 +13,18 @@ import java.util.BitSet;
 
 public class NtFeaturesUtils {
 
+    // Read by name through reflection in Nothing Camera
+    public static final int NTF_QCOM = 59;
+    public static final int NTF_MTK = 60;
+    public static final int NTF_PONG = 62;
+    public static final int NTF_PACMAN = 63;
+    public static final int NTF_TETRIS = 64;
+    public static final int NTF_ASTEROIDS = 80;
+    public static final int NTF_ASTEROIDS_PLUS = 86;
+    public static final int NTF_JPN = 89;
+    public static final int NTF_DRAGONITE = 110;
+    public static final int NTF_BACKGROUND_RES_LIMIT = 115;
+
     private static final int MAX_FEATURES = 160;
 
     private static final BitSet sFeatures = new BitSet(MAX_FEATURES);
@@ -20,8 +32,14 @@ public class NtFeaturesUtils {
     static {
         final String fullProp = getFeatureProp("base");
         final String productDiffProp = getFeatureProp("diff.product." + Build.PRODUCT);
-        final String deviceDiffProp = getFeatureProp("diff.device." + Build.DEVICE);
-        final String plusDiffProp = getFeatureProp("diff.plus." + Build.DEVICE);
+        String deviceDiffProp = getFeatureProp("diff.device." + Build.DEVICE);
+        if ("0".equals(deviceDiffProp)) {
+            deviceDiffProp = getFeatureProp("diff.device.Asteroids");
+        }
+        String plusDiffProp = getFeatureProp("diff.plus." + Build.DEVICE);
+        if ("0".equals(plusDiffProp)) {
+            plusDiffProp = getFeatureProp("diff.plus.Asteroids");
+        }
         final String cmfDiffProp = getFeatureProp("diff.os.cmf");
         final String configCustomProp = SystemProperties.get("persist.sys.config.custom", "0");
         final String customProp = SystemProperties.get("persist.custom", "0");
