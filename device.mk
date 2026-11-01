@@ -125,7 +125,11 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti.recovery
 
 # Camera
-$(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
+$(call inherit-product-if-exists, vendor/nothing/camera/nothing-camera.mk)
+
+# Glyph lights for Nothing Camera
+PRODUCT_PACKAGES += \
+    libglyph_lights_shim
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \

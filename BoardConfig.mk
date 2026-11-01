@@ -246,7 +246,7 @@ DEVICE_MANIFEST_SKUS += volcano
 DEVICE_MANIFEST_VOLCANO_FILES += $(DEVICE_PATH)/vintf/manifest_volcano.xml
 
 # Camera
-include vendor/nothing/camera/BoardConfigCamera.mk
+-include vendor/nothing/camera/BoardConfigCamera.mk
 
 # Wi-Fi
 BOARD_WLAN_DEVICE := qcwcn
