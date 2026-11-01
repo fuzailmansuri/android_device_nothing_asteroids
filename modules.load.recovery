@@ -137,7 +137,6 @@ msm_qmp.ko
 msm_sharedmem.ko
 msm_show_epoch.ko
 msm_show_resume_irq.ko
-msm_sysstats.ko
 nb7vpq904m.ko
 nothing_bootloader_log.ko
 nothing_check_parts.ko
