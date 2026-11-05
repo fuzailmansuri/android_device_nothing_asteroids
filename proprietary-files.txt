@@ -999,38 +999,40 @@ vendor/lib64/vendor.qti.gnss-service.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
 
 # Graphics (Adreno)
+# Userspace/compiler/KBC pins: TheMuppets FP6 e78a9529617af8094749acdf9e55bca2550fcdd5 (V@0800.53).
+# Retain Nothing-signed ZAP and the existing matching GMU/SQE firmware.
 vendor/bin/init.qti.graphics.sh
 vendor/etc/init/init.qti.graphics.rc
 vendor/firmware/gen80300_gmu.bin
 vendor/firmware/gen80300_sqe.fw
 vendor/firmware/gen80300_zap.mbn
 vendor/gpu/kbc/sequence_manifest.bin
-vendor/gpu/kbc/unified_kbcs_32.bin
-vendor/gpu/kbc/unified_kbcs_64.bin
+vendor/gpu/kbc/unified_kbcs_32.bin|eb4bc7b52928818b5826912a70c50d5b7f0eb2a9
+vendor/gpu/kbc/unified_kbcs_64.bin|1c7735d723b939b78828d940685ae7c1089c554f
 vendor/gpu/kbc/unified_ksqs.bin
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
-vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
+vendor/lib64/egl/eglSubDriverAndroid.so|f45d46376306a938796808c1ea7e1fab2abeeb57
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so|4ab6e6877fc156d4ea28833b5126874c3722f268
+vendor/lib64/egl/libGLESv1_CM_adreno.so|d61589f4c251c6d45649fd05c916a69680b43e06
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|1bec64d0ccf8faeac2a7af54d93a01a2b42f42f9
+vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so|8de6f39fd04f6c58adae7c8036a89516bb307dd2
 vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/libCB.so
+vendor/lib64/egl/libq3dtools_esx.so|7e5800be237f507235ef1e4e78b43292ae94bc0e
+vendor/lib64/libCB.so|7bbed0facd7f9ba6442de71b751b71ed3e994131
 vendor/lib64/libOpenCL.so
 vendor/lib64/libOpenCL_adreno.so
-vendor/lib64/libadreno_app_profiles.so
-vendor/lib64/libadreno_compiler_cl.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libgpudataproducer.so
-vendor/lib64/libgsl.so
-vendor/lib64/libkcl.so
-vendor/lib64/libkernelmanager.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libllvm-qgl.so
+vendor/lib64/libadreno_app_profiles.so|4a0e70708ea0974b4786601347407dafca0aafd7
+vendor/lib64/libadreno_compiler_cl.so|b445d6cddb1643ee51d5db5b612e11ef72f8c73d
+vendor/lib64/libadreno_utils.so|0f9a0532b9955cbd9f64073bd2cffda391ad81c1
+vendor/lib64/libgpudataproducer.so|edc7deffb638b81b470b86bd07261ae003a0bf11
+vendor/lib64/libgsl.so|5570f455e8b3ef443933c80097e4b5366d4ff31a
+vendor/lib64/libkcl.so|e43177c0c931bf30a5d474462880a94b7494d77a
+vendor/lib64/libkernelmanager.so|3bca2310376063b2e4c88fd3ceece9daeb696bce
+vendor/lib64/libllvm-glnext.so|843ee46e8aec06b7cd58165507c44a0988883301
+vendor/lib64/libllvm-qcom.so|3d369966743011eeb94881d9c99b39a4c7a0c236
+vendor/lib64/libllvm-qgl.so|ab4b66e1d44eb10c2c4954bec21f44615ece9899
 
 # Graphics (Vulkan)
-vendor/lib64/hw/vulkan.adreno.so
+vendor/lib64/hw/vulkan.adreno.so|faabaca69c9a013a7aec4f61b6dfee7db379f486
 
 # HDCP
 vendor/bin/hdcp1prov
