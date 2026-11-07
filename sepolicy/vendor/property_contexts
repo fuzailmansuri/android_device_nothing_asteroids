@@ -2,6 +2,9 @@
 persist.vendor.overlay.fp_model     u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.overlay.fp_vendor    u:object_r:vendor_fingerprint_prop:s0
 
+# Keymint
+vendor.keymint.retry_timer          u:object_r:vendor_keymint_retry_timer_prop:s0
+
 # NFC
 persist.vendor.nfc.config_file_name    u:object_r:vendor_persist_nfc_prop:s0
 persist.vendor.nfc_model               u:object_r:vendor_nfc_prop:s0

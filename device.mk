@@ -127,6 +127,9 @@ PRODUCT_PACKAGES += \
 # Camera
 $(call inherit-product-if-exists, vendor/nothing/camera/nothing-camera.mk)
 
+# Dolby
+$(call inherit-product-if-exists, hardware/dolby/dolby.mk)
+
 # Glyph lights for Nothing Camera
 PRODUCT_PACKAGES += \
     libglyph_lights_shim
@@ -143,7 +146,9 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey
+    android.hardware.drm-service.clearkey \
+    duck_rkp
+
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)

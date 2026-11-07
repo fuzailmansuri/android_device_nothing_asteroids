@@ -1,2 +1,6 @@
 # QMS
 vendor.qti.qhcp.IQHDC/default                          u:object_r:vendor_hal_qms_service:s0
+
+# Duck RKP
+vendor.evo.duckrkp.IDuckRkp/default                    u:object_r:hal_duck_rkp_service:s0
+
