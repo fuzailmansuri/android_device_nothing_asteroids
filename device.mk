@@ -127,6 +127,9 @@ PRODUCT_PACKAGES += \
 # Camera
 $(call inherit-product-if-exists, vendor/nothing/camera/nothing-camera.mk)
 
+# Dolby
+$(call inherit-product-if-exists, hardware/dolby/dolby.mk)
+
 # Glyph lights for Nothing Camera
 PRODUCT_PACKAGES += \
     libglyph_lights_shim

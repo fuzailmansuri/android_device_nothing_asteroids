@@ -245,6 +245,9 @@ ODM_MANIFEST_JPN_FILES := $(DEVICE_PATH)/vintf/manifest_JPN.xml
 DEVICE_MANIFEST_SKUS += volcano
 DEVICE_MANIFEST_VOLCANO_FILES += $(DEVICE_PATH)/vintf/manifest_volcano.xml
 
+# Dolby
+-include hardware/dolby/configs/vintf/config.mk
+
 # Camera
 -include vendor/nothing/camera/BoardConfigCamera.mk
 
