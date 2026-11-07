@@ -21,8 +21,8 @@ TARGET_SCREEN_HEIGHT := 2412
 TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="qssi_64-user 17 CQ2A.260522.002-CP2A.260605.016 2609152123 release-keys" \
-    BuildFingerprint=Nothing/Asteroids/Asteroids:14/UKQ1.260129.001/2609152123:user/release-keys \
+    BuildDesc="qssi_64-user 17 CQ2A.260522.002-CP2A.260605.016 2610232146 release-keys" \
+    BuildFingerprint=Nothing/Asteroids/Asteroids:14/UKQ1.260129.001/2610232146:user/release-keys \
     DeviceName=Asteroids \
     DeviceProduct=Asteroids \
     SystemDevice=Asteroids \
