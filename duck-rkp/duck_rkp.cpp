@@ -78,11 +78,19 @@ bool integerField(const cppbor::Map& map, int key, int64_t expected) {
 
 bool validPublicKey(const cppbor::Item* item) {
     if (!item) return false;
+    if (const auto* arr = item->asArray(); arr && arr->size() == 4) {
+        item = (*arr)[2].get();
+    }
     const cppbor::Map* key = item->asMap();
     std::unique_ptr<cppbor::Item> decoded;
     if (!key && item->asBstr()) {
         decoded = decode(item->asBstr()->value());
-        if (decoded) key = decoded->asMap();
+        if (decoded) {
+            if (const auto* arr = decoded->asArray(); arr && arr->size() == 4) {
+                decoded = decode((*arr)[2]->asBstr() ? (*arr)[2]->asBstr()->value() : (*arr)[2]->encode());
+            }
+            if (decoded) key = decoded->asMap();
+        }
     }
     return key && key->size() == 5 && integerField(*key, 1, 2) &&
            integerField(*key, 3, -7) && integerField(*key, -1, 1) &&
@@ -102,8 +110,8 @@ bool validRequest(uint32_t backend, const std::vector<uint8_t>& payload) {
                (integerField(map, 55, 0) || integerField(map, 55, 1));
     }
     if (!byteField(map, 4, 1, 64)) return false;
-    if (backend == 2) {
-        if (labels != std::set<int64_t>{4, 57} || !byteField(map, 57, 1, 512)) return false;
+    if (backend == 2 || backend == 0x3125) {
+        if (labels != std::set<int64_t>{4, 57} || !byteField(map, 57, 1, 1024)) return false;
         auto keys = decode(map.get(57)->asBstr()->value());
         if (!keys || !keys->asArray() || keys->asArray()->size() != 1) return false;
         return validPublicKey((*keys->asArray())[0].get());
@@ -123,6 +131,37 @@ bool validRequest(uint32_t backend, const std::vector<uint8_t>& payload) {
     return true;
 }
 
+std::vector<uint8_t> buildMacedPublicKey(const cppbor::Item* item) {
+    if (!item) return {};
+    if (const auto* arr = item->asArray(); arr && arr->size() == 4) {
+        return item->encode();
+    }
+    if (const auto* bstr = item->asBstr()) {
+        auto decoded = decode(bstr->value());
+        if (decoded) {
+            if (const auto* arr = decoded->asArray(); arr && arr->size() == 4) {
+                return bstr->value();
+            }
+            if (decoded->asMap()) {
+                return buildMacedPublicKey(decoded.get());
+            }
+        }
+    }
+    std::vector<uint8_t> pubKeyBytes;
+    if (item->asBstr()) {
+        pubKeyBytes = item->asBstr()->value();
+    } else {
+        pubKeyBytes = item->encode();
+    }
+    auto protectedHeaders = cppbor::Map().add(1, 5).encode();
+    return cppbor::Array()
+            .add(cppbor::Bstr(std::move(protectedHeaders)))
+            .add(cppbor::Map())
+            .add(cppbor::Bstr(std::move(pubKeyBytes)))
+            .add(cppbor::Bstr(std::vector<uint8_t>(32, 0)))
+            .encode();
+}
+
 std::vector<uint8_t> encodeVendorRequest(uint32_t backend, const std::vector<uint8_t>& payload) {
     auto body = payload;
     if (backend == 1) {
@@ -136,18 +175,13 @@ std::vector<uint8_t> encodeVendorRequest(uint32_t backend, const std::vector<uin
     } else if (backend == 0x3126) {
         // GenerateRkpKey: Key 0x1837 = test_mode. MUST be 0 on retail silicon.
         body = cppbor::Map().add(55, 0).encode();
-    } else if (backend == 2) {
+    } else if (backend == 2 || backend == 0x3125) {
         auto item = decode(payload);
         const auto& map = *item->asMap();
         auto challenge = map.get(4)->clone();
         auto keys = decode(map.get(57)->asBstr()->value());
         const auto* item0 = (*keys->asArray())[0].get();
-        std::vector<uint8_t> macedKeyBytes;
-        if (item0->asBstr()) {
-            macedKeyBytes = item0->asBstr()->value();
-        } else {
-            macedKeyBytes = item0->encode();
-        }
+        auto macedKeyBytes = buildMacedPublicKey(item0);
         // Qualcomm TrustZone 0x3125 (GenerateCsrV2) strictly requires:
         // bstr( array(1) [ bstr( MacedPublicKey ) ] )
         auto wrappedArray = cppbor::Array().add(cppbor::Bstr(std::move(macedKeyBytes))).encode();
@@ -158,7 +192,7 @@ std::vector<uint8_t> encodeVendorRequest(uint32_t backend, const std::vector<uin
     }
     std::vector<uint8_t> request(4 + body.size());
     // Asteroids SM7635: Opcode 0x3125 (GenerateCsrV2) for backend 2, 0x3126 for GenerateRkpKey.
-    uint32_t command = htole32(backend == 2 ? 0x3125 : (backend == 0x3126 ? 0x3126 : 0x311e));
+    uint32_t command = htole32((backend == 2 || backend == 0x3125) ? 0x3125 : (backend == 0x3126 ? 0x3126 : 0x311e));
     memcpy(request.data(), &command, 4);
     memcpy(request.data() + 4, body.data(), body.size());
 
@@ -229,7 +263,7 @@ int selfTest() {
     auto pkBytes = publicKey.encode();
     auto keys = cppbor::Array().add(std::move(publicKey)).encode();
     auto valid = cppbor::Map().add(4, std::vector<uint8_t>{1}).add(57, keys).encode();
-    if (!validRequest(2, valid) || validRequest(0x3125, valid) || validRequest(1, valid)) return 1;
+    if (!validRequest(2, valid) || !validRequest(0x3125, valid) || validRequest(1, valid)) return 1;
     valid.push_back(0);
     if (validRequest(2, valid) || validRequest(2, {}) ||
         validRequest(2, std::vector<uint8_t>(kMaxRequest + 1))) return 2;
@@ -265,7 +299,14 @@ int selfTest() {
             value->encode() != original->asMap()->get(key->asInt()->value())->encode()) return 8;
     }
     auto v2Payload = cppbor::Map().add(4, std::vector<uint8_t>{1}).add(57, keys).encode();
-    auto wrappedArray = cppbor::Array().add(cppbor::Bstr(pkBytes)).encode();
+    auto protectedHeaders = cppbor::Map().add(1, 5).encode();
+    auto expectedMacedKey = cppbor::Array()
+            .add(cppbor::Bstr(std::move(protectedHeaders)))
+            .add(cppbor::Map())
+            .add(cppbor::Bstr(pkBytes))
+            .add(cppbor::Bstr(std::vector<uint8_t>(32, 0)))
+            .encode();
+    auto wrappedArray = cppbor::Array().add(cppbor::Bstr(expectedMacedKey)).encode();
     auto expectedV2Body = cppbor::Map()
             .add(4, std::vector<uint8_t>{1})
             .add(57, cppbor::Bstr(wrappedArray))
@@ -273,6 +314,13 @@ int selfTest() {
     std::vector<uint8_t> expectedV2{0x25, 0x31, 0x00, 0x00};
     expectedV2.insert(expectedV2.end(), expectedV2Body.begin(), expectedV2Body.end());
     if (encodeVendorRequest(2, v2Payload) != expectedV2) return 9;
+    if (encodeVendorRequest(0x3125, v2Payload) != expectedV2) return 9;
+
+    auto prebuiltKeys = cppbor::Array().add(cppbor::Bstr(expectedMacedKey)).encode();
+    auto prebuiltV2Payload = cppbor::Map().add(4, std::vector<uint8_t>{1}).add(57, prebuiltKeys).encode();
+    if (!validRequest(2, prebuiltV2Payload)) return 12;
+    if (encodeVendorRequest(2, prebuiltV2Payload) != expectedV2) return 13;
+
     auto rkpKeyPayload = cppbor::Map().add(55, 1).encode();
     if (!validRequest(0x3126, rkpKeyPayload)) return 10;
     auto rkpRequest = encodeVendorRequest(0x3126, rkpKeyPayload);
