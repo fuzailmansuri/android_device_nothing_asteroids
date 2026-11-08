@@ -8,6 +8,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/voltage_asteroids.mk
 
 COMMON_LUNCH_CHOICES := \
+    voltage_asteroids-cp2a-user \
+    voltage_asteroids-cp2a-userdebug \
+    voltage_asteroids-cp2a-eng \
     voltage_asteroids-bp4a-user \
     voltage_asteroids-bp4a-userdebug \
     voltage_asteroids-bp4a-eng \
