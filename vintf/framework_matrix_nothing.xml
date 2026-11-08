@@ -6,6 +6,7 @@
     <!-- Charging -->
     <hal format="aidl" optional="true">
         <name>vendor.noth.hardware.charge</name>
+        <version>1</version>
         <interface>
             <name>ICharge</name>
             <instance>default</instance>
@@ -14,6 +15,7 @@
     <!-- Biometrics -->
     <hal format="aidl" optional="true">
         <name>vendor.goodix.hardware.biometrics.fingerprint</name>
+        <version>1</version>
         <interface>
             <name>IGoodixFingerprintDaemon</name>
             <instance>default</instance>
@@ -22,16 +24,18 @@
     <!-- Sensors -->
     <hal format="aidl" optional="true">
         <name>vendor.noth.hardware.sensor.sensor_extension</name>
+        <version>1</version>
         <interface>
             <name>ISensorExtension</name>
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>android.frameworks.cameraservice.service</name>
-        <version>2.0-2</version>
+    <!-- QTI TX Power Service -->
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.data.txpwrservice</name>
+        <version>8</version>
         <interface>
-            <name>ICameraService</name>
+            <name>ITxPwrService</name>
             <instance>default</instance>
         </interface>
     </hal>
