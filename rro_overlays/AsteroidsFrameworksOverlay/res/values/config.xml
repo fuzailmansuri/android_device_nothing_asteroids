@@ -380,7 +380,7 @@
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
     <!-- Whether device supports double tap to wake -->
-    <bool name="config_supportDoubleTapWake">true</bool>
+    <bool name="config_supportDoubleTapWake">false</bool>
 
 
     <!-- Default value for fp screen off unlock toggle, it only works for the devices that support
