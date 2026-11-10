@@ -8,6 +8,8 @@ DEVICE_PATH := device/nothing/asteroids
 include build/make/target/board/BoardConfigMainlineCommon.mk
 include vendor/nothing/asteroids/BoardConfigVendor.mk
 
+BOARD_USES_SYSTEM_OTHER_ODEX := false
+
 BUILD_BROKEN_DUP_RULES := true
 
 # A/B
@@ -35,14 +37,8 @@ BOARD_SHIPPING_API_LEVEL := 34
 # AVB
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-WITH_AVB := true
-ifeq ($(WITH_AVB),true)
-BOARD_AVB_KEY_PATH := vendor/clover-priv/keys/avb.pk8
-BOARD_AVB_ALGORITHM := SHA256_RSA4096
-else
 BOARD_AVB_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_ALGORITHM := SHA256_RSA2048
-endif
 
 BOARD_AVB_BOOT_KEY_PATH := $(BOARD_AVB_KEY_PATH)
 BOARD_AVB_BOOT_ALGORITHM := $(BOARD_AVB_ALGORITHM)

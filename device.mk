@@ -11,6 +11,7 @@ $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
 PRODUCT_RO_FILE_SYSTEM ?= erofs
+PRODUCT_BUILD_SYSTEM_OTHER_IMAGE := false
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -238,7 +239,6 @@ PRODUCT_PACKAGES += \
     fstab.default.vendor_ramdisk \
     fstab.zram.2g \
     init.asteroids.hw.rc \
-    init.asteroids.nfc.sh \
     init.asteroids.rc \
     init.class_main.sh \
     init.qcom.early_boot.sh \
@@ -289,10 +289,9 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st21-BASE.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st21-BASE.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st21-PRO.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st21-PRO.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st54j-JPN.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st54j-JPN.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st54j-PRO.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st54j-PRO.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st-BASE.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st-BASE.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st-JPN.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st-JPN.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st-PRO.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st-PRO.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci-JPN.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci-JPN.conf
 
 # Nothing-fwk
@@ -325,6 +324,7 @@ PRODUCT_PACKAGES += \
     AsteroidsApertureOverlay \
     AsteroidsEuiccOverlay \
     AsteroidsFrameworksOverlay \
+    AsteroidsLauncher3Overlay \
     AsteroidsMainlineWifiOverlay \
     AsteroidsProMainlineWifiOverlay \
     AsteroidsProSettingsProviderOverlay \

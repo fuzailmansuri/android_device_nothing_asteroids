@@ -31,3 +31,7 @@ CLOVER_BUILDTYPE := OFFICIAL
 TARGET_ENABLE_BLUR := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Enforce that all modules in PRODUCT_PACKAGES exist
+$(call enforce-product-packages-exist)
+
