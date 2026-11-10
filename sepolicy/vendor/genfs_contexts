@@ -23,6 +23,7 @@ genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-
 genfscon proc /sys/walt/sched_boost u:object_r:proc_sched:s0
 
 # Touch
+genfscon proc /touchpanel/gesture_mode                                                                      u:object_r:vendor_proc_touchpanel_gesture:s0
 genfscon proc /touchpanel/pocket_mode                                                                       u:object_r:vendor_proc_display:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/fts_fod_enabled                   u:object_r:vendor_sysfs_touch:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/fts_fod_pressed                   u:object_r:vendor_sysfs_touch:s0
@@ -30,6 +31,7 @@ genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/fts_gesture_single_tap_pressed    u:object_r:vendor_sysfs_touch:s0
 
 # Wakeup
+genfscon sysfs /devices/platform/hypervisor/hypervisor:qcom,resource-manager-rpc@bef8f86ad0b675fd/wakeup     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/usb1/1-1/wakeup              u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/wakeup              u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup                                                    u:object_r:sysfs_wakeup:s0

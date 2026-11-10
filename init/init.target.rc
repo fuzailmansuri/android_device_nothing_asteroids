@@ -65,7 +65,6 @@ import /vendor/etc/init/hw/init.qti.kernel.rc
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
     export MEMTAG_OPTIONS off
-    exec_start gki.modprobe
 
 on init
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -117,17 +116,6 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
-
-    mkdir /dev/cpuset/surfaceflinger
-    write /dev/cpuset/surfaceflinger/cpus 4-7
-    write /dev/cpuset/surfaceflinger/mems 0
-    chown system system /dev/cpuset/surfaceflinger
-    chown system system /dev/cpuset/surfaceflinger/tasks
-    chown system system /dev/cpuset/surfaceflinger/cgroup.procs
-    # set surfaceflinger to 0775 so SurfaceFlinger can touch it
-    chmod 0775 /dev/cpuset/surfaceflinger
-    chmod 0664 /dev/cpuset/surfaceflinger/tasks
-    chmod 0664 /dev/cpuset/surfaceflinger/cgroup.procs
 
     chown system /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/trusted_touch_enable
     chmod 0660 /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/trusted_touch_enable
@@ -219,12 +207,3 @@ service fan_control_turn_off /vendor/bin/fan_service 0
     disabled
     oneshot
 
-
-service gki.modprobe /vendor/bin/system_dlkm_modprobe.sh
-    class main
-    user root
-    group root system
-    disabled
-    stdio_to_kmsg
-    seclabel u:r:vendor_modprobe:s0
-    oneshot

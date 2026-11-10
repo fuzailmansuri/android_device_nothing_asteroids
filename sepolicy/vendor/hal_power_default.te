@@ -15,3 +15,8 @@ binder_call(vendor_hal_perf_default, hal_power_default)
 
 # Allow Power HAL to connect to display composer / DisplayConfig AIDL
 hal_client_domain(hal_power_default, hal_graphics_composer)
+
+# Allow the power feature service to toggle tap to wake
+allow hal_power_default vendor_proc_display:dir search;
+allow hal_power_default vendor_proc_touchpanel_gesture:file rw_file_perms;
+allow hal_power_default vendor_sysfs_touch:file rw_file_perms;
