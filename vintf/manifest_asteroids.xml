@@ -2,17 +2,8 @@
      SPDX-FileCopyrightText: 2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<manifest version="1.0" type="device" target-level="8">
+<manifest version="1.0" type="device">
     <hal format="aidl" override="true">
         <name>android.hardware.secure_element</name>
-    </hal>
-    <hal format="hidl" override="true">
-        <name>android.frameworks.cameraservice.service</name>
-        <transport>hwbinder</transport>
-        <version>2.2</version>
-        <interface>
-            <name>ICameraService</name>
-            <instance>default</instance>
-        </interface>
     </hal>
 </manifest>
