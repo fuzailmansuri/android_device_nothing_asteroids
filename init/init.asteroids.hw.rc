@@ -9,6 +9,7 @@ on early-init
 on fs && property:ro.boot.pbid=Base
     mount overlay overlay /vendor/etc/camera lowerdir=/vendor/etc/camera:/odm/overlayfs_origin/base/etc/camera,context=u:object_r:vendor_configs_file:s0
 
+    setprop persist.vendor.nfc.config_file_name "libnfc-hal-st-BASE.conf"
     setprop vendor.usb.product_string "Nothing Phone (3a)"
 
 on fs && property:ro.boot.pbid=Pro
