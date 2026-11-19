@@ -29,12 +29,12 @@ public class NtFeaturesUtils {
 
     static {
         final String fullProp = SystemProperties.get("ro.vendor.nothing.feature.base", "0");
-        final String productDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.product." + Build.PRODUCT, "0");
-        String deviceDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.device." + Build.DEVICE, "0");
+        final String productDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.product." + realProduct(), "0");
+        String deviceDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.device." + realDevice(), "0");
         if ("0".equals(deviceDiffProp)) {
             deviceDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.device.Asteroids", "0");
         }
-        String plusDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.plus." + Build.DEVICE, "0");
+        String plusDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.plus." + realDevice(), "0");
         if ("0".equals(plusDiffProp)) {
             plusDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.plus.Asteroids", "0");
         }
@@ -104,5 +104,27 @@ public class NtFeaturesUtils {
             }
         }
         return max;
+    }
+
+    /*
+     * Build.DEVICE/Build.PRODUCT come from ro.product.device/ro.product.name,
+     * which Play Integrity Fix (and similar prop spoofers) rewrite in every
+     * app process. The per-partition props are not spoofed, so prefer them and
+     * only fall back to Build.* when they are missing.
+     */
+    private static String realDevice() {
+        String device = SystemProperties.get("ro.product.odm.device", "");
+        if (device.isEmpty()) {
+            device = SystemProperties.get("ro.product.vendor.device", "");
+        }
+        return device.isEmpty() ? Build.DEVICE : device;
+    }
+
+    private static String realProduct() {
+        String product = SystemProperties.get("ro.product.odm.name", "");
+        if (product.isEmpty()) {
+            product = SystemProperties.get("ro.product.vendor.name", "");
+        }
+        return product.isEmpty() ? Build.PRODUCT : product;
     }
 }
