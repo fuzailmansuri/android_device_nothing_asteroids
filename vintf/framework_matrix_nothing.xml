@@ -35,4 +35,21 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Hwservicemanager for legacy HIDL HALs (Dolby, Camera Post-Proc) -->
+    <hal format="hidl" optional="true">
+        <name>android.hidl.manager</name>
+        <version>1.0</version>
+        <interface>
+            <name>IServiceManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.camera.postproc</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPostProcService</name>
+            <instance>camerapostprocservice</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
