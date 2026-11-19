@@ -14,3 +14,4 @@
 
 # Vibrator
 /dev/ics_sfdc   0660   system   system
+/dev/aac_richtap   0660   system   system
