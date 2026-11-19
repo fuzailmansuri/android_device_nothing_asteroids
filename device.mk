@@ -199,6 +199,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     NothingFelicaDisabler
 
+# Firmware
+PRODUCT_PACKAGES += \
+    rfs_msm_adsp_readonly_firmware_symlink \
+    rfs_msm_adsp_readonly_vendor_firmware_symlink \
+    rfs_msm_cdsp_readonly_firmware_symlink \
+    rfs_msm_cdsp_readonly_vendor_firmware_symlink
+
 # FWK Detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti_vendor
