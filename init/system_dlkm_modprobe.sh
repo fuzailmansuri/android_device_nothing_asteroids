@@ -5,29 +5,29 @@ VENDOR_DLKM_DIR="/vendor_dlkm/lib/modules"
 
 MODPROBE="/vendor/bin/modprobe"
 
-for dir in ${SYSTEM_DLKM_DIR} ;
-do
-	if [ -e ${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist ] && grep -q blocklist ${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist; then
-		blocklist_expr="$(sed -n -e 's/blocklist \(.*\)/\1/p' ${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist | sed -e 's/-/[-_]/g' -e 's/^/-e /')"
-	else
-		# Use pattern that won't be found in modules list so that all modules pass through grep below
-		blocklist_expr="-e %"
-	fi
-	# Filter out modules in blocklist - we would see unnecessary errors otherwise
-	load_modules=$(find ${dir} -name "*.ko" | grep -w -v ${blocklist_expr})
-	first_module=$(echo ${load_modules} | cut -d " " -f1)
-	other_modules=$(echo ${load_modules} | cut -d " " -f2-)
-	if ! ${MODPROBE} -b -s -d ${dir} -a ${first_module} > /dev/null ; then
-		continue
-	fi
-	# load modules individually in case one of them fails to init
-	for module in ${other_modules}; do
-		( ${MODPROBE} -b -s -d ${dir} -a ${module} > /dev/null ) &
-	done
+blocked_modules=""
+if [ -f "${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist" ]; then
+    while read -r keyword module rest || [ -n "$keyword" ]; do
+        [ "$keyword" = blocklist ] || continue
+        module=$(printf '%s' "${module%.ko}" | tr '-' '_')
+        blocked_modules="$blocked_modules $module"
+    done < "${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist"
+fi
 
-	wait
-
-	exit 0
+# YAAP can install modules flat or under a kernel-version directory.
+for dir in "$SYSTEM_DLKM_DIR" "$SYSTEM_DLKM_DIR"/*; do
+    [ -f "$dir/modules.dep" ] && [ -f "$dir/modules.load" ] || continue
+    status=0
+    while read -r module rest || [ -n "$module" ]; do
+        case "$module" in ""|\#*) continue ;; esac
+        name=${module##*/}
+        name=$(printf '%s' "${name%.ko}" | tr '-' '_')
+        case " $blocked_modules " in *" $name "*) continue ;; esac
+        # Keep the packaged order and try the rest even if one driver fails.
+        "$MODPROBE" -b -d "$dir" -a "$module" || status=1
+    done < "$dir/modules.load"
+    exit "$status"
 done
 
+echo "No system_dlkm module load list and dependency index found" >&2
 exit 1
