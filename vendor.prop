@@ -54,6 +54,7 @@ vendor.hw.fm.init=0
 camera.disable_zsl_mode=1
 ro.camera.enableCamera1MaxZsl=1
 ro.camera.disableHeicUltraHDR=true
+persist.vendor.camera.FlashLightThermalThreshold=70000
 
 # Display 
 vendor.display.comp_mask=0
