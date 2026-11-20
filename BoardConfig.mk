@@ -117,6 +117,7 @@ BOARD_KERNEL_CMDLINE := \
     
 BOARD_BOOTCONFIG := \
     androidboot.console=0 \
+    androidboot.fstab_suffix=default \
     androidboot.hardware=qcom \
     androidboot.load_modules_parallel=true \
     androidboot.memcg=1 \
