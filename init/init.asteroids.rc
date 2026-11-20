@@ -27,7 +27,7 @@ on post-fs-data
     chmod 0444 /data/vendor/camera/bokeh_caldata_tele_golden.bin
     chown cameraserver audio /data/vendor/camera/bokeh_caldata_tele_golden.bin
 
-    # OIS factory gyro bias (Pro only), the camera HAL can't read the 0600 original
+    # The HAL cannot read the 0600 persist original through a symlink.
     rm /data/vendor/camera/ois_gyro_offset
     copy /mnt/vendor/persist/sensors/registry/registry/volcano_qrd_ois_manager_0.json.ois_manager_0_platform.ois.fac_cal.bias /data/vendor/camera/ois_gyro_offset
     chown cameraserver audio /data/vendor/camera/ois_gyro_offset

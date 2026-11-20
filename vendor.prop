@@ -103,7 +103,7 @@ debug.sf.early.sf.duration=10500000
 debug.sf.earlyGl.app.duration=13666666
 debug.sf.earlyGl.sf.duration=10500000
 debug.sf.enable_adpf_cpu_hint=true
-debug.sf.enable_gl_backpressure=0
+debug.sf.enable_gl_backpressure=1
 debug.sf.late.app.duration=13666666
 debug.sf.late.sf.duration=10500000
 debug.sf.predict_hwc_composition_strategy=0
@@ -187,9 +187,4 @@ vendor.vibrator.device=/dev/aac_richtap
 
 # Wi-Fi
 wifi.aware.interface=wifi-aware0
-
-# Nothing features
-ro.vendor.nothing.feature.base=0xe24800001004458438124a040106b4247b97ffL
-ro.vendor.nothing.feature.diff.device.Asteroids=0x241001a38fc01acc038d140ad44002d0842080L
-ro.vendor.nothing.feature.diff.plus.Asteroids=0x4000000000000000000000L
 

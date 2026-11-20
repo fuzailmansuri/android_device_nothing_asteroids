@@ -1,6 +1,5 @@
 #
 # SPDX-FileCopyrightText: 2025 The LineageOS Project
-# SPDX-FileCopyrightText: 2026 VoltageOS
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -16,14 +15,12 @@ PRODUCT_MANUFACTURER := Nothing
 PRODUCT_MODEL := A059
 PRODUCT_NAME := voltage_asteroids
 
-PRODUCT_ENFORCE_PACKAGES_EXIST := true
-
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="qssi_64-user 16 BQ2A.250721.001-BP2A.250605.031.A3 2609281204 release-keys" \
-    BuildFingerprint=Nothing/Asteroids/Asteroids:14/UKQ1.250612.001/2609281204:user/release-keys \
-    BuildSystemFingerprint=qti/qssi_64/qssi_64:16/BQ2A.250721.001-BP2A.250605.031.A3/2609281204:user/release-keys \
+    BuildDesc="qssi_64-user 17 CQ2A.260522.002-CP2A.260605.016 2610232146 release-keys" \
+    BuildFingerprint=Nothing/Asteroids/Asteroids:17/CQ2A.260522.002-CP2A.260605.016/2610232146:user/release-keys \
+    BuildSystemFingerprint=qti/qssi_64/qssi_64:17/CQ2A.260522.002-CP2A.260605.016/2610232146:user/release-keys \
     DeviceName=Asteroids \
     DeviceProduct=Asteroids \
     SystemDevice=Asteroids \

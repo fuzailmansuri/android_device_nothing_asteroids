@@ -5,8 +5,6 @@
 
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
-
-# Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
 # A/B
@@ -117,6 +115,8 @@ $(call soong_config_set_bool,nothing_fingerprint,use_lhbm,true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
+TARGET_HAS_UDFPS := true
+
 # Bluetooth
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -128,9 +128,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti.recovery
 
 # Camera
-$(call inherit-product-if-exists, vendor/nothing/camera/nothing-camera.mk)
+$(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 
-# Glyph lights for Nothing Camera
 PRODUCT_PACKAGES += \
     libglyph_lights_shim
 
@@ -149,19 +148,13 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
 # Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 
 # Data
-PRODUCT_SOONG_NAMESPACES += \
-    hardware/qcom-caf/sm8650/data-ipa-cfg-mgr \
-    vendor/qcom/opensource/dataservices
-
 PRODUCT_PACKAGES += \
     IPACM_Filter_cfg.xml \
     IPACM_cfg.xml \
-    ipacm \
-    librmnetctl \
-    android.hardware.tetheroffload-V1-ndk
+    ipacm
 
 # Device Extras
 PRODUCT_PACKAGES += \
@@ -197,6 +190,7 @@ PRODUCT_PACKAGES += \
     privapp-permissions-com.google.android.euicc.xml
 
 # Face Unlock 
+TARGET_PROVIDES_FACE_UNLOCK_HAL := true
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
 
@@ -274,8 +268,6 @@ PRODUCT_PACKAGES += \
 
 
 # Lineage Health
-$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
-
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
@@ -366,7 +358,9 @@ PRODUCT_PACKAGES += \
     WifiResCommonMainline_Vendor \
     WifiResCommon_Vendor \
     WifiResMainlineTarget \
-    WifiResTarget
+    WifiResTarget \
+    EvolutionUpdaterOverlay \
+    EvolutionSettingsOverlay
 
 # Partitions
 PRODUCT_BUILD_RECOVERY_IMAGE := true
@@ -426,7 +420,7 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element-service.thales
 
 # Security
-BOOT_SECURITY_PATCH := 2026-01-05
+BOOT_SECURITY_PATCH := 2026-04-05
 INIT_BOOT_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 VENDOR_SECURITY_PATCH := 2026-04-05
 

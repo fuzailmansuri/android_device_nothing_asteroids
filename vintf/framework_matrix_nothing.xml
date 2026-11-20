@@ -3,6 +3,15 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <compatibility-matrix version="2.0" type="framework">
+    <!-- Legacy CameraService enabled by manifest_asteroids.xml. -->
+    <hal format="hidl" optional="true">
+        <name>android.frameworks.cameraservice.service</name>
+        <version>2.2</version>
+        <interface>
+            <name>ICameraService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- Charging -->
     <hal format="aidl" optional="true">
         <name>vendor.noth.hardware.charge</name>

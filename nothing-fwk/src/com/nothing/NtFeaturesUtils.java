@@ -13,7 +13,7 @@ import java.util.BitSet;
 
 public class NtFeaturesUtils {
 
-    // Read by name through reflection in Nothing Camera
+    // Nothing Camera reads these names through reflection.
     public static final int NTF_QCOM = 59;
     public static final int NTF_MTK = 60;
     public static final int NTF_PONG = 62;
@@ -21,23 +21,23 @@ public class NtFeaturesUtils {
     public static final int NTF_TETRIS = 64;
     public static final int NTF_ASTEROIDS = 80;
     public static final int NTF_ASTEROIDS_PLUS = 86;
+    public static final int NTF_IND = 88;
     public static final int NTF_JPN = 89;
     public static final int NTF_DRAGONITE = 110;
     public static final int NTF_BACKGROUND_RES_LIMIT = 115;
+    public static final int NTF_LINEAR_VIBRATOR = 139;
 
     private static final BitSet sFeatures;
 
     static {
         final String fullProp = SystemProperties.get("ro.vendor.nothing.feature.base", "0");
-        final String productDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.product." + Build.PRODUCT, "0");
-        String deviceDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.device." + Build.DEVICE, "0");
-        if ("0".equals(deviceDiffProp)) {
-            deviceDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.device.Asteroids", "0");
-        }
-        String plusDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.plus." + Build.DEVICE, "0");
-        if ("0".equals(plusDiffProp)) {
-            plusDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.plus.Asteroids", "0");
-        }
+        final String product = SystemProperties.get("ro.product.odm.name", Build.PRODUCT);
+        final String device = SystemProperties.get("ro.product.odm.device", "Asteroids");
+        final String productDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.product." + product, "0");
+        final String deviceDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.device." + device,
+                SystemProperties.get("ro.vendor.nothing.feature.diff.device.Asteroids", "0"));
+        final String plusDiffProp = SystemProperties.get("ro.vendor.nothing.feature.diff.plus." + device,
+                SystemProperties.get("ro.vendor.nothing.feature.diff.plus.Asteroids", "0"));
 
         int bitsetSize = maxLength(replace(fullProp),replace(productDiffProp),replace(deviceDiffProp)) * 4;
 

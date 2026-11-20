@@ -131,7 +131,8 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7635
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
-    vendor/pineapple_GKI.config
+    vendor/fps_GKI.config \
+    vendor/asteroids.config
 TARGET_MERGE_DTBS_WILDCARD := *volcano*
 
 # Kernel Modules
@@ -176,7 +177,7 @@ TARGET_KERNEL_EXT_MODULES := \
 
 # Partitions
 ifneq ($(PRODUCT_RO_FILE_SYSTEM), erofs)
--include vendor/lineage/config/BoardConfigReservedSize.mk
+include vendor/voltage/config/BoardConfigReservedSize.mk
 endif
 
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
@@ -246,7 +247,7 @@ DEVICE_MANIFEST_SKUS += volcano
 DEVICE_MANIFEST_VOLCANO_FILES += $(DEVICE_PATH)/vintf/manifest_volcano.xml
 
 # Camera
--include vendor/nothing/camera/BoardConfigCamera.mk
+include vendor/nothing/camera/BoardConfigCamera.mk
 
 # Wi-Fi
 BOARD_WLAN_DEVICE := qcwcn

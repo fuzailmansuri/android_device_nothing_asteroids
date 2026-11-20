@@ -60,8 +60,6 @@ lib_fixups: lib_fixups_user_type = {
 blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4.cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
-    'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so': blob_fixup()
-        .replace_needed('libprotobuf-cpp-full.so','libprotobuf-cpp-full-21.7.so'),
     'vendor/bin/hw/android.hardware.biometrics.face-service.noth': blob_fixup()
         .replace_needed('libcamera2ndk_vendor.so', 'libcamera2ndk_vendor-v34.so'), 
     'vendor/bin/qcc-vendor': blob_fixup()
@@ -91,9 +89,7 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('remote_register_buf')
         .clear_symbol_version('rpcmem_alloc')
         .clear_symbol_version('rpcmem_free'),
-    # Nothing extended IPostProcSession with release() under the same version,
-    # ship their interface library under its own name so it doesn't clash with
-    # the QTI one
+    # Nothing's IPostProcSession adds release() under the same HIDL version.
     'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-nothing.so': blob_fixup()
         .fix_soname(),
     (
@@ -105,8 +101,17 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libntcam_session_shim.so'),
     'vendor/bin/hw/vendor.qti.hardware.lights.service': blob_fixup()
         .add_needed('libglyph_lights_shim.so'),
+    # Portrait falls back to the factory calibration files in /data/vendor/camera.
     'vendor/lib64/camera/node/com.nothing.node.bokehhdr.so': blob_fixup()
         .binary_regex_replace(b'\xb7\x83\x5d\xf8\x77\xf1\xff\xb4', b'\xb7\x83\x5d\xf8\xb7\xf6\xff\xb4'),
+    # Avoid the pink RAWHDR path and out-of-order multi-frame requests.
+    (
+        'vendor/etc/camera/decision.json',
+        'vendor/etc/camera/decision_pro.json',
+    ): blob_fixup()
+        .regex_replace(r'("feature\.camera\.day\.hdr\.zoom\.range"\s*:\s*")[^"]*"', r'\1"'),
+    'vendor/etc/camera/ntcamoverridesettings.txt': blob_fixup()
+        .regex_replace(r'EnableReuqestLIFO=1', 'EnableReuqestLIFO=0'),
     'vendor/lib64/libcne.so': blob_fixup()
         .add_needed('libbinder_shim.so'),
     'vendor/lib64/libmorpho_RapidEffect.so': blob_fixup()
@@ -145,15 +150,12 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/etc/init/vendor.qti.media.c2@1.0-service.rc': blob_fixup()
         .regex_replace(r'writepid\s+/dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh HighPerformance'),
-    (   
-        'system_ext/etc/seccomp_policy/tcmd.policy',
-        'vendor/etc/seccomp_policy/atfwd@2.0.policy',
-    ): blob_fixup()
-        .add_line_if_missing('lseek: 1'),
     'system/framework/WfdCommon.jar': blob_fixup()
         .apktool_patch('blob-patches/WfdCommon.patch'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
+    'vendor/lib64/hw/libproviderextension.so' :blob_fixup()
+        .replace_needed('android.hardware.graphics.allocator-V2-ndk.so','android.hardware.graphics.allocator-V1-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

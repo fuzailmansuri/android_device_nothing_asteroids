@@ -1,6 +1,5 @@
 #
 # SPDX-FileCopyrightText: 2025 The LineageOS Project
-# SPDX-FileCopyrightText: 2026 VoltageOS
 # SPDX-License-Identifier: Apache-2.0
 #
 
