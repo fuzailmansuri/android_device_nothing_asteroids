@@ -168,7 +168,7 @@
         <Config
             Id="0x00001083" Enable="true" Timeout="400" Target="volcano"
             Resources="0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40804200, 0xFFF,
-                       0x40800000, 0xFFF, 0x40800100, 0xFFF, 0x40800200, 0xFFF" />
+                       0x40800000, 1401, 0x40800100, 1344, 0x40800200, 1651" />
 
     <!--Exit app Animation boost -->
         <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
@@ -379,8 +379,8 @@
         <!-- Type="", Package Install boost -->
         <Config
             Id="0x00001088" Enable="true" Target="volcano"
-            Resources="0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40804200, 0xFFF, 0x40800000, 0xFFF,
-                       0x40800100, 0xFFF, 0x40800200, 0xFFF, 0x40CA0000, 0, 0x40C00000, 2,
+            Resources="0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40804200, 0xFFF, 0x40800000, 2400,
+                       0x40800100, 1804, 0x40800200, 2496, 0x40CA0000, 0, 0x40C00000, 2,
                        0x40CCC000, 0" />
 
     <!--Rotation latency boost-->
@@ -395,7 +395,7 @@
         <Config
             Id="0x00001089" Enable="true" Timeout="1500" Target="volcano"
             Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40804200, 0xFFF,
-                       0x40800000,0xFFF, 0x40800100,0xFFF, 0x40800200,0xFFF" />
+                       0x40800000, 1401, 0x40800100, 1344, 0x40800200, 1651" />
 
     <!--Rotation animation boost-->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
@@ -442,6 +442,23 @@
         <Config
                 Id="0x00001040" Enable="true" Timeout="0" Target="volcano"
                 Resources="0x40000000, 0x0" />
+
+    <!-- ADPF / Picard hint IDs (0x104A..0x104E) requested by QTI PowerHAL -->
+        <Config
+                Id="0x0000104A" Enable="true" Timeout="10" Target="volcano"
+                Resources="0x40C80000, 0" />
+
+        <Config
+                Id="0x0000104B" Enable="true" Timeout="10" Target="volcano"
+                Resources="0x40CA4000, 0" />
+
+        <Config
+                Id="0x0000104C" Enable="true" Timeout="0" Target="volcano"
+                Resources="0x40CD0000, 0" />
+
+        <Config
+                Id="0x0000104D" Enable="true" Timeout="0" Target="volcano"
+                Resources="0x40C80000, 0" />
 
     <!-- ADPF load hints still request this profile independently of per-thread load reports. -->
         <Config

@@ -92,7 +92,7 @@ ________________________________________________________________________________
                 <Prop Name="ro.vendor.perf.qape.boost_duration" Value="10" />
                 <Prop Name="ro.vendor.perf.qape.max_boost_count" Value="3" />
                 <Prop Name="ro.vendor.perf.qape.max_pipeline_number" Value="4" />
-                <Prop Name="vendor.perf.bgt.enable" Value="true" />
+                <Prop Name="vendor.perf.bgt.enable" Value="false" />
 
                 <Prop Name="vendor.perf.phr.enable" Value="0" Ram="6" Target="volcano"/>
                 <Prop Name="vendor.perf.pfar2.enable" Value="0" Ram="6" Target="volcano"/>
