@@ -208,6 +208,7 @@ TARGET_BOARD_PLATFORM := volcano
 TARGET_KERNEL_ADDITIONAL_FLAGS += TARGET_BOARD_PLATFORM=$(TARGET_BOARD_PLATFORM)
 
 # Power
+TARGET_USES_INTERACTION_BOOST := true
 TARGET_TAP_TO_WAKE_NODE := /proc/touchpanel/gesture_mode
 TARGET_SINGLE_TAP_TO_WAKE_NODE := /sys/devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/fts_gesture_single_tap_enabled
 

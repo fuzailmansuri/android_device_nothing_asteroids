@@ -171,14 +171,10 @@ PRODUCT_PACKAGES += \
 
 # Data
 PRODUCT_SOONG_NAMESPACES += \
-    hardware/qcom-caf/sm8650/data-ipa-cfg-mgr
+    vendor/qcom/opensource/dataservices
 
 PRODUCT_PACKAGES += \
-    IPACM_Filter_cfg.xml \
-    IPACM_cfg.xml \
-    ipacm \
-    librmnetctl \
-    android.hardware.tetheroffload-V1-ndk
+    librmnetctl
 
 # Display
 include hardware/qcom-caf/sm8650/display/config/display-modules.mk
@@ -495,6 +491,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     nt-telephony-interface
 
+# Perf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
+    $(LOCAL_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml \
+    $(LOCAL_PATH)/configs/perf/testcommonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/testcommonresourceconfigs.xml
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
@@ -526,6 +528,7 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6750/WCNSS_qcom_cfg.ini \
     frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
