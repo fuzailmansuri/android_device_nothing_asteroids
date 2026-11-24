@@ -32,6 +32,54 @@ service gto_secure_element_aidl_service /vendor/bin/hw/android.hardware.secure_e
     group secure_element nfc
     disabled
 
+# Shared init services whose executables are not shipped on this target.
+service ptt_socket_app /system/vendor/bin/ptt_socket_app -d
+    override
+    class main
+    user wifi
+    group wifi system inet net_admin
+    capabilities NET_ADMIN
+    disabled
+    oneshot
+
+service chre /vendor/bin/chre
+    override
+    class late_start
+    user system
+    group system
+    socket chre seqpacket 0660 root system
+    shutdown critical
+    disabled
+
+service nqnfcinfo /system/vendor/bin/nqnfcinfo
+    override
+    class late_start
+    group nfc
+    user system
+    disabled
+    oneshot
+
+service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
+    override
+    class late_start
+    user system
+    group system
+    disabled
+
+service qvop-daemon /vendor/bin/qvop-daemon
+    override
+    class late_start
+    user system
+    group system drmrpc
+    disabled
+
+service esepmdaemon /system/vendor/bin/esepmdaemon
+    override
+    class core
+    user system
+    group nfc
+    disabled
+
 # Sensors
 on property:vendor.all.modules.ready=1
     chown system system /proc/touchpanel/gesture_code

@@ -27,8 +27,11 @@ on post-fs-data
     chmod 0444 /data/vendor/camera/bokeh_caldata_tele_golden.bin
     chown cameraserver audio /data/vendor/camera/bokeh_caldata_tele_golden.bin
 
-    symlink /mnt/vendor/persist/sensors/registry/registry/volcano_qrd_ois_manager_0.json.ois_manager_0_platform.ois.fac_cal.bias /data/vendor/camera/ois_gyro_offset
+    # OIS factory gyro bias (Pro only), the camera HAL can't read the 0600 original
+    rm /data/vendor/camera/ois_gyro_offset
+    copy /mnt/vendor/persist/sensors/registry/registry/volcano_qrd_ois_manager_0.json.ois_manager_0_platform.ois.fac_cal.bias /data/vendor/camera/ois_gyro_offset
     chown cameraserver audio /data/vendor/camera/ois_gyro_offset
+    chmod 0664 /data/vendor/camera/ois_gyro_offset
 
     setprop ro.media.xml_variant.profiles "_volcano_v1_${ro.boot.pbid}"
 
@@ -42,6 +45,20 @@ on early-boot
     chown system system /sys/devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/frame_brightness
 
 on boot
+    # Notification LEDs
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chmod 0666 /sys/class/leds/red/brightness
+    chmod 0666 /sys/class/leds/green/brightness
+    chmod 0666 /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/red/trigger
+    chown system system /sys/class/leds/green/trigger
+    chown system system /sys/class/leds/blue/trigger
+
+    # Display panel backlight baseline to avoid 0.1 nits pitch black cold boot
+    write /sys/class/backlight/panel0-backlight/brightness 200
+
     chown system system /sys/devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/factory_test
     chown system system /sys/devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/imax
     chown system system /sys/devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/effect
@@ -78,6 +95,12 @@ on boot
     chown system system /proc/touchpanel/pocket_mode
 
 on property:sys.boot_completed=1
+    # Stop the kernel boot recorder after its final log flush.
+    wait /sys/devices/virtual/NT/NT_reserve_kernel_log/boot_stage_systemserver
+    write /sys/devices/virtual/NT/NT_reserve_kernel_log/boot_stage_systemserver 1
+
+    # Select the compressor before fs_mgr sets the zRAM disk size.
+    write /sys/block/zram0/comp_algorithm lz4
     swapon_all /odm/etc/fstab.zram.2g
 
     chown system system /proc/charger/nt_otg_enable

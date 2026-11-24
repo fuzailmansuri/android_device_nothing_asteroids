@@ -842,6 +842,8 @@ vendor/etc/display/qdcm_calib_data_rm69220_amoled_vid_mode_dsi_BOE_panel_with_DS
 vendor/etc/display/qdcm_calib_data_rm69220_amoled_vid_mode_dsi_visionox_panel_with_DSC.json
 vendor/etc/display/thermallevel_to_fps.xml
 vendor/etc/clstc_config_library.xml
+vendor/etc/init/vendor.qti.hardware.lights.service.rc;EXTRACT_ONLY
+vendor/etc/vintf/manifest/vendor.qti.hardware.lights.service.xml;EXTRACT_ONLY
 vendor/lib64/libbacklight-calib.so
 vendor/lib64/libclstc_algorithm_adapter.so
 vendor/lib64/libclstc_gcp_adapter.so
@@ -865,6 +867,8 @@ vendor/lib64/libvmfilexfer.so
 
 # Display postprocessing
 vendor/bin/hw/vendor.qti.hardware.display.color-service
+vendor/bin/hw/vendor.qti.hardware.lights.service;DISABLE_CHECKELF;EXTRACT_ONLY
+vendor/lib64/vendor.hardware.light-V1-ndk_platform.so
 vendor/bin/ppd
 vendor/etc/init/vendor.qti.hardware.display.color-service.rc
 vendor/lib64/libdisp-aba.so
@@ -886,6 +890,7 @@ vendor/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor
 
 # DSP
 vendor/bin/dspservice
+vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
@@ -1317,7 +1322,7 @@ vendor/bin/ATFWD-daemon
 vendor/bin/ks
 vendor/bin/qms
 vendor/etc/default-permissions/vendor.qti.data.txpwradmin.xml
-vendor/etc/init/dcfd.rc
+vendor/etc/init/dcfd.rc;EXTRACT_ONLY
 vendor/etc/init/qcrilNrd.rc
 vendor/etc/init/qms.rc
 vendor/etc/qcril_database/upgrade/config/0006.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
@@ -1330,6 +1335,7 @@ vendor/etc/qcril_database/upgrade/config/0012.0_config.sql;FILEGROUP=proprietary
 vendor/etc/qcril_database/upgrade/config/0013.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
 vendor/etc/qcril_database/upgrade/config/0014.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
 vendor/etc/qcril_database/upgrade/config/0015.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0016.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
 vendor/etc/qcril_database/upgrade/other/0000_initial_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
 vendor/etc/qcril_database/upgrade/other/0001_version_intro_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
 vendor/etc/qcril_database/upgrade/other/0002_version_add_wps_config_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
@@ -1346,6 +1352,7 @@ vendor/etc/qcril_database/upgrade/other/0012_version_update_ecc_table.sql;FILEGR
 vendor/etc/qcril_database/upgrade/other/0013_version_update_ecc_table.sql;FILEGROUP=proprietary_rildb_other_sql_files
 vendor/etc/qcril_database/upgrade/other/0014_version_update_modules.sql;FILEGROUP=proprietary_rildb_other_sql_files
 vendor/etc/qcril_database/upgrade/other/0015_version_add_iccid_clir_pref_table.sql;FILEGROUP=proprietary_rildb_other_sql_files
+vendor/etc/qcril_database/upgrade/other/0016_version_update_ecc_table.sql;FILEGROUP=proprietary_rildb_other_sql_files
 vendor/etc/seccomp_policy/qcrilnr@2.0.policy
 vendor/etc/seccomp_policy/qms.policy
 vendor/etc/vintf/manifest/android.hardware.radio.config.xml

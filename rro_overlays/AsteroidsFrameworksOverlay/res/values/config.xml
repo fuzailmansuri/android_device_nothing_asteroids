@@ -94,14 +94,6 @@
         <item>7</item>
     </integer-array>
 
-    <!-- Messages that should not be shown to the user during face authentication, on keyguard.
-         This includes both lockscreen and bouncer. This should be used to hide messages that may be
-         too chatty or messages that the user can't do much about. Entries are defined in
-         android.hardware.biometrics.face@1.0 types.hal -->
-    <integer-array name="config_face_acquire_keyguard_ignorelist">
-        <item>11</item>
-    </integer-array>
-
     <!-- Default files to pin via Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
         <item>/apex/com.android.art/javalib/core-oj.jar</item>
@@ -159,11 +151,11 @@
         <item>0.55</item>
     </string-array>
 
-    <!-- Boolean indicating whether display white balance is supported. -->
-    <bool name="config_displayWhiteBalanceAvailable">true</bool>
+    <!-- The selected sensors do not provide calibrated ambient color temperature. -->
+    <bool name="config_displayWhiteBalanceAvailable">false</bool>
 
     <!-- Boolean indicating whether display white balance should be enabled by default. -->
-    <bool name="config_displayWhiteBalanceEnabledDefault">true</bool>
+    <bool name="config_displayWhiteBalanceEnabledDefault">false</bool>
 
     <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
     <bool name="config_dozePulsePickup">true</bool>
@@ -389,15 +381,6 @@
          available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
 
-    <!-- Set this to true to enable the platform's auto-power-save modes like doze and
-         app standby.  These are not enabled by default because they require a standard
-         cloud-to-device messaging service for apps to interact correctly with the modes
-         (such as to be able to deliver an instant message to the device even when it is
-         dozing).  This should be enabled if you have such services and expect apps to
-         correctly use them when installed on your device.  Otherwise, keep this disabled
-         so that applications can still use their own mechanisms. -->
-    <bool name="config_enableAutoPowerModes">true</bool>
-    
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
     
