@@ -36,6 +36,7 @@ lib_fixups: lib_fixups_user_type = {
         'libats',
         'libagm',
         'libpalclient',
+        'libglyph_lights_shim',
     ): lib_fixup_remove,
     (
         'com.qualcomm.qti.dpm.api@1.0',
@@ -91,6 +92,17 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    # The stock RC starts a daemon absent from the Asteroids vendor payload.
+    'vendor/etc/init/init.vendor.wlan.rc': blob_fixup()
+        .regex_replace(
+            r'\nservice wifi_qos_daemon /vendor/bin/wifi_qos_daemon\n'
+            r'    class late_start\n'
+            r'    user wifi\n'
+            r'    group wifi inet net_admin oem_2912 system\n'
+            r'    capabilities NET_ADMIN\n'
+            r'    oneshot\n',
+            '',
+        ),
     'vendor/bin/init.qti.kernel.sh': blob_fixup()
         .regex_replace(r'(?m)^start_msm_irqbalance\n', ''),
     (
@@ -107,6 +119,16 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libqcc_sdk.so',
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
+    (
+        'vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy',
+        'vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy',
+    ): blob_fixup()
+        .regex_replace(r'(?ms)(^munmap: 1\n.*?)^munmap: 1\n', r'\1'),
+    (
+        'vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy',
+        'vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy',
+    ): blob_fixup()
+        .regex_replace(r'(?m)^(_llseek|getdents64): 1\n', ''),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
     'vendor/etc/lvacfs_params/1mic/LVACFS_Configuration.txt': blob_fixup()
@@ -125,6 +147,10 @@ blob_fixups: blob_fixups_user_type = {
         'libtensorflowlite_c.so',
         'libtensorflowlite_c_vendor.so',
     ),
+    'vendor/bin/hw/vendor.qti.hardware.lights.service': blob_fixup()
+        .add_needed('libglyph_lights_shim.so'),
+    'vendor/lib64/hw/libproviderextension.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.allocator-V2-ndk.so', 'android.hardware.graphics.allocator-V1-ndk.so'),
     'vendor/lib64/libmorpho_RapidEffect.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_describe')

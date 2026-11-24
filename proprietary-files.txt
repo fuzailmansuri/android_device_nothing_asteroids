@@ -265,7 +265,7 @@ vendor/lib64/camera/node/com.nothing.node.bokehhdr.so
 vendor/lib64/camera/node/com.nothing.node.cfr.so
 vendor/lib64/camera/node/com.nothing.node.darkvision.so
 vendor/lib64/camera/node/com.nothing.node.dmp.so
-vendor/lib64/camera/node/com.nothing.node.filter.so
+vendor/lib64/camera/node/com.nothing.node.filter.so;DISABLE_CHECKELF
 vendor/lib64/camera/node/com.nothing.node.frmselect.so
 vendor/lib64/camera/node/com.nothing.node.frt.so
 vendor/lib64/camera/node/com.nothing.node.jpeg.so
@@ -337,6 +337,7 @@ vendor/lib64/hw/camera.qcom.milos.so
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.offline.so
 vendor/lib64/hw/com.qti.chi.override.so;DISABLE_DEPS
+vendor/lib64/hw/libproviderextension.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/bm4d68v02s12n52.bin
 vendor/lib64/bm4d68v02s12n53.bin
 vendor/lib64/bm4d68v02s12n63.bin
@@ -665,7 +666,7 @@ vendor/etc/charger_fw_fstab.qti
 vendor/app/CACertService/CACertService.apk
 vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_vendor_symlink
 vendor/app/IWlanService/IWlanService.apk
-vendor/bin/cnd
+vendor/bin/cnd;DISABLE_CHECKELF
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
@@ -793,7 +794,7 @@ vendor/lib64/libDcfHalLogger.so
 vendor/lib64/libDcfHalQtiMutex.so
 
 # Diagnostics
-vendor/bin/diag-router
+vendor/bin/diag-router;DISABLE_CHECKELF
 vendor/etc/init/vendor.qti.diag.rc
 vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/lib64/libdiag.so
@@ -874,8 +875,8 @@ vendor/etc/init/vendor.qti.hardware.display.color-service.rc
 vendor/lib64/libdisp-aba.so
 
 # DPM
-vendor/bin/dpmQmiMgr
-vendor/bin/vendor.dpmd
+vendor/bin/dpmQmiMgr;DISABLE_CHECKELF
+vendor/bin/vendor.dpmd;DISABLE_CHECKELF
 vendor/etc/dpm_vndr/vendor.dpm.conf
 vendor/etc/init/dpmQmiMgr.rc
 vendor/etc/init/vendor.dpmd.rc
@@ -1055,8 +1056,8 @@ system_ext/framework/com.android.hotwordenrollment.common.util_WIDEBAND.jar
 
 # IMS
 vendor/bin/ims-dataservice-daemon
-vendor/bin/ims_rtp_daemon
-vendor/bin/imsdaemon
+vendor/bin/ims_rtp_daemon;DISABLE_CHECKELF
+vendor/bin/imsdaemon;DISABLE_CHECKELF
 vendor/etc/init/ims-dataservice-daemon.rc
 vendor/etc/init/ims_rtp_daemon.rc
 vendor/etc/init/imsdaemon.rc
@@ -1208,7 +1209,7 @@ vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 
 # Perf
-vendor/bin/hw/vendor.qti.hardware.limits@1.2-service
+vendor/bin/hw/vendor.qti.hardware.limits@1.2-service;DISABLE_CHECKELF
 vendor/bin/qlm-service
 vendor/etc/init/init.qlm-service.rc
 vendor/etc/init/vendor.qti.hardware.limits-service.rc
@@ -1239,7 +1240,7 @@ vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
 # QCC
-vendor/bin/qcc-vendor
+vendor/bin/qcc-vendor;DISABLE_CHECKELF
 vendor/etc/init/init.qccvendor.rc
 vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
 vendor/lib64/libqcc_file_agent.so
@@ -1749,7 +1750,7 @@ vendor/etc/wifi/wpa_supplicant_overlay.conf
 # WiFi Display (vendor)
 vendor/bin/wfdhdcphalservice
 vendor/bin/wfdvndservice
-vendor/bin/wifidisplayhalservice
+vendor/bin/wifidisplayhalservice;DISABLE_CHECKELF
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/etc/init/wfdvndservice.rc
