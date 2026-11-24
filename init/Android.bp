@@ -11,12 +11,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "fstab.zram.2g",
-    src: "fstab.zram.2g",
-    device_specific: true,
-}
-
-prebuilt_etc {
     name: "init.asteroids.hw.rc",
     src: "init.asteroids.hw.rc",
     sub_dir: "init",
