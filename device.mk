@@ -221,7 +221,7 @@ PRODUCT_PACKAGES += \
 # Glyph
 PRODUCT_PACKAGES += \
     GlyphAdapter \
-    ParanoidGlyphPhone3a
+    ParanoidGlyph
 
 # Graphics
 PRODUCT_REQUIRES_INSECURE_EXECMEM_FOR_SWIFTSHADER := true
@@ -490,6 +490,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     nt-telephony-interface
+
+# Nothing-fwk
+PRODUCT_PACKAGES += \
+    nothing-fwk
+
+PRODUCT_BOOT_JARS += \
+    nothing-fwk
 
 # Perf
 PRODUCT_COPY_FILES += \

@@ -1,0 +1,6 @@
+get_prop(system_server, vendor_fingerprint_prop)
+
+hal_client_domain(system_server, vendor_hal_snapx_service_qti)
+
+# Allow CachedAppOptimizer compaction on tmpfs
+allow system_server tmpfs:file { getattr map read write };

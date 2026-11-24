@@ -4,6 +4,9 @@ genfscon proc /charger/usb_charger_en u:object_r:vendor_proc_power_supply:s0
 genfscon proc /touchpanel/TP_charger_flags   u:object_r:vendor_proc_power_supply:s0
 genfscon sysfs /class/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
 
+# Boot log completion
+genfscon sysfs /devices/virtual/NT/NT_reserve_kernel_log/boot_stage_systemserver u:object_r:vendor_sysfs_boot_log:s0
+
 # Display
 genfscon sysfs /panel_feature/panel_id1    u:object_r:vendor_sysfs_graphics:s0
 
@@ -11,14 +14,21 @@ genfscon sysfs /panel_feature/panel_id1    u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd9378-codec/extcon    u:object_r:sysfs_extcon:s0
 
 # Lights
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led                   u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/all_brightness    u:object_r:vendor_sysfs_glyph:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/all_white_brightness    u:object_r:vendor_sysfs_glyph:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/frame_brightness        u:object_r:vendor_sysfs_glyph:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/always_on               u:object_r:vendor_sysfs_glyph:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/operating_mode          u:object_r:vendor_sysfs_glyph:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/single_brightness       u:object_r:vendor_sysfs_glyph:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/dev_color               u:object_r:vendor_sysfs_glyph:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-7/7-003a/leds/aw20036_led/max_brightness          u:object_r:vendor_sysfs_glyph:s0
 
 # Scheduler
 genfscon proc /sys/walt/sched_boost u:object_r:proc_sched:s0
+
+# VM
+genfscon proc /sys/vm/swappiness u:object_r:vendor_proc_swappiness:s0
 
 # Touch
 genfscon proc /touchpanel/gesture_mode                                                                      u:object_r:vendor_proc_touchpanel_gesture:s0
@@ -34,7 +44,4 @@ genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/880000.i2c/i2c-
 genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup                                                    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.spi/spi_master/spi0/spi0.0/wakeup    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup                                     u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:gpio_key/wakeup                                                     u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/17110040.qcom,wcn6750/wakeup                                            u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/9bb00000.remoteproc-wpss/wakeup                                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/890000.qcom,qup_uart/wakeup                 u:object_r:sysfs_wakeup:s0

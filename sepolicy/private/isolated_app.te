@@ -1,0 +1,2 @@
+# Chrome isolated renderers setattr app data files (crashpad/disk cache bookkeeping)
+allow isolated_app app_data_file:file setattr;

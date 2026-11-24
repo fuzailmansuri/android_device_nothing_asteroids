@@ -1,1 +1,8 @@
 get_prop(platform_app, vendor_nothing_feature_prop)
+get_prop(platform_app_36, vendor_nothing_feature_prop)
+
+get_prop(platform_app, bluetooth_lea_prop)
+get_prop(platform_app_36, bluetooth_lea_prop)
+
+# device/qcom/sepolicy grants these to platform_app only
+allow platform_app_36 { vendor_cne_service vendor_color_service vendor_dpmservice soundtrigger_middleware_service }:service_manager find;

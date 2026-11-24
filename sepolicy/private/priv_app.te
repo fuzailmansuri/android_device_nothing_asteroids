@@ -1,0 +1,2 @@
+# device/qcom/sepolicy grants this to priv_app only
+allow priv_app_36 soundtrigger_middleware_service:service_manager find;

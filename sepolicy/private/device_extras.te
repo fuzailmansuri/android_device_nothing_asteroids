@@ -1,0 +1,3 @@
+allow device_extras vendor_perf_service:service_manager find;
+
+hal_client_domain(device_extras, vendor_hal_perf)

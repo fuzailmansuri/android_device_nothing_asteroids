@@ -19,7 +19,9 @@
 /vendor/lib64/libmpbase\.so                                         u:object_r:same_process_hal_file:s0
 
 # Lights
-/dev/led_strips    u:object_r:led_device:s0
+/dev/led_strips                               u:object_r:led_device:s0
+/sys/devices/platform/soc/[^/]+/leds(/.*)?    u:object_r:sysfs_leds:s0
+/sys/class/leds(/.*)?                         u:object_r:sysfs_leds:s0
 
 # Power HAL
 

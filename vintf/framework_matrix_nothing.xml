@@ -11,6 +11,15 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Camera: HIDL cameraservice is max-level 7 in the framework manifest -->
+    <hal format="hidl" optional="true">
+        <name>android.frameworks.cameraservice.service</name>
+        <version>2.2</version>
+        <interface>
+            <name>ICameraService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- Sensors -->
     <hal format="aidl" optional="true">
         <name>vendor.noth.hardware.sensor.sensor_extension</name>
