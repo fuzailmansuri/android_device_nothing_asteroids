@@ -8,6 +8,7 @@ rw_dir_file(vendor_hal_perf_default, proc_sched)
 r_dir_file(vendor_hal_perf_default, proc_sched_walt)
 allow vendor_hal_perf_default proc_sched_walt:file rw_file_perms;
 
+allow vendor_hal_perf_default self:capability sys_admin;
 dontaudit vendor_hal_perf_default self:capability net_admin;
 
 # Perf2 service

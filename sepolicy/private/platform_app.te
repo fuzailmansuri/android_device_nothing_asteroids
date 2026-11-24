@@ -6,3 +6,8 @@ get_prop(platform_app_36, bluetooth_lea_prop)
 
 # device/qcom/sepolicy grants these to platform_app only
 allow platform_app_36 { vendor_cne_service vendor_color_service vendor_dpmservice soundtrigger_middleware_service }:service_manager find;
+allow platform_app_36 { vendor_dpmd_socket vendor_dpmtcm_socket }:sock_file w_file_perms;
+allow platform_app_36 vendor_dpmd:unix_stream_socket connectto;
+unix_socket_connect(platform_app_36, vendor_dpmtcm, vendor_tcmd);
+vendor_dpmd_socket_perm(platform_app_36)
+

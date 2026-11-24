@@ -1,2 +1,14 @@
 allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
+
+# Settings SystemPropPoker probes all listed services; suppress expected denials
+# on services system_app must not call or find.
+dontaudit system_app {
+  sltntc
+  storaged
+}:binder call;
+dontaudit system_app {
+  system_suspend_control_service
+  tracingproxy_service
+}:service_manager find;
+

@@ -1,0 +1,11 @@
+# Allow Settings/system_app to read QTI perf/mpctl properties (BoostFramework/ScrollOptimizer)
+get_prop(system_app, vendor_mpctl_prop)
+
+# Settings SystemPropPoker probes all listed services; suppress expected HAL binder denials.
+dontaudit system_app {
+  hal_audio_default
+  hal_bootctl_default
+  hal_fingerprint_default
+  hal_health_default
+  hal_memtrack_default
+}:binder call;

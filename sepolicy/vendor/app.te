@@ -1,0 +1,4 @@
+# Adreno-AppProfiles probes QSPM AIDL service even when ro.vendor.qspm.enable=false;
+# suppress service_manager find denials for app domains without vendor_hal_qspmhal_client
+# (mirrors vendor_hal_qspmhal_hwservice dontaudit in sepolicy_vndr app.te).
+dontaudit appdomain vendor_hal_qspmhal_service:service_manager find;
