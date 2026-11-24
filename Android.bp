@@ -26,3 +26,10 @@ install_symlink {
     installed_location: "lib64/hw/android.hardware.bluetooth.audio-impl.so",
     symlink_target: "/vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so",
 }
+
+install_symlink {
+    name: "CneApp.libvndfwk_detect_jni.qti_vendor_symlink",
+    vendor: true,
+    installed_location: "app/CneApp/lib/arm64/libvndfwk_detect_jni.qti_vendor.so",
+    symlink_target: "/vendor/lib64/libvndfwk_detect_jni.qti_vendor.so",
+}

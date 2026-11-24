@@ -268,16 +268,12 @@ PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
 
 # Lights
+TARGET_PROVIDES_LIGHTSHAL := true
+
 $(call soong_config_set,nothing_glyph,device,phone3a)
 
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.glyph
-
-# Health extension
-$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
-
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_COPY_FILES += \

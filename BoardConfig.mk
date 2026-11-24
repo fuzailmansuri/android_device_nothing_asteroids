@@ -230,14 +230,26 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 100
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Dolby
+ifneq ($(wildcard hardware/dolby/dolby.mk),)
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    hardware/dolby/sepolicy/vendor \
+    hardware/dolby/sepolicy/vendor/aidl
+endif
+
 # SELinux
 TARGET_SEPOLICY_DIR := pineapple
 include hardware/nothing/config.mk
-include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+
+# UFS
+SOONG_CONFIG_NAMESPACES += ufsbsg
+SOONG_CONFIG_ufsbsg += ufsframework
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
