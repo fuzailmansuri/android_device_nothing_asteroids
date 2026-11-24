@@ -19,3 +19,10 @@ install_symlink {
     installed_location: "firmware/wlan/qca_cld/qca6750/wlan_mac.bin",
     symlink_target: "/mnt/vendor/persist/qca6750/wlan_mac.bin",
 }
+
+install_symlink {
+    name: "android.hardware.bluetooth.audio-impl_hw_symlink",
+    soc_specific: true,
+    installed_location: "lib64/hw/android.hardware.bluetooth.audio-impl.so",
+    symlink_target: "/vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so",
+}
