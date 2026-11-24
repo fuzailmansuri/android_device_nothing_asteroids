@@ -5,7 +5,7 @@
 
 # Platform
 TARGET_BOARD_PLATFORM := volcano
-TARGET_KERNEL_VERSION := 6.6
+TARGET_KERNEL_VERSION := 6.1
 TARGET_USES_KERNEL_PLATFORM := false
 
 # QTI components
@@ -246,11 +246,6 @@ PRODUCT_PACKAGES += \
     system_dlkm_modprobe.sh \
     ueventd.asteroids.rc
 
-# Post-boot scripts
-PRODUCT_COPY_FILES += \
-    vendor/nothing/asteroids/proprietary/vendor/bin/init.kernel.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot.sh \
-    vendor/nothing/asteroids/proprietary/vendor/bin/init.kernel.post_boot-volcano.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot-volcano.sh
-
 # Kernel
  PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system_dlkm.modules.blocklist:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
@@ -446,7 +441,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/nothing \
     hardware/qcom/wlan/qcwcn \
     hardware/qcom/wlan/qcwcn/wpa_supplicant_8_lib \
-    kernel/nothing/sm7635 \
     hardware/qcom-caf/sm8650 \
     hardware/qcom-caf/sm8650/audio/st-hal-ar
 

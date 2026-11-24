@@ -5,8 +5,10 @@ VENDOR_DLKM_DIR="/vendor_dlkm/lib/modules"
 
 MODPROBE="/vendor/bin/modprobe"
 
-for dir in ${SYSTEM_DLKM_DIR} ;
+for dir in "${SYSTEM_DLKM_DIR}" "${SYSTEM_DLKM_DIR}"/* ;
 do
+	# 6.1 GKI modules are installed in a versioned directory by the ROM build.
+	[ -f "${dir}/modules.dep" ] || continue
 	if [ -e ${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist ] && grep -q blocklist ${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist; then
 		blocklist_expr="$(sed -n -e 's/blocklist \(.*\)/\1/p' ${VENDOR_DLKM_DIR}/system_dlkm.modules.blocklist | sed -e 's/-/[-_]/g' -e 's/^/-e /')"
 	else
