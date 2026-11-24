@@ -36,6 +36,7 @@ lib_fixups: lib_fixups_user_type = {
         'libats',
         'libagm',
         'libpalclient',
+        'libntcam_session_shim',
         'libglyph_lights_shim',
     ): lib_fixup_remove,
     (
@@ -147,8 +148,12 @@ blob_fixups: blob_fixups_user_type = {
         'libtensorflowlite_c.so',
         'libtensorflowlite_c_vendor.so',
     ),
+    'vendor/bin/hw/vendor.qti.camera.provider-service_64': blob_fixup()
+        .add_needed('libntcam_session_shim.so'),
     'vendor/bin/hw/vendor.qti.hardware.lights.service': blob_fixup()
         .add_needed('libglyph_lights_shim.so'),
+    'vendor/lib64/camera/node/com.nothing.node.bokehhdr.so': blob_fixup()
+        .binary_regex_replace(b'\xb7\x83\x5d\xf8\x77\xf1\xff\xb4', b'\xb7\x83\x5d\xf8\xb7\xf6\xff\xb4'),
     'vendor/lib64/hw/libproviderextension.so': blob_fixup()
         .replace_needed('android.hardware.graphics.allocator-V2-ndk.so', 'android.hardware.graphics.allocator-V1-ndk.so'),
     'vendor/lib64/libmorpho_RapidEffect.so': blob_fixup()
@@ -161,6 +166,15 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libui_shim.so'),
     'vendor/lib64/libntcamskia.so': blob_fixup()
         .add_needed('libnativewindow.so'),
+    (
+        'vendor/lib64/libntofflinepostproc.so',
+        'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so',
+    ): blob_fixup().replace_needed(
+        'vendor.qti.hardware.camera.postproc@1.0.so',
+        'vendor.qti.hardware.camera.postproc@1.0-nothing.so',
+    ),
+    'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-nothing.so': blob_fixup()
+        .fix_soname(),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
         .add_needed('libbinder_shim.so')
         .add_needed('libhidlbase_shim.so'),

@@ -15,9 +15,6 @@ persist.bluetooth.leaudio.notify.idle.during.call=true
 persist.bluetooth.leaudio_offload.disabled=false
 ro.bluetooth.leaudio_offload.supported=true
 
-# Camera
-vendor.camera.aux.packagelist=com.nothing.camera,org.lineageos.aperture,org.lineageos.aperture.dev
-
 # Charger
 ro.charger.enable_suspend=1
 

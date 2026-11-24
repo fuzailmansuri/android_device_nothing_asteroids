@@ -20,9 +20,6 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.device_id.vendor_id=0x001D
 
-# Camera
-ro.camerax.extensions.enabled=true
-
 # eUICC
 masterclear.allow_retain_esim_profiles_after_fdr=true
 

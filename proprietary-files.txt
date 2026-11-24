@@ -169,10 +169,8 @@ vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so
 # Camera
 odm/overlayfs_origin/base/etc/camera/camxoverridesettings.txt
 odm/overlayfs_origin/pro/etc/camera/camxoverridesettings.txt
-system_ext/etc/permissions/advancedSample_camera_extensions.xml
-system_ext/framework/androidx.camera.extensions.impl.advanced.jar;MAKE_COPY_RULE_ONLY
 system_ext/lib64/libencoderjpeg_jni.so
-vendor/bin/hw/vendor.qti.camera.provider-service_64
+vendor/bin/hw/vendor.qti.camera.provider-service_64;DISABLE_CHECKELF
 vendor/etc/init/vendor.qti.camera.provider-service_64.rc
 vendor/etc/vintf/manifest/vendor.qti.camera.offlinecamera-impl.xml
 vendor/etc/vintf/manifest/vendor.qti.camera.postproc-impl.xml
@@ -495,6 +493,7 @@ vendor/lib64/libwa_sat.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0.so:vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-nothing.so
 
 # Camera configs
 vendor/etc/camera/ancsat/sat_mecp.bin
