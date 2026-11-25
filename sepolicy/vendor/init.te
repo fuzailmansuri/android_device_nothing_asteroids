@@ -1,0 +1,4 @@
+allow init vendor_configs_file:dir mounton;
+allow init vendor_configs_file:filesystem {mount relabelfrom relabelto};
+
+set_prop(vendor_init, vendor_nothing_feature_prop)

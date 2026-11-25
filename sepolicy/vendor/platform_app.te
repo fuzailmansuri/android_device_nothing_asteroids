@@ -1,0 +1,6 @@
+allow platform_app vendor_sysfs_graphics:file r_file_perms;
+allow platform_app_36 vendor_sysfs_graphics:file r_file_perms;
+
+# Nothing Camera targets SDK 36 and calls QPerformance for capture boosts.
+hal_client_domain(platform_app_36, vendor_hal_perf)
+get_prop(platform_app_36, vendor_mpctl_prop)
