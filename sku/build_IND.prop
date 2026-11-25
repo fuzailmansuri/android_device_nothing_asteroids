@@ -1,6 +1,7 @@
-ro.odm.build.fingerprint=Nothing/AsteroidsIND/Asteroids:14/UKQ1.260129.001/2611061007:user/release-keys
-ro.vendor.build.fingerprint=Nothing/AsteroidsIND/Asteroids:14/UKQ1.260129.001/2611061007:user/release-keys
+ro.odm.build.fingerprint=Nothing/AsteroidsIND/Asteroids:17/CQ2A.260522.002-CP2A.260605.016/2611061007:user/release-keys
+ro.vendor.build.fingerprint=Nothing/AsteroidsIND/Asteroids:17/CQ2A.260522.002-CP2A.260605.016/2611061007:user/release-keys
 ro.product.odm.name=AsteroidsIND
 ro.product.vendor.name=AsteroidsIND
 ro.product.odm.model=A059
+ro.product.vendor.model=A059
 ro.vendor.nothing.feature.diff.product.AsteroidsIND=0x10000000000000000000000L
