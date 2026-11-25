@@ -5,6 +5,8 @@
 <manifest version="1.0" type="device" target-level="8">
     <hal format="aidl" override="true">
         <name>android.hardware.secure_element</name>
+        <fqname>ISecureElement/SIM1</fqname>
+        <fqname>ISecureElement/SIM2</fqname>
     </hal>
     <hal format="hidl" override="true">
         <name>android.frameworks.cameraservice.service</name>
