@@ -31,6 +31,3 @@ remote_provisioning.hostname=remoteprovisioning.googleapis.com
 
 # Thermal
 persist.sys.sltntc.enable=1
-
-# Apply the hardware SKU after the product image's common fingerprint.
-import /product/etc/build_${ro.boot.hardware.sku}.prop
