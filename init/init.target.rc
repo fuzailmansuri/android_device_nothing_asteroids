@@ -122,8 +122,9 @@ on boot
     chown system /sys/devices/system/cpu/hyp_core_ctl/hcc_min_freq
 
     mkdir /dev/cpuset/surfaceflinger
-    write /dev/cpuset/surfaceflinger/cpus 2-5
+    write /dev/cpuset/surfaceflinger/cpus 0-7
     write /dev/cpuset/surfaceflinger/mems 0
+    write /dev/cpuctl/top-app/cpu.uclamp.min 10
     chown system system /dev/cpuset/surfaceflinger
     chown system system /dev/cpuset/surfaceflinger/tasks
     chown system system /dev/cpuset/surfaceflinger/cgroup.procs
