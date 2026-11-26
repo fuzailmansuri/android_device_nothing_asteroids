@@ -31,3 +31,6 @@ remote_provisioning.hostname=remoteprovisioning.googleapis.com
 
 # Thermal
 persist.sys.sltntc.enable=1
+
+# Sku properties
+import /product/etc/build_${ro.boot.hardware.sku}.prop

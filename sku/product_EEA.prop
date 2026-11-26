@@ -1,1 +1,4 @@
 ro.build.fingerprint=Nothing/AsteroidsEEA/Asteroids:17/CQ2A.260522.002-CP2A.260605.016/2611061007:user/release-keys
+ro.product.build.fingerprint=Nothing/AsteroidsEEA/Asteroids:17/CQ2A.260522.002-CP2A.260605.016/2611061007:user/release-keys
+ro.product.product.name=AsteroidsEEA
+ro.product.product.model=A059
