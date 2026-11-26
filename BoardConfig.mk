@@ -256,6 +256,9 @@ DEVICE_MANIFEST_VOLCANO_FILES += \
     hardware/dolby/configs/vintf/vendor.dolby.hardware.dms@2.0-service.xml \
     hardware/dolby/configs/vintf/vendor.dolby.media.c2@1.0-service.xml
 
+# Camera
+include vendor/nothing/camera/BoardConfigCamera.mk
+
 # Wi-Fi
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211

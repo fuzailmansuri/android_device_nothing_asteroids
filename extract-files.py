@@ -24,6 +24,7 @@ namespace_imports = [
     'hardware/qcom-caf/common/libqti-perfd-client',
     'hardware/qcom-caf/sm8650',
     'hardware/qcom-caf/wlan',
+    'vendor/nothing/camera',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
@@ -102,6 +103,18 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('remote_register_buf')
         .clear_symbol_version('rpcmem_alloc')
         .clear_symbol_version('rpcmem_free'),
+    # Nothing added IPostProcSession.release() without changing the QTI interface version.
+    'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-nothing.so': blob_fixup()
+        .fix_soname(),
+    (
+        'vendor/lib64/libntofflinepostproc.so',
+        'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so',
+    ): blob_fixup()
+        .replace_needed('vendor.qti.hardware.camera.postproc@1.0.so', 'vendor.qti.hardware.camera.postproc@1.0-nothing.so'),
+    'vendor/bin/hw/vendor.qti.camera.provider-service_64': blob_fixup()
+        .add_needed('libntcam_session_shim.so'),
+    'vendor/bin/hw/vendor.qti.hardware.lights.service': blob_fixup()
+        .add_needed('libglyph_lights_shim.so'),
     'vendor/lib64/camera/node/com.nothing.node.bokehhdr.so': blob_fixup()
         .call(fixup_bokeh_calibration, need_tmp_dir=False),
     'vendor/etc/camera/ntcamoverridesettings.txt': blob_fixup()
