@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- asteroids uses HIDL libswdap.so, which handles AudioEffect.setEnabled(false) cleanly. -->
+    <bool name="config_dolby_disable_audio_effect">true</bool>
+
+    <!-- dax-default.xml sets ieq-enable=false with an included ieq_preset and ieq-amount=6. -->
+    <bool name="config_dolby_force_ieq_reapply">true</bool>
+    <integer name="config_dolby_min_ieq_amount">6</integer>
+
+    <!-- Match tuned profiles in hardware/dolby/configs/dax/dax-default.xml (0, 1, 2). -->
+    <string-array name="dolby_profile_entries" translatable="false">
+        <item>dynamic</item>
+        <item>video</item>
+        <item>music</item>
+    </string-array>
+
+    <string-array name="dolby_profile_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

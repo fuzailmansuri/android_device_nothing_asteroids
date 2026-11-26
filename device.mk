@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # Audio
-$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+$(call soong_config_set,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8650/audio/primary-hal
 AUDIO_PAL_DIR := hardware/qcom-caf/sm8650/audio/pal
@@ -105,6 +105,7 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.volcano
 
 # Dolby
+USE_HWDAP := false
 $(call inherit-product, hardware/dolby/dolby.mk)
 
 # Biometrics
@@ -328,6 +329,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     AsteroidsApertureDevOverlay \
     AsteroidsApertureOverlay \
+    AsteroidsDolbyOverlay \
     AsteroidsEuiccOverlay \
     AsteroidsFrameworksOverlay \
     AsteroidsLauncherOverlay \
