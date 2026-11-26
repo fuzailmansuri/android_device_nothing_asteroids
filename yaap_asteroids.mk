@@ -12,6 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, device/nothing/asteroids/device.mk)
 $(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+$(call inherit-product-if-exists, vendor/yaap/signing/keys/keys.mk)
 
 PRODUCT_BRAND := Nothing
 PRODUCT_DEVICE := asteroids
