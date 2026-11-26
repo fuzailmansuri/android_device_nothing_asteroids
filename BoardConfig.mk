@@ -114,6 +114,7 @@ BOARD_KERNEL_CMDLINE := \
     log_buf_len=1M \
     nosoftlockup \
     qcom_geni_serial.con_enabled=0 \
+    sysctl.kernel.firmware_config.force_sysfs_fallback=1 \
     video=vfb:640x400,bpp=32,memsize=3072000
 
 BOARD_BOOTCONFIG := \
