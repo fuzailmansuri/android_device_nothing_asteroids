@@ -95,6 +95,11 @@ blob_fixups: blob_fixups_user_type = {
             '81 15 02 d0 21 00 71 39 01 00 00 b9 00 00 80 52 c0 03 5f d6',
             '21 00 80 52 01 00 00 b9 00 00 80 52 c0 03 5f d6 1f 20 03 d5',
         ),
+    'vendor/lib64/libqti-perfd-client.so': blob_fixup()
+        .sig_replace(
+            '28 d0 07 51 1f d1 07 31 c8 01 00 54 a1 ff ff b0',
+            '28 d0 07 51 1f d1 07 31 c8 01 00 54 0b 00 00 14',
+        ),
     'vendor/etc/lvacfs_params/1mic/LVACFS_Configuration.txt': blob_fixup()
         .patch_file('audio/lvacfs_1mic_config.patch'),
     'vendor/etc/lvacfs_params/2mic/LVACFS_Configuration.txt': blob_fixup()
