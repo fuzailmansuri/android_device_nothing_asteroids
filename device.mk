@@ -384,6 +384,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
     $(LOCAL_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
 
+# Platform
+TARGET_BOARD_PLATFORM := volcano
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
