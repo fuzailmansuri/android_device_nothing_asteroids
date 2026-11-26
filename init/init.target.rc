@@ -224,4 +224,10 @@ service gki.modprobe /vendor/bin/system_dlkm_modprobe.sh
     disabled
     stdio_to_kmsg
     seclabel u:r:vendor_modprobe:s0
+
+on property:sys.boot_completed=1
+    write /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us 4000
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/down_rate_limit_us 4000
+    write /sys/devices/system/cpu/cpufreq/policy4/walt/rtg_boost_freq 1190400
+    write /proc/sys/walt/sched_downmigrate "50 75 85"
     oneshot
