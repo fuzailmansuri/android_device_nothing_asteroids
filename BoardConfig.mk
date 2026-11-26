@@ -251,7 +251,10 @@ ODM_MANIFEST_SKUS := JPN
 ODM_MANIFEST_JPN_FILES := $(DEVICE_PATH)/vintf/manifest_JPN.xml
 
 DEVICE_MANIFEST_SKUS += volcano
-DEVICE_MANIFEST_VOLCANO_FILES += $(DEVICE_PATH)/vintf/manifest_volcano.xml
+DEVICE_MANIFEST_VOLCANO_FILES += \
+    $(DEVICE_PATH)/vintf/manifest_volcano.xml \
+    hardware/dolby/configs/vintf/vendor.dolby.hardware.dms@2.0-service.xml \
+    hardware/dolby/configs/vintf/vendor.dolby.media.c2@1.0-service.xml
 
 # Wi-Fi
 BOARD_WLAN_DEVICE := qcwcn

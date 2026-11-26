@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Match tuned profiles in hardware/dolby/configs/dax/dax-default.xml (0, 1, 2). -->
+    <string-array name="dolby_profile_entries" translatable="false">
+        <item>Dynamic</item>
+        <item>Movie/Video</item>
+        <item>Music</item>
+    </string-array>
+
+    <string-array name="dolby_profile_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

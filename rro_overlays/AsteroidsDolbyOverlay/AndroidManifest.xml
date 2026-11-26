@@ -4,10 +4,10 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.hlcyn.dolby.overlay.asteroids">
+    package="org.lunaris.dolby.overlay.asteroids">
 
     <overlay
         android:isStatic="true"
         android:priority="750"
-        android:targetPackage="org.hlcyn.dolby" />
+        android:targetPackage="org.lunaris.dolby" />
 </manifest>
