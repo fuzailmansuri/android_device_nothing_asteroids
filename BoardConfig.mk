@@ -252,9 +252,12 @@ ODM_MANIFEST_JPN_FILES := $(DEVICE_PATH)/vintf/manifest_JPN.xml
 
 DEVICE_MANIFEST_SKUS += volcano
 DEVICE_MANIFEST_VOLCANO_FILES += \
-    $(DEVICE_PATH)/vintf/manifest_volcano.xml \
+    $(DEVICE_PATH)/vintf/manifest_volcano.xml
+ifneq ($(wildcard hardware/dolby/dolby.mk),)
+DEVICE_MANIFEST_VOLCANO_FILES += \
     hardware/dolby/configs/vintf/vendor.dolby.hardware.dms@2.0-service.xml \
     hardware/dolby/configs/vintf/vendor.dolby.media.c2@1.0-service.xml
+endif
 
 # Camera
 include vendor/nothing/camera/BoardConfigCamera.mk

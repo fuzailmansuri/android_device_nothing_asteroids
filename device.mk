@@ -105,8 +105,12 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.volcano
 
 # Dolby
+ifneq ($(wildcard hardware/dolby/dolby.mk),)
 USE_HWDAP := false
 $(call inherit-product, hardware/dolby/dolby.mk)
+PRODUCT_PACKAGES += \
+    AsteroidsDolbyOverlay
+endif
 
 # Biometrics
 PRODUCT_PACKAGES += \
@@ -327,7 +331,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     AsteroidsApertureDevOverlay \
     AsteroidsApertureOverlay \
-    AsteroidsDolbyOverlay \
     AsteroidsEuiccOverlay \
     AsteroidsFrameworksOverlay \
     AsteroidsLauncherOverlay \
